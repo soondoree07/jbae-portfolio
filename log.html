@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>프로젝트 로그 | artist_portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Noto+Sans+KR:wght@300;400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:       #0e1117;
+      --surface:  #161b22;
+      --border:   #21262d;
+      --accent:   #58a6ff;
+      --green:    #3fb950;
+      --yellow:   #d29922;
+      --purple:   #bc8cff;
+      --red:      #f85149;
+      --text:     #c9d1d9;
+      --muted:    #6e7681;
+      --white:    #f0f6fc;
+      --mono:     'JetBrains Mono', 'Fira Code', monospace;
+      --sans:     'Noto Sans KR', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 14px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout ── */
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+    }
+
+    /* ── Sidebar ── */
+    aside {
+      background: var(--surface);
+      border-right: 1px solid var(--border);
+      padding: 32px 0;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar-logo {
+      padding: 0 24px 24px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+
+    .sidebar-logo h1 {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--white);
+      letter-spacing: 0.05em;
+    }
+
+    .sidebar-logo p {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .nav-section {
+      padding: 0 16px;
+      margin-bottom: 24px;
+    }
+
+    .nav-section-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0 8px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--text);
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .nav-item:hover, .nav-item.active {
+      background: rgba(88, 166, 255, 0.1);
+      color: var(--white);
+    }
+
+    .nav-item .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── Main ── */
+    main {
+      padding: 40px 48px;
+      max-width: 1000px;
+    }
+
+    /* ── Section ── */
+    .section {
+      margin-bottom: 56px;
+      scroll-margin-top: 24px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-icon {
+      font-size: 16px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .badge {
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 2px 8px;
+      border-radius: 12px;
+      background: rgba(88,166,255,0.15);
+      color: var(--accent);
+      border: 1px solid rgba(88,166,255,0.3);
+    }
+
+    /* ── Stats ── */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .stat-value {
+      font-family: var(--mono);
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ── File Table ── */
+    .file-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--mono);
+      font-size: 13px;
+    }
+
+    .file-table th {
+      text-align: left;
+      padding: 10px 16px;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      font-weight: 400;
+    }
+
+    .file-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    .file-table tr:last-child td { border-bottom: none; }
+
+    .file-table tr:hover td {
+      background: rgba(255,255,255,0.02);
+    }
+
+    .file-name {
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .file-icon { font-size: 14px; }
+
+    .file-lines {
+      color: var(--yellow);
+      text-align: right;
+    }
+
+    .file-type {
+      display: inline-block;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    .type-html { background: rgba(240,101,41,0.15); color: #f06529; border: 1px solid rgba(240,101,41,0.3); }
+    .type-css  { background: rgba(38,143,244,0.15); color: #268ff4; border: 1px solid rgba(38,143,244,0.3); }
+    .type-js   { background: rgba(247,223,30,0.12);  color: #f7df1e; border: 1px solid rgba(247,223,30,0.3); }
+    .type-json { background: rgba(63,185,80,0.12);  color: var(--green); border: 1px solid rgba(63,185,80,0.3); }
+    .type-md   { background: rgba(188,140,255,0.12); color: var(--purple); border: 1px solid rgba(188,140,255,0.3); }
+    .type-dir  { background: rgba(110,118,129,0.15); color: var(--muted); border: 1px solid var(--border); }
+
+    .file-desc {
+      color: var(--muted);
+      font-family: var(--sans);
+      font-size: 12px;
+    }
+
+    /* ── Directory Tree ── */
+    .tree {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 24px;
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    .tree-line {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tree-connector { color: var(--border); user-select: none; }
+    .tree-dir  { color: var(--accent); font-weight: 600; }
+    .tree-file { color: var(--text); }
+    .tree-comment { color: var(--muted); font-size: 11px; margin-left: 8px; }
+
+    /* ── Git Log ── */
+    .commit-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .commit {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 16px;
+      align-items: start;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .commit:last-child { border-bottom: none; }
+
+    .commit-dot-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 4px;
+    }
+
+    .commit-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--green);
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 0 2px var(--green);
+      flex-shrink: 0;
+    }
+
+    .commit-line {
+      width: 2px;
+      flex: 1;
+      background: var(--border);
+      margin-top: 6px;
+      min-height: 20px;
+    }
+
+    .commit:last-child .commit-line { display: none; }
+
+    .commit-msg {
+      font-size: 14px;
+      color: var(--white);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .commit-meta {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      gap: 16px;
+    }
+
+    .commit-hash {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--accent);
+      background: rgba(88,166,255,0.1);
+      padding: 2px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+      align-self: flex-start;
+    }
+
+    .commit-changes {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+    }
+
+    .change-tag {
+      font-size: 11px;
+      font-family: var(--mono);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .change-new  { background: rgba(63,185,80,0.12);  color: var(--green);  border: 1px solid rgba(63,185,80,0.3); }
+    .change-mod  { background: rgba(210,153,34,0.12); color: var(--yellow); border: 1px solid rgba(210,153,34,0.3); }
+
+    /* ── Data Summary ── */
+    .data-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .data-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .data-card-label {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+
+    .data-card-value {
+      font-family: var(--mono);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .data-card-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .year-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+
+    .year-pill {
+      font-family: var(--mono);
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 4px;
+      background: rgba(88,166,255,0.08);
+      color: var(--accent);
+      border: 1px solid rgba(88,166,255,0.2);
+    }
+
+    /* ── Deployment ── */
+    .deploy-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .deploy-step {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 16px 0;
+    }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(88,166,255,0.15);
+      color: var(--accent);
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(88,166,255,0.3);
+      flex-shrink: 0;
+    }
+
+    .step-content h4 {
+      font-size: 14px;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    code {
+      font-family: var(--mono);
+      font-size: 12px;
+      background: rgba(255,255,255,0.07);
+      color: var(--green);
+      padding: 1px 6px;
+      border-radius: 3px;
+    }
+
+    .url-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-top: 16px;
+      font-family: var(--mono);
+      font-size: 13px;
+    }
+
+    .url-label {
+      color: var(--muted);
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    .url-value {
+      color: var(--accent);
+    }
+
+    /* ── Header ── */
+    .page-header {
+      margin-bottom: 40px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-header h2 {
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 6px;
+    }
+
+    .page-header p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .header-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 12px;
+    }
+
+    .header-meta span {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      display: inline-block;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      aside { position: static; height: auto; }
+      main { padding: 24px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .data-cards { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .data-cards { grid-template-columns: 1fr; }
+      .commit { grid-template-columns: auto 1fr; }
+      .commit-hash { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside>
+    <div class="sidebar-logo">
+      <h1>artist_portfolio</h1>
+      <p>soondoree07 / GitHub</p>
+    </div>
+
+    <nav class="nav-section">
+      <span class="nav-section-label">대시보드</span>
+      <a href="#overview" class="nav-item active">
+        <span class="dot" style="background:var(--accent)"></span> 개요
+      </a>
+      <a href="#files" class="nav-item">
+        <span class="dot" style="background:var(--yellow)"></span> 파일 목록
+      </a>
+      <a href="#tree" class="nav-item">
+        <span class="dot" style="background:var(--purple)"></span> 디렉토리 구조
+      </a>
+      <a href="#git" class="nav-item">
+        <span class="dot" style="background:var(--green)"></span> Git 로그
+      </a>
+      <a href="#data" class="nav-item">
+        <span class="dot" style="background:var(--red)"></span> 데이터 구조
+      </a>
+      <a href="#deploy" class="nav-item">
+        <span class="dot" style="background:#e3b341)"></span> 배포 가이드
+      </a>
+    </nav>
+
+    <nav class="nav-section">
+      <span class="nav-section-label">바로가기</span>
+      <a href="index.html" class="nav-item">
+        <span class="dot" style="background:var(--green)"></span> 메인 포트폴리오
+      </a>
+      <a href="year.html?year=2026" class="nav-item">
+        <span class="dot" style="background:var(--muted)"></span> 연도별 페이지
+      </a>
+    </nav>
+  </aside>
+
+  <!-- Main -->
+  <main>
+
+    <!-- Header -->
+    <div class="page-header">
+      <h2>프로젝트 대시보드</h2>
+      <p>artist_portfolio 생성 기록 및 파일 구조 정리</p>
+      <div class="header-meta">
+        <span><span class="status-dot"></span> GitHub 연동 완료</span>
+        <span>&#128197; 2026-03-19</span>
+        <span>&#128101; soondoree07</span>
+      </div>
+    </div>
+
+    <!-- Overview -->
+    <div class="section" id="overview">
+      <div class="section-header">
+        <span class="section-icon">&#9654;</span>
+        <h3 class="section-title">개요</h3>
+        <span class="badge">Summary</span>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" style="color:var(--accent)">6</div>
+          <div class="stat-label">생성된 파일</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" style="color:var(--yellow)">1,867</div>
+          <div class="stat-label">총 코드 라인</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" style="color:var(--green)">20</div>
+          <div class="stat-label">연도 (2007~2026)</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" style="color:var(--purple)">63</div>
+          <div class="stat-label">더미 작품 수</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Files -->
+    <div class="section" id="files">
+      <div class="section-header">
+        <span class="section-icon">&#128196;</span>
+        <h3 class="section-title">파일 목록</h3>
+        <span class="badge">6 files</span>
+      </div>
+
+      <table class="file-table">
+        <thead>
+          <tr>
+            <th>파일명</th>
+            <th>타입</th>
+            <th>역할</th>
+            <th style="text-align:right">라인 수</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="file-name">
+                <span class="file-icon">&#128196;</span>
+                <a href="index.html">index.html</a>
+              </div>
+            </td>
+            <td><span class="file-type type-html">HTML</span></td>
+            <td class="file-desc">메인 페이지 — Hero / About / Works / Contact 섹션</td>
+            <td class="file-lines">80</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="file-name">
+                <span class="file-icon">&#128196;</span>
+                <a href="year.html?year=2026">year.html</a>
+              </div>
+            </td>
+            <td><span class="file-type type-html">HTML</span></td>
+            <td class="file-desc">연도별 상세 페이지 — Masonry 갤러리 + Lightbox</td>
+            <td class="file-lines">63</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="file-name">
+                <span class="file-icon">&#127912;</span>
+                <a href="style.css">style.css</a>
+              </div>
+            </td>
+            <td><span class="file-type type-css">CSS</span></td>
+            <td class="file-desc">전체 스타일 — 베이지/크림 갤러리 디자인, 반응형</td>
+            <td class="file-lines">726</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="file-name">
+                <span class="file-icon">&#9889;</span>
+                <a href="script.js">script.js</a>
+              </div>
+            </td>
+            <td><span class="file-type type-js">JS</span></td>
+            <td class="file-desc">data.json 동적 렌더링, Lightbox, 키보드 지원</td>
+            <td class="file-lines">288</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="file-name">
+                <span class="file-icon">&#128202;</span>
+                <a href="data.json">data.json</a>
+              </div>
+            </td>
+            <td><span class="file-type type-json">JSON</span></td>
+            <td class="file-desc">작가 정보 + 2007~2026년 연도별 작품 더미 데이터</td>
+            <td class="file-lines">633</td>
+          </tr>
+          <tr>
+            <td>
+              <div class="file-name">
+                <span class="file-icon">&#128221;</span>
+                <a href="README.md">README.md</a>
+              </div>
+            </td>
+            <td><span class="file-type type-md">MD</span></td>
+            <td class="file-desc">프로젝트 설명 및 수정 가이드</td>
+            <td class="file-lines">77</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Directory Tree -->
+    <div class="section" id="tree">
+      <div class="section-header">
+        <span class="section-icon">&#128193;</span>
+        <h3 class="section-title">디렉토리 구조</h3>
+        <span class="badge">Directory</span>
+      </div>
+
+      <div class="tree">
+        <div class="tree-line">
+          <span class="tree-dir">artist_portfolio/</span>
+        </div>
+        <div class="tree-line">
+          <span class="tree-connector">├──</span>
+          <span class="tree-file"><a href="index.html">index.html</a></span>
+          <span class="tree-comment">← 메인 페이지</span>
+        </div>
+        <div class="tree-line">
+          <span class="tree-connector">├──</span>
+          <span class="tree-file"><a href="year.html?year=2026">year.html</a></span>
+          <span class="tree-comment">← 연도별 상세 (?year=XXXX)</span>
+        </div>
+        <div class="tree-line">
+          <span class="tree-connector">├──</span>
+          <span class="tree-file"><a href="style.css">style.css</a></span>
+          <span class="tree-comment">← 전체 스타일</span>
+        </div>
+        <div class="tree-line">
+          <span class="tree-connector">├──</span>
+          <span class="tree-file"><a href="script.js">script.js</a></span>
+          <span class="tree-comment">← 동적 렌더링 + 인터랙션</span>
+        </div>
+        <div class="tree-line">
+          <span class="tree-connector">├──</span>
+          <span class="tree-file"><a href="data.json">data.json</a></span>
+          <span class="tree-comment">← 모든 콘텐츠 데이터</span>
+        </div>
+        <div class="tree-line">
+          <span class="tree-connector">├──</span>
+          <span class="tree-file"><a href="README.md">README.md</a></span>
+          <span class="tree-comment">← 프로젝트 설명</span>
+        </div>
+        <div class="tree-line">
+          <span class="tree-connector">└──</span>
+          <span class="tree-dir">images/</span>
+          <span class="tree-comment">← 연도별 이미지 폴더</span>
+        </div>
+        <div class="tree-line" style="padding-left:24px">
+          <span class="tree-connector">├── 2026/</span>
+        </div>
+        <div class="tree-line" style="padding-left:24px">
+          <span class="tree-connector">├── 2025/</span>
+        </div>
+        <div class="tree-line" style="padding-left:24px; color:var(--muted)">
+          <span>│&nbsp;&nbsp; ...</span>
+        </div>
+        <div class="tree-line" style="padding-left:24px">
+          <span class="tree-connector">└── 2007/</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Git Log -->
+    <div class="section" id="git">
+      <div class="section-header">
+        <span class="section-icon">&#128260;</span>
+        <h3 class="section-title">Git 커밋 로그</h3>
+        <span class="badge">2 commits</span>
+      </div>
+
+      <div class="commit-list">
+        <div class="commit">
+          <div class="commit-dot-wrap">
+            <div class="commit-dot"></div>
+            <div class="commit-line"></div>
+          </div>
+          <div>
+            <div class="commit-msg">Add complete artist portfolio website</div>
+            <div class="commit-meta">
+              <span>&#128197; 2026-03-19 15:34</span>
+              <span>&#128101; soondoree07</span>
+              <span>&#128260; claude/add-readme-bJWxJ</span>
+            </div>
+            <div class="commit-changes">
+              <span class="change-tag change-new">+ index.html</span>
+              <span class="change-tag change-new">+ year.html</span>
+              <span class="change-tag change-new">+ style.css</span>
+              <span class="change-tag change-new">+ script.js</span>
+              <span class="change-tag change-new">+ data.json</span>
+              <span class="change-tag change-mod">~ README.md</span>
+            </div>
+          </div>
+          <span class="commit-hash">402d0b8</span>
+        </div>
+
+        <div class="commit">
+          <div class="commit-dot-wrap">
+            <div class="commit-dot" style="background:var(--muted); box-shadow: 0 0 0 2px var(--muted)"></div>
+            <div class="commit-line"></div>
+          </div>
+          <div>
+            <div class="commit-msg">Add README.md</div>
+            <div class="commit-meta">
+              <span>&#128197; 2026-03-19 05:43</span>
+              <span>&#128101; soondoree07</span>
+            </div>
+            <div class="commit-changes">
+              <span class="change-tag change-new">+ README.md</span>
+            </div>
+          </div>
+          <span class="commit-hash">372b594</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Data Summary -->
+    <div class="section" id="data">
+      <div class="section-header">
+        <span class="section-icon">&#128202;</span>
+        <h3 class="section-title">데이터 구조 (data.json)</h3>
+        <span class="badge">633 lines</span>
+      </div>
+
+      <div class="data-cards">
+        <div class="data-card">
+          <div class="data-card-label">총 연도</div>
+          <div class="data-card-value">20</div>
+          <div class="data-card-sub">2007 ~ 2026</div>
+        </div>
+        <div class="data-card">
+          <div class="data-card-label">총 작품 수</div>
+          <div class="data-card-value">63</div>
+          <div class="data-card-sub">연도별 평균 3.15개</div>
+        </div>
+        <div class="data-card">
+          <div class="data-card-label">이미지 폴더</div>
+          <div class="data-card-value">20</div>
+          <div class="data-card-sub">images/YYYY/ 구조</div>
+        </div>
+      </div>
+
+      <div style="margin-top:20px">
+        <p style="font-size:12px; color:var(--muted); margin-bottom:12px;">포함된 연도</p>
+        <div class="year-pills">
+          <span class="year-pill">2026</span>
+          <span class="year-pill">2025</span>
+          <span class="year-pill">2024</span>
+          <span class="year-pill">2023</span>
+          <span class="year-pill">2022</span>
+          <span class="year-pill">2021</span>
+          <span class="year-pill">2020</span>
+          <span class="year-pill">2019</span>
+          <span class="year-pill">2018</span>
+          <span class="year-pill">2017</span>
+          <span class="year-pill">2016</span>
+          <span class="year-pill">2015</span>
+          <span class="year-pill">2014</span>
+          <span class="year-pill">2013</span>
+          <span class="year-pill">2012</span>
+          <span class="year-pill">2011</span>
+          <span class="year-pill">2010</span>
+          <span class="year-pill">2009</span>
+          <span class="year-pill">2008</span>
+          <span class="year-pill">2007</span>
+        </div>
+      </div>
+
+      <div style="margin-top:24px; background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:20px;">
+        <p style="font-size:11px; color:var(--muted); margin-bottom:12px; letter-spacing:0.1em; text-transform:uppercase;">data.json 최상위 구조</p>
+        <pre style="font-family:var(--mono); font-size:12px; color:var(--text); line-height:1.9; overflow-x:auto;"><span style="color:var(--muted)">{</span>
+  <span style="color:var(--accent)">"artist"</span>: <span style="color:var(--muted)">{</span>
+    <span style="color:var(--accent)">"name"</span>: <span style="color:var(--green)">"이순례"</span>,
+    <span style="color:var(--accent)">"tagline"</span>: <span style="color:var(--green)">"..."</span>,
+    <span style="color:var(--accent)">"bio"</span>: <span style="color:var(--green)">"..."</span>,
+    <span style="color:var(--accent)">"email"</span>: <span style="color:var(--green)">"..."</span>,
+    <span style="color:var(--accent)">"instagram"</span>: <span style="color:var(--green)">"..."</span>
+  <span style="color:var(--muted)">}</span>,
+  <span style="color:var(--accent)">"years"</span>: <span style="color:var(--yellow)">[</span> <span style="color:var(--muted)">// 20개 연도 배열</span>
+    <span style="color:var(--muted)">{</span>
+      <span style="color:var(--accent)">"id"</span>: <span style="color:var(--green)">"2026"</span>,
+      <span style="color:var(--accent)">"year"</span>: <span style="color:var(--purple)">2026</span>,
+      <span style="color:var(--accent)">"description"</span>: <span style="color:var(--green)">"..."</span>,
+      <span style="color:var(--accent)">"thumbnail"</span>: <span style="color:var(--green)">"images/2026/thumb.jpg"</span>,
+      <span style="color:var(--accent)">"works"</span>: <span style="color:var(--yellow)">[</span> <span style="color:var(--muted)">// 작품 배열</span>
+        <span style="color:var(--muted)">{</span>
+          <span style="color:var(--accent)">"title"</span>: <span style="color:var(--green)">"작품 제목"</span>,
+          <span style="color:var(--accent)">"material"</span>: <span style="color:var(--green)">"유화"</span>,
+          <span style="color:var(--accent)">"size"</span>: <span style="color:var(--green)">"80×100cm"</span>,
+          <span style="color:var(--accent)">"description"</span>: <span style="color:var(--green)">"..."</span>,
+          <span style="color:var(--accent)">"image"</span>: <span style="color:var(--green)">"images/2026/01.jpg"</span>
+        <span style="color:var(--muted)">}</span>
+      <span style="color:var(--yellow)">]</span>
+    <span style="color:var(--muted)">}</span>
+  <span style="color:var(--yellow)">]</span>
+<span style="color:var(--muted)">}</span></pre>
+      </div>
+    </div>
+
+    <!-- Deploy Guide -->
+    <div class="section" id="deploy">
+      <div class="section-header">
+        <span class="section-icon">&#128640;</span>
+        <h3 class="section-title">GitHub Pages 배포 가이드</h3>
+        <span class="badge">Deploy</span>
+      </div>
+
+      <div class="deploy-steps">
+        <div class="deploy-step">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h4>저장소 Settings로 이동</h4>
+            <p>GitHub에서 <code>soondoree07/artist_portfolio</code> 저장소의 <code>Settings</code> 탭 클릭</p>
+          </div>
+        </div>
+        <div class="deploy-step">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h4>저장소 공개로 변경</h4>
+            <p>현재 <code>private</code> 저장소입니다. GitHub Pages는 무료 계정에서 public 저장소에서만 무료로 사용 가능합니다. Settings → General → Danger Zone → Change visibility</p>
+          </div>
+        </div>
+        <div class="deploy-step">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h4>Pages 설정</h4>
+            <p>Settings → Pages → Source: <code>Deploy from a branch</code> → Branch: <code>main</code> / <code>/ (root)</code> → Save</p>
+          </div>
+        </div>
+        <div class="deploy-step">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <h4>배포 완료 확인</h4>
+            <p>1~2분 후 아래 URL로 접속 가능합니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="url-box">
+        <span class="url-label">배포 URL</span>
+        <span class="url-value">https://soondoree07.github.io/artist_portfolio/</span>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+  // Sidebar active link on scroll
+  const sections = document.querySelectorAll('.section');
+  const navItems = document.querySelectorAll('.nav-item');
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navItems.forEach(a => a.classList.remove('active'));
+        const active = document.querySelector(`.nav-item[href="#${e.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sections.forEach(s => io.observe(s));
+</script>
+
+</body>
+</html>
