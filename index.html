@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>작가 포트폴리오</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo" id="nav-name">이순례</a>
+    <ul class="nav-links">
+      <li><a href="#about">소개</a></li>
+      <li><a href="#works">작품</a></li>
+      <li><a href="#contact">연락</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-bg" id="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 id="hero-name">이순례</h1>
+      <p id="hero-tagline">자연을 담은 붓끝, 시간을 그리다</p>
+    </div>
+    <div class="hero-scroll">scroll</div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="about-inner">
+      <div class="about-image">
+        <img src="https://picsum.photos/seed/artist-profile/600/800" alt="작가 사진" />
+      </div>
+      <div class="about-text">
+        <span class="section-label">About</span>
+        <h2 class="section-title" id="about-name">이순례</h2>
+        <p class="about-bio" id="about-bio">불러오는 중...</p>
+        <div class="about-contact" id="about-contact"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Works -->
+  <section id="works">
+    <div class="works-inner">
+      <div class="works-header">
+        <span class="section-label">Works</span>
+        <h2 class="section-title">작품 연보</h2>
+      </div>
+      <div id="works-list">
+        <div class="loading">불러오는 중...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="contact-inner">
+      <span class="section-label">Contact</span>
+      <h2 class="section-title">연락하기</h2>
+      <p class="contact-desc">작품 구매, 전시 협의, 그 외 문의 사항은 아래로 연락 주세요.</p>
+      <div class="contact-links" id="contact-links"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p id="footer-text">&copy; 2026 이순례. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

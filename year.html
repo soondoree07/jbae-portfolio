@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>연도별 작품 | 포트폴리오</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="main-nav">
+    <a href="index.html" class="nav-logo" id="nav-name">이순례</a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">소개</a></li>
+      <li><a href="index.html#works">작품</a></li>
+      <li><a href="index.html#contact">연락</a></li>
+    </ul>
+  </nav>
+
+  <!-- Back Button -->
+  <a href="index.html#works" class="back-btn">&#8592; 전체 작품으로</a>
+
+  <!-- Year Hero -->
+  <div class="year-hero" id="year-hero">
+    <div class="loading">불러오는 중...</div>
+  </div>
+
+  <!-- Gallery Grid -->
+  <div class="gallery-section" id="gallery-section" style="display:none;">
+    <div class="masonry-grid" id="masonry-grid"></div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close" aria-label="닫기">&#10005;</button>
+    <div class="lightbox-inner">
+      <div class="lightbox-img-wrap">
+        <img id="lightbox-img" src="" alt="" />
+      </div>
+      <div class="lightbox-info">
+        <h2 class="lightbox-title" id="lightbox-title"></h2>
+        <div class="lightbox-meta" id="lightbox-meta"></div>
+        <p class="lightbox-desc" id="lightbox-desc"></p>
+        <div class="lightbox-nav">
+          <button id="lb-prev" aria-label="이전 작품">&#9664;</button>
+          <span class="lightbox-counter" id="lb-counter"></span>
+          <button id="lb-next" aria-label="다음 작품">&#9654;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p id="footer-text">&copy; 2026 이순례. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

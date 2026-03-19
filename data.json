@@ -1,0 +1,633 @@
+{
+  "artist": {
+    "name": "이순례",
+    "tagline": "자연을 담은 붓끝, 시간을 그리다",
+    "bio": "화가 이순례는 자연의 고요함과 전통 회화의 미학을 현대적 감각으로 재해석해왔습니다. 유화와 수채화를 주된 매체로 사용하며, 한국의 산하와 계절의 변화를 화폭에 담아옵니다. 2007년 첫 개인전을 시작으로 20여 년간 꾸준한 작품 활동을 이어오고 있으며, 국내외 다수의 그룹전과 개인전에 참여해왔습니다.",
+    "email": "artist@example.com",
+    "instagram": "https://instagram.com/artist_portfolio"
+  },
+  "years": [
+    {
+      "id": "2026",
+      "year": 2026,
+      "description": "봄의 귀환을 주제로 새 생명과 순환의 이미지를 탐구한 작업들입니다. 긴 겨울 끝에 찾아오는 봄의 경이로움을 유화와 수채화로 담아냈습니다.",
+      "thumbnail": "https://picsum.photos/seed/2026t/1200/750",
+      "works": [
+        {
+          "title": "봄의 문턱",
+          "material": "유화",
+          "size": "80×100cm",
+          "description": "겨울이 물러가고 봄이 찾아오는 경계의 순간을 담았습니다. 눈 속에서 피어나는 첫 꽃망울의 생명력을 표현했습니다.",
+          "image": "https://picsum.photos/seed/2026-1/600/800"
+        },
+        {
+          "title": "연두빛 들판",
+          "material": "수채화",
+          "size": "60×80cm",
+          "description": "새잎이 돋아나는 들판의 첫 번째 연두빛을 수채화 특유의 투명한 질감으로 표현했습니다.",
+          "image": "https://picsum.photos/seed/2026-2/800/600"
+        },
+        {
+          "title": "꽃비",
+          "material": "유화",
+          "size": "100×80cm",
+          "description": "벚꽃이 흩날리는 순간의 생동감과 덧없는 아름다움을 두터운 유화 붓터치로 담아냈습니다.",
+          "image": "https://picsum.photos/seed/2026-3/600/800"
+        }
+      ]
+    },
+    {
+      "id": "2025",
+      "year": 2025,
+      "description": "눈 내리는 산을 주제로 한국의 겨울 산하를 탐구했습니다. 고요하고 장엄한 설경 속에서 자연의 숭고함을 발견합니다.",
+      "thumbnail": "https://picsum.photos/seed/2025t/1200/750",
+      "works": [
+        {
+          "title": "설악의 겨울",
+          "material": "유화",
+          "size": "120×150cm",
+          "description": "설악산의 겨울 풍경을 대형 캔버스에 담았습니다. 눈으로 뒤덮인 암봉의 웅장함을 표현했습니다.",
+          "image": "https://picsum.photos/seed/2025-1/800/600"
+        },
+        {
+          "title": "침묵하는 숲",
+          "material": "아크릴",
+          "size": "80×80cm",
+          "description": "눈 쌓인 숲의 고요한 침묵을 모노톤 계열의 아크릴로 표현한 작품입니다.",
+          "image": "https://picsum.photos/seed/2025-2/600/800"
+        },
+        {
+          "title": "눈길",
+          "material": "수채화",
+          "size": "50×70cm",
+          "description": "이른 아침 눈 위에 남겨진 발자국들과 그 고독한 여정을 담았습니다.",
+          "image": "https://picsum.photos/seed/2025-3/600/800"
+        },
+        {
+          "title": "백설의 고원",
+          "material": "유화",
+          "size": "100×120cm",
+          "description": "하얀 눈으로 덮인 고원의 광활함과 그 속의 고독감을 넓은 붓질로 표현했습니다.",
+          "image": "https://picsum.photos/seed/2025-4/800/600"
+        }
+      ]
+    },
+    {
+      "id": "2024",
+      "year": 2024,
+      "description": "빛의 파편을 주제로 자연광이 만들어내는 다양한 순간들을 포착했습니다. 시시각각 변하는 빛과 그림자의 대화를 화폭에 담았습니다.",
+      "thumbnail": "https://picsum.photos/seed/2024t/1200/750",
+      "works": [
+        {
+          "title": "황금빛 오후",
+          "material": "유화",
+          "size": "80×100cm",
+          "description": "늦은 오후 황금빛 햇살이 들판을 가로지르는 순간을 포착했습니다.",
+          "image": "https://picsum.photos/seed/2024-1/600/800"
+        },
+        {
+          "title": "물빛 반영",
+          "material": "수채화",
+          "size": "60×80cm",
+          "description": "호수 수면에 반사되는 빛의 파편들을 수채화의 번짐 효과로 표현했습니다.",
+          "image": "https://picsum.photos/seed/2024-2/800/600"
+        },
+        {
+          "title": "여명",
+          "material": "파스텔",
+          "size": "40×60cm",
+          "description": "새벽빛이 어둠을 밀어내는 순간의 미묘한 색채 변화를 파스텔로 표현했습니다.",
+          "image": "https://picsum.photos/seed/2024-3/600/800"
+        }
+      ]
+    },
+    {
+      "id": "2023",
+      "year": 2023,
+      "description": "흐르는 강을 주제로 물의 다양한 표정과 움직임을 탐구했습니다. 강은 시간의 흐름과 삶의 여정을 상징합니다.",
+      "thumbnail": "https://picsum.photos/seed/2023t/1200/750",
+      "works": [
+        {
+          "title": "섬진강의 봄",
+          "material": "유화",
+          "size": "100×120cm",
+          "description": "섬진강변의 봄 풍경을 담은 작품으로, 강물의 유유한 흐름과 주변 자연을 표현했습니다.",
+          "image": "https://picsum.photos/seed/2023-1/800/600"
+        },
+        {
+          "title": "여울목",
+          "material": "아크릴",
+          "size": "60×80cm",
+          "description": "강물이 바위를 만나 여울을 이루는 역동적인 순간을 강렬한 붓터치로 담았습니다.",
+          "image": "https://picsum.photos/seed/2023-2/600/800"
+        },
+        {
+          "title": "강안개",
+          "material": "수채화",
+          "size": "70×90cm",
+          "description": "이른 아침 강 위에 피어오르는 안개의 몽환적인 분위기를 수채화로 포착했습니다.",
+          "image": "https://picsum.photos/seed/2023-3/600/800"
+        }
+      ]
+    },
+    {
+      "id": "2022",
+      "year": 2022,
+      "description": "가을 단상을 주제로 깊어가는 가을의 색채와 정서를 담았습니다. 낙엽과 황금빛 들판, 쓸쓸하면서도 아름다운 계절의 끝을 표현했습니다.",
+      "thumbnail": "https://picsum.photos/seed/2022t/1200/750",
+      "works": [
+        {
+          "title": "단풍의 절정",
+          "material": "유화",
+          "size": "100×80cm",
+          "description": "붉고 황금빛으로 물든 단풍 숲의 절정을 강렬한 색채로 담아냈습니다.",
+          "image": "https://picsum.photos/seed/2022-1/600/800"
+        },
+        {
+          "title": "낙엽 지는 오후",
+          "material": "혼합매체",
+          "size": "80×100cm",
+          "description": "낙엽이 천천히 떨어지는 오후의 고요한 정경을 혼합매체로 표현했습니다.",
+          "image": "https://picsum.photos/seed/2022-2/800/600"
+        },
+        {
+          "title": "황금 들녘",
+          "material": "유화",
+          "size": "120×90cm",
+          "description": "수확을 앞둔 황금빛 들판의 풍요로움과 아름다움을 파노라마처럼 담았습니다.",
+          "image": "https://picsum.photos/seed/2022-3/800/600"
+        },
+        {
+          "title": "마지막 잎",
+          "material": "수채화",
+          "size": "30×40cm",
+          "description": "앙상한 나뭇가지에 홀로 매달린 마지막 잎의 고독과 의연함을 작은 화폭에 담았습니다.",
+          "image": "https://picsum.photos/seed/2022-4/600/800"
+        }
+      ]
+    },
+    {
+      "id": "2021",
+      "year": 2021,
+      "description": "치유의 시간을 주제로 팬데믹 이후의 회복과 자연으로의 귀환을 담았습니다. 자연과의 재연결을 통한 내면의 치유를 표현했습니다.",
+      "thumbnail": "https://picsum.photos/seed/2021t/1200/750",
+      "works": [
+        {
+          "title": "귀환",
+          "material": "유화",
+          "size": "80×100cm",
+          "description": "오랜 단절 끝에 자연으로 돌아오는 순간의 감동과 치유를 표현한 작품입니다.",
+          "image": "https://picsum.photos/seed/2021-1/600/800"
+        },
+        {
+          "title": "숲의 치유",
+          "material": "아크릴",
+          "size": "90×90cm",
+          "description": "울창한 숲속에서 느끼는 자연의 치유 에너지를 싱그러운 녹색으로 담았습니다.",
+          "image": "https://picsum.photos/seed/2021-2/800/800"
+        },
+        {
+          "title": "봄비 내리는 날",
+          "material": "수채화",
+          "size": "60×80cm",
+          "description": "봄비가 내리는 날의 촉촉하고 생명력 넘치는 자연의 모습을 담았습니다.",
+          "image": "https://picsum.photos/seed/2021-3/600/800"
+        }
+      ]
+    },
+    {
+      "id": "2020",
+      "year": 2020,
+      "description": "멈춘 세계를 주제로 팬데믹으로 정지된 일상 속에서 발견한 자연의 목소리를 담았습니다. 고요 속에서 더 선명하게 들리는 자연의 소리를 표현했습니다.",
+      "thumbnail": "https://picsum.photos/seed/2020t/1200/750",
+      "works": [
+        {
+          "title": "정적",
+          "material": "유화",
+          "size": "100×100cm",
+          "description": "모든 것이 멈춘 듯한 고요한 풍경 속에서 느끼는 역설적인 생명감을 표현했습니다.",
+          "image": "https://picsum.photos/seed/2020-1/800/800"
+        },
+        {
+          "title": "창밖의 계절",
+          "material": "아크릴",
+          "size": "60×80cm",
+          "description": "집 안에서 바라보는 계절의 변화를 통해 자연과의 연결을 이어가는 작품입니다.",
+          "image": "https://picsum.photos/seed/2020-2/600/800"
+        },
+        {
+          "title": "텅 빈 광장",
+          "material": "수채화",
+          "size": "80×60cm",
+          "description": "사람이 사라진 광장에 자연이 들어오는 모습을 담담하게 담아냈습니다.",
+          "image": "https://picsum.photos/seed/2020-3/800/600"
+        }
+      ]
+    },
+    {
+      "id": "2019",
+      "year": 2019,
+      "description": "바다를 향해라는 주제로 광활한 바다의 다양한 표정을 탐구했습니다. 바다는 자유와 무한한 가능성의 상징입니다.",
+      "thumbnail": "https://picsum.photos/seed/2019t/1200/750",
+      "works": [
+        {
+          "title": "수평선 너머",
+          "material": "유화",
+          "size": "120×80cm",
+          "description": "광활한 수평선을 바라보며 느끼는 무한한 자유와 동경을 파노라마 형식으로 담았습니다.",
+          "image": "https://picsum.photos/seed/2019-1/800/600"
+        },
+        {
+          "title": "파도",
+          "material": "아크릴",
+          "size": "80×100cm",
+          "description": "역동적으로 부서지는 파도의 에너지를 강렬한 붓터치와 색채로 표현했습니다.",
+          "image": "https://picsum.photos/seed/2019-2/600/800"
+        },
+        {
+          "title": "해질 무렵 바다",
+          "material": "파스텔",
+          "size": "50×70cm",
+          "description": "노을이 물드는 바다의 황홀한 색채를 파스텔의 부드러운 질감으로 표현했습니다.",
+          "image": "https://picsum.photos/seed/2019-3/600/800"
+        },
+        {
+          "title": "갯벌의 아침",
+          "material": "수채화",
+          "size": "60×80cm",
+          "description": "물이 빠진 갯벌에 펼쳐지는 생명의 다양성과 새벽빛의 조화를 담았습니다.",
+          "image": "https://picsum.photos/seed/2019-4/800/600"
+        }
+      ]
+    },
+    {
+      "id": "2018",
+      "year": 2018,
+      "description": "산의 사계를 주제로 한 해 동안 산이 보여주는 네 가지 얼굴을 담았습니다. 계절에 따라 변화하는 산의 모습에서 자연의 순환을 발견합니다.",
+      "thumbnail": "https://picsum.photos/seed/2018t/1200/750",
+      "works": [
+        {
+          "title": "산의 봄",
+          "material": "유화",
+          "size": "80×100cm",
+          "description": "봄을 맞아 연두빛으로 물드는 산의 생동감을 밝고 경쾌한 색채로 표현했습니다.",
+          "image": "https://picsum.photos/seed/2018-1/600/800"
+        },
+        {
+          "title": "여름 산",
+          "material": "아크릴",
+          "size": "100×80cm",
+          "description": "짙은 녹색으로 가득 찬 한여름 산의 울창함과 생명력을 담았습니다.",
+          "image": "https://picsum.photos/seed/2018-2/800/600"
+        },
+        {
+          "title": "가을 산",
+          "material": "유화",
+          "size": "80×100cm",
+          "description": "붉게 물든 가을 산의 화려한 색채의 향연을 두터운 마티에르로 표현했습니다.",
+          "image": "https://picsum.photos/seed/2018-3/600/800"
+        },
+        {
+          "title": "겨울 산",
+          "material": "수채화",
+          "size": "70×90cm",
+          "description": "눈에 덮인 겨울 산의 순백의 장엄함을 여백을 살려 표현했습니다.",
+          "image": "https://picsum.photos/seed/2018-4/600/800"
+        }
+      ]
+    },
+    {
+      "id": "2017",
+      "year": 2017,
+      "description": "들녘의 노래를 주제로 평원과 들판의 소박하고 아름다운 풍경을 담았습니다. 농촌의 정겨운 풍경과 계절의 변화를 사계절에 걸쳐 표현했습니다.",
+      "thumbnail": "https://picsum.photos/seed/2017t/1200/750",
+      "works": [
+        {
+          "title": "보리밭",
+          "material": "유화",
+          "size": "100×80cm",
+          "description": "바람에 일렁이는 보리밭의 생동감과 초록빛 아름다움을 넓은 붓질로 담았습니다.",
+          "image": "https://picsum.photos/seed/2017-1/800/600"
+        },
+        {
+          "title": "해바라기 밭",
+          "material": "아크릴",
+          "size": "80×100cm",
+          "description": "태양을 향해 고개를 든 해바라기들의 당당함과 활력을 강렬한 색채로 표현했습니다.",
+          "image": "https://picsum.photos/seed/2017-2/600/800"
+        },
+        {
+          "title": "황혼의 들판",
+          "material": "유화",
+          "size": "120×90cm",
+          "description": "해가 지는 들판의 황금빛 노을과 고요한 평화를 파노라마 형식으로 담았습니다.",
+          "image": "https://picsum.photos/seed/2017-3/800/600"
+        }
+      ]
+    },
+    {
+      "id": "2016",
+      "year": 2016,
+      "description": "새벽과 황혼을 주제로 하루의 시작과 끝의 경계에서 만나는 빛과 색채를 탐구했습니다. 가장 드라마틱한 두 순간의 하늘을 담았습니다.",
+      "thumbnail": "https://picsum.photos/seed/2016t/1200/750",
+      "works": [
+        {
+          "title": "여명",
+          "material": "파스텔",
+          "size": "60×80cm",
+          "description": "어둠이 걷히고 빛이 스며드는 새벽의 미묘한 색채 변화를 파스텔로 표현했습니다.",
+          "image": "https://picsum.photos/seed/2016-1/800/600"
+        },
+        {
+          "title": "붉은 노을",
+          "material": "유화",
+          "size": "100×80cm",
+          "description": "하늘을 붉게 물들이는 저녁 노을의 장엄한 아름다움을 유화로 담았습니다.",
+          "image": "https://picsum.photos/seed/2016-2/800/600"
+        },
+        {
+          "title": "새벽 안개",
+          "material": "수채화",
+          "size": "80×60cm",
+          "description": "새벽 들판에 내려앉은 안개의 신비로운 분위기를 수채화의 투명함으로 표현했습니다.",
+          "image": "https://picsum.photos/seed/2016-3/800/600"
+        }
+      ]
+    },
+    {
+      "id": "2015",
+      "year": 2015,
+      "description": "숲속의 고요를 주제로 숲이 가진 신비롭고 생명력 넘치는 내면의 세계를 탐구했습니다. 빛과 그림자, 생명의 순환을 숲을 통해 표현했습니다.",
+      "thumbnail": "https://picsum.photos/seed/2015t/1200/750",
+      "works": [
+        {
+          "title": "빛이 드는 숲",
+          "material": "유화",
+          "size": "80×100cm",
+          "description": "나뭇잎 사이로 스며드는 빛이 만들어내는 숲 안의 드라마틱한 명암을 담았습니다.",
+          "image": "https://picsum.photos/seed/2015-1/600/800"
+        },
+        {
+          "title": "이끼 낀 바위",
+          "material": "수채화",
+          "size": "50×60cm",
+          "description": "오랜 세월 이끼로 뒤덮인 바위에서 발견하는 시간의 흔적과 자연의 인내를 표현했습니다.",
+          "image": "https://picsum.photos/seed/2015-2/600/800"
+        },
+        {
+          "title": "대나무 숲",
+          "material": "혼합매체",
+          "size": "70×100cm",
+          "description": "곧게 뻗은 대나무들이 만들어내는 리듬감과 청아한 공간감을 혼합매체로 담았습니다.",
+          "image": "https://picsum.photos/seed/2015-3/600/800"
+        },
+        {
+          "title": "고목",
+          "material": "유화",
+          "size": "60×80cm",
+          "description": "수백 년을 살아온 고목의 위엄과 생명력을 세밀하고 힘 있는 붓질로 표현했습니다.",
+          "image": "https://picsum.photos/seed/2015-4/600/800"
+        }
+      ]
+    },
+    {
+      "id": "2014",
+      "year": 2014,
+      "description": "물의 기억을 주제로 강, 호수, 연못 등 다양한 물의 모습과 그 속에 담긴 기억을 탐구했습니다. 물은 시간과 기억의 또 다른 이름입니다.",
+      "thumbnail": "https://picsum.photos/seed/2014t/1200/750",
+      "works": [
+        {
+          "title": "연꽃 연못",
+          "material": "유화",
+          "size": "100×100cm",
+          "description": "탁한 물에서 피어나는 연꽃의 순결함과 아름다움을 정방형 화면에 담았습니다.",
+          "image": "https://picsum.photos/seed/2014-1/800/800"
+        },
+        {
+          "title": "고요한 호수",
+          "material": "수채화",
+          "size": "80×60cm",
+          "description": "산이 그대로 반영되는 고요한 호수의 표면을 수채화의 번짐으로 표현했습니다.",
+          "image": "https://picsum.photos/seed/2014-2/800/600"
+        },
+        {
+          "title": "비 오는 강",
+          "material": "아크릴",
+          "size": "70×90cm",
+          "description": "빗방울이 수면에 만들어내는 무수한 원들과 그 생동감을 담아냈습니다.",
+          "image": "https://picsum.photos/seed/2014-3/600/800"
+        }
+      ]
+    },
+    {
+      "id": "2013",
+      "year": 2013,
+      "description": "하늘의 색을 주제로 다양한 하늘의 표정을 담았습니다. 맑은 날, 흐린 날, 폭풍 전야의 하늘까지 그 변화무쌍한 아름다움을 포착했습니다.",
+      "thumbnail": "https://picsum.photos/seed/2013t/1200/750",
+      "works": [
+        {
+          "title": "여름 구름",
+          "material": "유화",
+          "size": "100×80cm",
+          "description": "한여름 하늘 높이 솟아오른 뭉게구름의 역동적인 형태와 그 아래 펼쳐지는 빛을 담았습니다.",
+          "image": "https://picsum.photos/seed/2013-1/800/600"
+        },
+        {
+          "title": "폭풍 전야",
+          "material": "아크릴",
+          "size": "80×100cm",
+          "description": "폭풍이 오기 직전 불안하고 웅장한 하늘의 드라마틱한 순간을 포착했습니다.",
+          "image": "https://picsum.photos/seed/2013-2/600/800"
+        },
+        {
+          "title": "청명한 하늘",
+          "material": "수채화",
+          "size": "60×80cm",
+          "description": "가을 하늘의 맑고 투명한 파란색을 수채화의 깨끗한 색감으로 표현했습니다.",
+          "image": "https://picsum.photos/seed/2013-3/800/600"
+        }
+      ]
+    },
+    {
+      "id": "2012",
+      "year": 2012,
+      "description": "시간의 흔적을 주제로 세월이 자연에 남긴 흔적들을 탐구했습니다. 오래된 것들이 가진 아름다움과 그 속에 담긴 이야기를 표현했습니다.",
+      "thumbnail": "https://picsum.photos/seed/2012t/1200/750",
+      "works": [
+        {
+          "title": "풍화된 바위",
+          "material": "유화",
+          "size": "80×60cm",
+          "description": "오랜 세월 바람과 비에 깎인 바위의 표면에서 시간의 아름다운 조각을 발견했습니다.",
+          "image": "https://picsum.photos/seed/2012-1/800/600"
+        },
+        {
+          "title": "낡은 담장",
+          "material": "수채화",
+          "size": "60×80cm",
+          "description": "이끼와 시간이 만들어낸 낡은 담장의 텍스처와 그 속의 풍경을 담담하게 담았습니다.",
+          "image": "https://picsum.photos/seed/2012-2/600/800"
+        },
+        {
+          "title": "고목의 뿌리",
+          "material": "혼합매체",
+          "size": "70×90cm",
+          "description": "땅 위로 드러난 고목의 뿌리에서 발견하는 생명력과 시간의 흐름을 표현했습니다.",
+          "image": "https://picsum.photos/seed/2012-3/600/800"
+        },
+        {
+          "title": "빈 집",
+          "material": "유화",
+          "size": "100×80cm",
+          "description": "사람이 떠난 오래된 집과 그 주변에 무성히 자란 자연의 모습을 담았습니다.",
+          "image": "https://picsum.photos/seed/2012-4/800/600"
+        }
+      ]
+    },
+    {
+      "id": "2011",
+      "year": 2011,
+      "description": "빈 들판을 주제로 수확이 끝난 들판의 고요하고 쓸쓸한 아름다움을 담았습니다. 비움의 미학을 통해 여백의 의미를 탐구했습니다.",
+      "thumbnail": "https://picsum.photos/seed/2011t/1200/750",
+      "works": [
+        {
+          "title": "수확 후",
+          "material": "유화",
+          "size": "120×80cm",
+          "description": "벼를 베고 난 후 황량하지만 풍요로운 기억을 간직한 들판을 담았습니다.",
+          "image": "https://picsum.photos/seed/2011-1/800/600"
+        },
+        {
+          "title": "겨울 논",
+          "material": "수채화",
+          "size": "70×50cm",
+          "description": "얼어붙은 논에 새들이 내려앉는 겨울 풍경의 쓸쓸하고 아름다운 순간을 담았습니다.",
+          "image": "https://picsum.photos/seed/2011-2/800/600"
+        },
+        {
+          "title": "빈 땅",
+          "material": "아크릴",
+          "size": "80×80cm",
+          "description": "비어있음 자체의 아름다움을 최소한의 색채와 형태로 표현한 추상적 풍경입니다.",
+          "image": "https://picsum.photos/seed/2011-3/800/800"
+        }
+      ]
+    },
+    {
+      "id": "2010",
+      "year": 2010,
+      "description": "달빛 아래를 주제로 밤의 자연을 담았습니다. 달빛이 만들어내는 신비롭고 몽환적인 풍경 속에서 또 다른 자연의 얼굴을 발견했습니다.",
+      "thumbnail": "https://picsum.photos/seed/2010t/1200/750",
+      "works": [
+        {
+          "title": "보름달",
+          "material": "유화",
+          "size": "80×80cm",
+          "description": "보름달이 뜬 밤하늘과 그 아래 고요한 대지의 신비로운 풍경을 담았습니다.",
+          "image": "https://picsum.photos/seed/2010-1/800/800"
+        },
+        {
+          "title": "달빛 강",
+          "material": "수채화",
+          "size": "60×80cm",
+          "description": "달빛이 강물 위에 길을 내는 몽환적인 밤 풍경을 수채화의 번짐으로 표현했습니다.",
+          "image": "https://picsum.photos/seed/2010-2/800/600"
+        },
+        {
+          "title": "별빛과 달",
+          "material": "파스텔",
+          "size": "50×70cm",
+          "description": "달과 별이 가득한 밤하늘의 장관을 파스텔의 부드럽고 빛나는 질감으로 표현했습니다.",
+          "image": "https://picsum.photos/seed/2010-3/600/800"
+        }
+      ]
+    },
+    {
+      "id": "2009",
+      "year": 2009,
+      "description": "뿌리를 향해를 주제로 전통 자연관과 고향의 풍경을 탐구했습니다. 잊혀가는 농촌의 풍경과 그 속에 담긴 삶의 이야기를 담았습니다.",
+      "thumbnail": "https://picsum.photos/seed/2009t/1200/750",
+      "works": [
+        {
+          "title": "고향 마을",
+          "material": "유화",
+          "size": "100×80cm",
+          "description": "어린 시절의 기억 속 고향 마을의 정겨운 풍경을 따뜻한 색감으로 담았습니다.",
+          "image": "https://picsum.photos/seed/2009-1/800/600"
+        },
+        {
+          "title": "흙길",
+          "material": "수채화",
+          "size": "60×80cm",
+          "description": "비가 내린 후 농촌의 흙길과 그 주변의 소박한 풍경을 담담하게 표현했습니다.",
+          "image": "https://picsum.photos/seed/2009-2/800/600"
+        },
+        {
+          "title": "할머니의 텃밭",
+          "material": "아크릴",
+          "size": "70×90cm",
+          "description": "작은 텃밭에서 발견하는 생명의 경이로움과 손으로 가꾼 삶의 의미를 담았습니다.",
+          "image": "https://picsum.photos/seed/2009-3/600/800"
+        }
+      ]
+    },
+    {
+      "id": "2008",
+      "year": 2008,
+      "description": "첫 번째 겨울을 주제로 초창기 작품 활동 시절의 겨울 풍경을 담았습니다. 서툴지만 진실한 눈으로 바라본 자연의 아름다움이 담겨있습니다.",
+      "thumbnail": "https://picsum.photos/seed/2008t/1200/750",
+      "works": [
+        {
+          "title": "첫눈",
+          "material": "유화",
+          "size": "60×80cm",
+          "description": "그해 겨울 처음 내린 눈이 세상을 하얗게 덮는 순간의 경이로움을 담았습니다.",
+          "image": "https://picsum.photos/seed/2008-1/600/800"
+        },
+        {
+          "title": "얼어붙은 연못",
+          "material": "수채화",
+          "size": "50×60cm",
+          "description": "꽁꽁 얼어붙은 연못 표면의 투명한 아름다움을 수채화로 표현했습니다.",
+          "image": "https://picsum.photos/seed/2008-2/800/600"
+        },
+        {
+          "title": "겨울 나무",
+          "material": "혼합매체",
+          "size": "70×90cm",
+          "description": "잎을 다 떨군 겨울 나무의 선명한 가지들이 만들어내는 아름다운 드로잉을 표현했습니다.",
+          "image": "https://picsum.photos/seed/2008-3/600/800"
+        }
+      ]
+    },
+    {
+      "id": "2007",
+      "year": 2007,
+      "description": "출발점을 주제로 화가로서의 첫 발걸음을 내딛은 해의 작품들입니다. 자연을 향한 순수한 열정과 설렘이 담긴 초기 작품들로, 이후의 모든 작업의 씨앗이 되었습니다.",
+      "thumbnail": "https://picsum.photos/seed/2007t/1200/750",
+      "works": [
+        {
+          "title": "처음 본 풍경",
+          "material": "유화",
+          "size": "50×60cm",
+          "description": "화가로서 처음 캔버스 앞에 섰을 때의 설렘과 두려움, 그리고 자연을 향한 경외감을 담은 첫 작품입니다.",
+          "image": "https://picsum.photos/seed/2007-1/600/800"
+        },
+        {
+          "title": "봄날의 기억",
+          "material": "수채화",
+          "size": "40×50cm",
+          "description": "화가로서의 출발점이 된 봄날, 처음으로 자연의 아름다움에 감동받았던 그 순간을 담았습니다.",
+          "image": "https://picsum.photos/seed/2007-2/800/600"
+        },
+        {
+          "title": "시작의 하늘",
+          "material": "유화",
+          "size": "60×80cm",
+          "description": "모든 것이 가능할 것 같았던 시작의 날, 그날의 하늘빛을 기억하며 그린 작품입니다.",
+          "image": "https://picsum.photos/seed/2007-3/800/600"
+        }
+      ]
+    }
+  ]
+}
