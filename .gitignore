@@ -1,1 +1,2 @@
-images/
+# 압축 전 원본 tif 파일
+*.tif

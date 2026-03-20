@@ -6,7 +6,7 @@
     "bio": "홍익대학교 미술대학 회화과 및 동 대학원을 졸업한 배정혜 작가는 1995년 첫 개인전을 시작으로 30여 년간 활발한 작품 활동을 이어오고 있습니다. 바느질을 고유의 표현 수단으로 삼아 민화의 형식과 현대적 감각을 결합한 독창적 화풍으로, 꿈결·물결·바람결을 따라 흐르는 기억과 감정의 세계를 탐구해왔습니다. 예술의전당, 갤러리이즈 등 국내외 다수의 개인전과 그룹전에 참여하였으며, 국회의사당·서울아산병원 등 주요 기관에 작품이 소장되어 있습니다.",
     "email": "jh0329ms@naver.com",
     "phone": "010-2493-7995",
-    "instagram": "https://instagram.com/artist_portfolio",
+    "instagram": "https://www.instagram.com/artist_jbae/",
     "cv": {
       "education": [
         "1993   홍익대학교 미술대학 회화과 졸업",
@@ -530,14 +530,14 @@
       "id": "2019",
       "year": 2019,
       "description": "",
-      "thumbnail": "images/2019/Nine Rooms.tif",
+      "thumbnail": "images/2019/Nine Rooms.jpg",
       "works": [
         {
           "title": "Nine Rooms",
           "material": "Mixed Media",
           "size": "90×90cm",
           "description": "",
-          "image": "images/2019/Nine Rooms.tif"
+          "image": "images/2019/Nine Rooms.jpg"
         }
       ]
     },
@@ -766,21 +766,21 @@
       "id": "2014",
       "year": 2014,
       "description": "",
-      "thumbnail": "images/2014/여운1.tif",
+      "thumbnail": "images/2014/여운1.jpg",
       "works": [
         {
           "title": "여운1",
           "material": "",
           "size": "",
           "description": "",
-          "image": "images/2014/여운1.tif"
+          "image": "images/2014/여운1.jpg"
         },
         {
           "title": "여운2",
           "material": "",
           "size": "",
           "description": "",
-          "image": "images/2014/여운2.tif"
+          "image": "images/2014/여운2.jpg"
         }
       ]
     },
@@ -795,14 +795,14 @@
           "material": "Mixed Media",
           "size": "60×60cm",
           "description": "",
-          "image": "images/2013/I Have a Dream.tif"
+          "image": "images/2013/I Have a Dream.jpg"
         },
         {
           "title": "I Have a Dream2",
           "material": "",
           "size": "90×90cm",
           "description": "",
-          "image": "images/2013/I Have a Dream2.tif"
+          "image": "images/2013/I Have a Dream2.jpg"
         },
         {
           "title": "colorful flowers",
@@ -1035,7 +1035,7 @@
           "material": "",
           "size": "60×60cm",
           "description": "환상. 꿈인지 욕망인지 구분할 수 없는 경계에서, 드러내지 못한 것들이 환상이 되어 떠오릅니다.",
-          "image": "images/2011/ILLUSION.tif"
+          "image": "images/2011/ILLUSION.jpg"
         },
         {
           "title": "Stinkbug.Butterfly",
@@ -1049,7 +1049,7 @@
           "material": "",
           "size": "60×60cm",
           "description": "하나의 꿈 너머에 또 다른 꿈이 기다리고 있습니다. 끊임없이 이어지는 갈구와 소망을 담았습니다.",
-          "image": "images/2011/또다른 꿈.tif"
+          "image": "images/2011/또다른 꿈.jpg"
         }
       ]
     },

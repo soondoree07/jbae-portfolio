@@ -38,8 +38,13 @@ const observer = new IntersectionObserver(
    Index Page
    ===================== */
 
+function hasRealWorks(year) {
+  return year.works && year.works.some(w => w.image && !w.image.includes('picsum'));
+}
+
 function renderIndex(data) {
-  const { artist, years } = data;
+  const { artist } = data;
+  const years = data.years.filter(hasRealWorks);
 
   // Nav & Hero
   document.title = `${artist.name} | 포트폴리오`;
@@ -47,10 +52,21 @@ function renderIndex(data) {
   setTextById('hero-name', artist.name);
   setTextById('hero-tagline', artist.tagline);
 
-  // Hero background – use first year's thumbnail
+  // Hero background – random work images
   const heroBg = document.getElementById('hero-bg');
-  if (heroBg && years.length > 0) {
-    heroBg.style.backgroundImage = `url('${years[0].thumbnail}')`;
+  if (heroBg) {
+    const allImages = years
+      .flatMap(y => y.works.map(w => w.image))
+      .filter(img => img && !img.startsWith('https://picsum'));
+    const pool = allImages.length > 0 ? allImages : years.map(y => y.thumbnail);
+    const count = Math.min(pool.length, 3);
+    const picked = [...pool].sort(() => Math.random() - 0.5).slice(0, count);
+    picked.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = '';
+      heroBg.appendChild(img);
+    });
   }
 
   // About
@@ -123,19 +139,38 @@ function renderCV(cv) {
     { heading: '개인전',          data: cv.soloExhibitions,   full: false },
     { heading: '수상',            data: cv.awards,            full: false },
     { heading: '강의',            data: cv.teaching,          full: false },
-    { heading: '단체전 및 아트페어', data: cv.groupExhibitions, full: true  },
+    { heading: '단체전 및 아트페어', data: cv.groupExhibitions, full: true, collapsible: true },
     { heading: '작품소장',        data: cv.collections,       full: true, grid: true },
   ];
 
   blocks.forEach(block => {
     if (!block.data || block.data.length === 0) return;
     const div = document.createElement('div');
-    div.className = 'cv-block' + (block.full ? ' cv-full' : '');
+    div.className = 'cv-block' + (block.full ? ' cv-full' : '') + (block.collapsible ? ' cv-collapsible' : '');
     const items = block.data.map(item => `<li>${item}</li>`).join('');
-    div.innerHTML = `
-      <h3>${block.heading}</h3>
-      <ul class="cv-list${block.grid ? ' cv-collections' : ''}">${items}</ul>
-    `;
+
+    if (block.collapsible) {
+      div.innerHTML = `
+        <h3 class="cv-toggle" aria-expanded="false">
+          ${block.heading}
+          <span class="cv-toggle-icon">＋</span>
+        </h3>
+        <ul class="cv-list cv-collapse">${items}</ul>
+      `;
+      const h3 = div.querySelector('.cv-toggle');
+      const list = div.querySelector('.cv-list');
+      h3.addEventListener('click', () => {
+        const expanded = h3.getAttribute('aria-expanded') === 'true';
+        h3.setAttribute('aria-expanded', !expanded);
+        h3.querySelector('.cv-toggle-icon').textContent = expanded ? '＋' : '－';
+        list.classList.toggle('cv-collapse', expanded);
+      });
+    } else {
+      div.innerHTML = `
+        <h3>${block.heading}</h3>
+        <ul class="cv-list${block.grid ? ' cv-collections' : ''}">${items}</ul>
+      `;
+    }
     container.appendChild(div);
   });
 }
@@ -151,8 +186,8 @@ function renderYear(data, yearId) {
   const { artist, years } = data;
   const yearData = years.find(y => y.id === yearId);
 
-  if (!yearData) {
-    document.getElementById('year-hero').innerHTML = '<p style="padding:40px;color:#888;">해당 연도의 데이터를 찾을 수 없습니다.</p>';
+  if (!yearData || !hasRealWorks(yearData)) {
+    window.location.href = 'index.html';
     return;
   }
 
@@ -276,6 +311,41 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowLeft')   prevWork();
     if (e.key === 'ArrowRight')  nextWork();
   });
+
+  // Touch swipe for lightbox
+  let touchStartX = 0;
+  if (lightbox) {
+    lightbox.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+    lightbox.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 50) {
+        dx < 0 ? nextWork() : prevWork();
+      }
+    }, { passive: true });
+  }
+
+  // Hamburger menu
+  const hamburger = document.getElementById('nav-hamburger');
+  const navLinks  = document.getElementById('nav-links');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
 });
 
 /* =====================
