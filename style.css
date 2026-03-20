@@ -280,6 +280,61 @@ section {
 }
 
 /* =====================
+   CV Section
+   ===================== */
+#cv {
+  background-color: var(--white);
+}
+
+.cv-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.cv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-top: 60px;
+}
+
+.cv-block h3 {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--tan);
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--beige);
+  margin-bottom: 20px;
+}
+
+.cv-full {
+  grid-column: 1 / -1;
+}
+
+.cv-list {
+  list-style: none;
+}
+
+.cv-list li {
+  font-size: 0.88rem;
+  color: var(--gray);
+  line-height: 1.7;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(232, 220, 200, 0.5);
+}
+
+.cv-list li:last-child {
+  border-bottom: none;
+}
+
+.cv-collections {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0;
+}
+
+/* =====================
    Works Section (Editorial)
    ===================== */
 #works {
@@ -694,6 +749,7 @@ footer {
   section { padding: 100px 40px; }
   .about-inner { grid-template-columns: 1fr; gap: 48px; }
   .about-image { max-width: 480px; }
+  .cv-grid { grid-template-columns: 1fr; }
   .work-item { grid-template-columns: 1fr; gap: 32px; }
   .work-item.reverse { direction: ltr; }
   .hero-scroll { right: 40px; }

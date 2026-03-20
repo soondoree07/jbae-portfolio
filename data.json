@@ -1,10 +1,123 @@
 {
   "artist": {
-    "name": "이순례",
-    "tagline": "자연을 담은 붓끝, 시간을 그리다",
-    "bio": "화가 이순례는 자연의 고요함과 전통 회화의 미학을 현대적 감각으로 재해석해왔습니다. 유화와 수채화를 주된 매체로 사용하며, 한국의 산하와 계절의 변화를 화폭에 담아옵니다. 2007년 첫 개인전을 시작으로 20여 년간 꾸준한 작품 활동을 이어오고 있으며, 국내외 다수의 그룹전과 개인전에 참여해왔습니다.",
-    "email": "artist@example.com",
-    "instagram": "https://instagram.com/artist_portfolio"
+    "name": "배정혜",
+    "nameEn": "J.Bae",
+    "tagline": "한땀한땀, 꿈결·물결·바람결을 잇다",
+    "bio": "홍익대학교 미술대학 회화과 및 동 대학원을 졸업한 배정혜 작가는 1995년 첫 개인전을 시작으로 30여 년간 활발한 작품 활동을 이어오고 있습니다. 바느질을 고유의 표현 수단으로 삼아 민화의 형식과 현대적 감각을 결합한 독창적 화풍으로, 꿈결·물결·바람결을 따라 흐르는 기억과 감정의 세계를 탐구해왔습니다. 예술의전당, 갤러리이즈 등 국내외 다수의 개인전과 그룹전에 참여하였으며, 국회의사당·서울아산병원 등 주요 기관에 작품이 소장되어 있습니다.",
+    "email": "jh0329ms@naver.com",
+    "phone": "010-2493-7995",
+    "instagram": "https://instagram.com/artist_portfolio",
+    "cv": {
+      "education": [
+        "1993   홍익대학교 미술대학 회화과 졸업",
+        "1996   홍익대학교 미술대학 대학원 회화과 졸업"
+      ],
+      "soloExhibitions": [
+        "1995.10   제1회 배정혜 개인전   인사갤러리 (서울)",
+        "2009.05   제2회 배정혜 개인전 / 만들어가는 이야기   경인미술관 (서울)",
+        "2011.12   제3회 공평아트센타 기획초대전 / 만들어가는 이야기   공평아트센타 (서울)",
+        "2017.10   제4회 배정혜 개인전 / 만들어가는 이야기   그림손갤러리 (서울)",
+        "2018.03   제5회 배정혜 개인전 / 만들어가는 이야기   리빈갤러리 (부산)",
+        "2023.10   제6회 배정혜 개인전 / 원점으로의 여정   갤러리이즈 (서울)",
+        "2024.12   제7회 배정혜 개인전 / 꿈결 물결 바람결   예술의전당 한가람디자인미술관 3전시실"
+      ],
+      "groupExhibitions": [
+        "1990   창립20주년 모래알 사진전   조선일보미술관 (서울)",
+        "1991   제24회 모래알 사진전   예총화랑 (서울)",
+        "1992   제25회 모래알 사진전   예총화랑 (서울)",
+        "1992   청년미술대상전   예술의전당 (서울)",
+        "1994   C-516전   관훈미술관 (서울)",
+        "1995   '95 중간지대 / 문화의 수리공   인사갤러리 (서울)",
+        "1995   청년회화전망전   도올아트타운 (서울)",
+        "1995   제14회 대한민국미술대전   국립현대미술관 (과천)",
+        "1995   제1회 After Hours-Printing   인데코갤러리 (서울)",
+        "1995   제21회 서울현대미술제   한국문예진흥원 (서울)",
+        "1995   제23회 홍익판화가협회전   한국문예진흥원 (서울)",
+        "1996   제24회 홍익판화가협회전   한국문예진흥원 (서울)",
+        "1997   제2회 After Hours   갤러리 도올 (서울)",
+        "1997   제25회 홍익판화가협회전   서울시립미술관 (서울)",
+        "1998   제26회 홍익판화가협회전   한국문예진흥원 (서울)",
+        "1998   국립경상대학교 개교 50주년 기념 교수작품전   경남문화예술회관 (진주)",
+        "1999   제2회 한독(韓獨)미협공모전   공평아트센타 (서울)",
+        "1999   제3회 After Hours   갤러리 보다 (서울)",
+        "2008   제4회 After Hours (Drama in Drama)   경인미술관 2관 (서울)",
+        "2009   피스드림 아트 페스티발   CAS (스페인 안달루시아)",
+        "2009   한·중 수교 17주년 기념 C·KOAS展   북경 상상미술관 (중국)",
+        "2009   제41회 세계미술교류협회전   인사아트센터 (서울)",
+        "2010   부산비엔날레 한·중·일 지금의 작가전   부산문화회관 (부산)",
+        "2011   제1회 거북이걸음전   공평아트센타 (서울)",
+        "2011   세계미술교류협회 창립 30주년 기념 <자연·인간>   예술의전당 (서울)",
+        "2012   제2회 거북이걸음전   공평아트센타 (서울)",
+        "2013   제3회 거북이걸음전   해운대아트센타 (부산)",
+        "2013   제4회 거북이걸음전   국회의사당 (서울)",
+        "2013   제5회 After Hours   노암갤러리 (서울)",
+        "2013   제5회 거북이걸음전   예술의전당 제7전시관 (서울)",
+        "2013   KIAF/2013   코엑스 (서울)",
+        "2014   제6회 거북이걸음전   공평아트센터 공평갤러리",
+        "2014   제7회 거북이걸음전 <뉴욕 뉴욕 뉴욕>   스페이스웜브 (뉴욕)",
+        "2014   제8회 거북이걸음 드로잉전   공평갤러리 (서울)",
+        "2015   <여성, 그 다름과 힘 20>   한국미술관 (용인)",
+        "2015   제9회 거북이걸음전 <2015 타임머신>   겸재정선미술관 (서울)",
+        "2015   제6회 After Hours <新 매란국죽>   리더스갤러리 수 (서울)",
+        "2015   M갤러리 기획초대전 <After Hours+09>   M갤러리 (서울)",
+        "2015   After Hours 국회기획전 <情>   국회의사당 (서울)",
+        "2015   공감공간 현대미술전   유리섬 맥아트미술관 (대부도)",
+        "2016   제10회 거북이걸음 그룹전   해운대아트센타 (부산)",
+        "2016   제11회 거북이 나르샤   금오공대 (구미)",
+        "2017   제9회 After Hours   인사아트스페이스 (서울)",
+        "2017   제12회 거북이걸음전 Rush in Resh   로쉬아트홀 (분당)",
+        "2017   제13회 거북이걸음전 그대에게 가는 길   갤러리오차드 (서울)",
+        "2017   아트리에 소품전   아트리에갤러리 (안양)",
+        "2017   아트페스티발   공평갤러리 (서울)",
+        "2018   제14회 거북이걸음 기획전 삼청유람   JY ART 갤러리 (서울)",
+        "2018   제15회 거북이걸음 기획전 on you with you   온유갤러리 (안양)",
+        "2019   그 후 30년 Happy Reunion 홍익대학교 회화과 동문전   갤러리 미술세계 (서울)",
+        "2019   제16회 거북이걸음 정기전 행복한 동행   갤러리H (서울)",
+        "2020   제10회 After Hours   아트스페이스 더퀄리아 (서울)",
+        "2020   제17회 거북이걸음 정기전 가을_예술하라   아트스페이스 류 (고기리)",
+        "2021   제11회 After Hours 그림의 힘 (공모 당선전)   안산문화예술의전당 (안산)",
+        "2021   제12회 After Hours 갤러리 오엔 기획전   갤러리 오엔 (하남)",
+        "2021   제1회 MOAF/2021   문래동",
+        "2021   제18회 거북이걸음 회원전 말과 사물 그리고 예술   갤러리H (서울)",
+        "2022   작가님 그동안 어떻게 지내셨어요!   아트레온 갤러리 (서울)",
+        "2022   예술의 시간, debris   기획전 (부산)",
+        "2023   제13회 After Hours 쉼;   예술의전당 디자인미술관 3관 (서울)",
+        "2023   제14회 After Hours 에필로그전   갤러리 아래헌 (경주)",
+        "2023   예술로 떠나는 여름여행   Gouter 갤러리 (서울)",
+        "2023   국제블루아트페어   파라다이스호텔 부산 신관 (부산)",
+        "2024   L.A art show   L.A Convention Center (미국 L.A)",
+        "2024   Memories 거북이전   갤러리 Alley (서울)",
+        "2024   경기향토작가초대전   성남아트센터 808갤러리 (성남)",
+        "2024   거북이 송년회전   구띠 갤러리 (서울)",
+        "2025   100, 나를 채우다 거북이걸음전   구띠 갤러리 (서울)",
+        "2025   가을 청담 凊談 거북이걸음전   셀로아트갤러리 (서울)",
+        "2026   제15회 After Hours 선(善) 넘는 자연   예술의전당 디자인미술관 3관 (서울)"
+      ],
+      "awards": [
+        "1992   제10회 청년미술대상전 평면부분 입선   청년미술대상전 운영위원회",
+        "1995   제14회 대한민국미술대전 비구상계열 입선   한국미술협회",
+        "1999   제2회 한독미협공모전 서양화 비구상부문 특선   한독미술가협회"
+      ],
+      "teaching": [
+        "1998   국립경상대학교 미술교육학과 강사",
+        "2000   신라대학교 미술학과 강사"
+      ],
+      "collections": [
+        "국회의사당",
+        "서울아산병원",
+        "인제대학교부속 서울백병원",
+        "창원지방검찰청 통영지청",
+        "현대중공업",
+        "봉생병원",
+        "브링스코리아",
+        "오비오주식회사",
+        "국회의장공관 (2014–2016)",
+        "정경우 비뇨기과 센텀시티점",
+        "부산외국인학교",
+        "쉬즈라인 성형외과",
+        "양산 컨트리클럽"
+      ]
+    }
   },
   "years": [
     {
@@ -39,477 +152,904 @@
     {
       "id": "2025",
       "year": 2025,
-      "description": "눈 내리는 산을 주제로 한국의 겨울 산하를 탐구했습니다. 고요하고 장엄한 설경 속에서 자연의 숭고함을 발견합니다.",
-      "thumbnail": "https://picsum.photos/seed/2025t/1200/750",
+      "description": "",
+      "thumbnail": "images/2025/빨간 열매는 달다.jpg",
       "works": [
         {
-          "title": "설악의 겨울",
-          "material": "유화",
-          "size": "120×150cm",
-          "description": "설악산의 겨울 풍경을 대형 캔버스에 담았습니다. 눈으로 뒤덮인 암봉의 웅장함을 표현했습니다.",
-          "image": "https://picsum.photos/seed/2025-1/800/600"
+          "title": "Sapporo",
+          "material": "Mixed Media",
+          "size": "65.2×91cm",
+          "description": "",
+          "image": "images/2025/Sapporo.jpg"
         },
         {
-          "title": "침묵하는 숲",
-          "material": "아크릴",
-          "size": "80×80cm",
-          "description": "눈 쌓인 숲의 고요한 침묵을 모노톤 계열의 아크릴로 표현한 작품입니다.",
-          "image": "https://picsum.photos/seed/2025-2/600/800"
+          "title": "빨간 열매는 달다",
+          "material": "Mixed Media",
+          "size": "65.2×91cm",
+          "description": "",
+          "image": "images/2025/빨간 열매는 달다.jpg"
         },
         {
-          "title": "눈길",
-          "material": "수채화",
-          "size": "50×70cm",
-          "description": "이른 아침 눈 위에 남겨진 발자국들과 그 고독한 여정을 담았습니다.",
-          "image": "https://picsum.photos/seed/2025-3/600/800"
-        },
-        {
-          "title": "백설의 고원",
-          "material": "유화",
-          "size": "100×120cm",
-          "description": "하얀 눈으로 덮인 고원의 광활함과 그 속의 고독감을 넓은 붓질로 표현했습니다.",
-          "image": "https://picsum.photos/seed/2025-4/800/600"
+          "title": "여름이 지나가는 소리",
+          "material": "Mixed Media",
+          "size": "65.2×91cm",
+          "description": "",
+          "image": "images/2025/여름이 지나가는 소리.jpg"
         }
       ]
     },
     {
       "id": "2024",
       "year": 2024,
-      "description": "빛의 파편을 주제로 자연광이 만들어내는 다양한 순간들을 포착했습니다. 시시각각 변하는 빛과 그림자의 대화를 화폭에 담았습니다.",
-      "thumbnail": "https://picsum.photos/seed/2024t/1200/750",
+      "description": "나뭇가지가 늘어진 긴 담장 아래를 걷듯, 꿈결·물결·바람결을 따라 기억의 단편들 속으로 이끌려갑니다. 연못에 만개한 연꽃과 그 아래 어두운 수면이 마음 깊은 곳을 건드리고, 엉클어져 있으면서도 리듬이 있는 자연이 시간을 초월한 위안을 선사합니다.",
+      "thumbnail": "images/2024/나비 정원.jpg",
       "works": [
         {
-          "title": "황금빛 오후",
-          "material": "유화",
-          "size": "80×100cm",
-          "description": "늦은 오후 황금빛 햇살이 들판을 가로지르는 순간을 포착했습니다.",
-          "image": "https://picsum.photos/seed/2024-1/600/800"
+          "title": "Ponder in Pond3",
+          "material": "Mixed Media",
+          "size": "114×162cm",
+          "description": "연못 속 ponder 세 번째. 깊이를 알 수 없는 수면 아래에서 무언가가 끌어당기듯, 관람자 스스로 내면 깊은 곳의 수수께끼를 풀어가게 합니다.",
+          "image": "images/2024/Ponder in Pond3.jpg"
         },
         {
-          "title": "물빛 반영",
-          "material": "수채화",
-          "size": "60×80cm",
-          "description": "호수 수면에 반사되는 빛의 파편들을 수채화의 번짐 효과로 표현했습니다.",
-          "image": "https://picsum.photos/seed/2024-2/800/600"
+          "title": "깊은 곳 어딘가",
+          "material": "Mixed Media",
+          "size": "41×53cm",
+          "description": "화려한 연꽃 아래 어두운 물속을 들여다보면 보일 듯 말 듯 속삭이는 것들. 마음 깊은 곳을 건드리는 깊이를 알 수 없는 그곳을 담았습니다.",
+          "image": "images/2024/깊은 곳 어딘가.jpg"
         },
         {
-          "title": "여명",
-          "material": "파스텔",
-          "size": "40×60cm",
-          "description": "새벽빛이 어둠을 밀어내는 순간의 미묘한 색채 변화를 파스텔로 표현했습니다.",
-          "image": "https://picsum.photos/seed/2024-3/600/800"
+          "title": "나비 정원",
+          "material": "Mixed Media",
+          "size": "80.3×116.7cm",
+          "description": "바람에 흔들리는 잎사귀와 새소리를 따라 이끌려간 과거의 장면. 엉클어져 있으면서도 리듬이 있는 자연 속 기억의 정원을 담았습니다.",
+          "image": "images/2024/나비 정원.jpg"
+        },
+        {
+          "title": "모든 것의 역사",
+          "material": "Mixed Media",
+          "size": "65.2×91cm",
+          "description": "잊고 지내던 추억 속 감각과 감정들이 겹겹이 쌓여 이루는 역사. 시간을 초월한 듯한 기억의 단편들이 얽혀 만들어낸 풍경입니다.",
+          "image": "images/2024/모든 것의 역사.jpg"
+        },
+        {
+          "title": "바람의 속삭임",
+          "material": "Mixed Media",
+          "size": "80.3×116.7cm",
+          "description": "바람결처럼 스쳐 지나가는 삶의 단편들. 재잘거리는 새소리처럼 귀에 닿을 듯 말 듯 속삭이는 바람의 이야기를 담았습니다.",
+          "image": "images/2024/바람의 속삭임.jpg"
+        },
+        {
+          "title": "바람의 속삭임2",
+          "material": "Mixed Media",
+          "size": "72.7×53cm",
+          "description": "바람의 속삭임 두 번째. 새로운 감각들을 실어오는 바람결이 이어집니다.",
+          "image": "images/2024/바람의 속삭임2.jpg"
+        },
+        {
+          "title": "밤이 지나면",
+          "material": "Mixed Media",
+          "size": "91×65.2cm",
+          "description": "잠들지 않는 밤을 지나 새벽이 오듯. 꿈속에서 마주하는 기억의 단편들 속에서 시간이 멈춘 듯한 순간을 담았습니다.",
+          "image": "images/2024/밤이 지나면.jpg"
+        },
+        {
+          "title": "봄바람 흩날리며",
+          "material": "Mixed Media",
+          "size": "91×65.2cm",
+          "description": "봄바람결에 실려오는 새로운 감각들. 물결처럼 끊임없이 이어지는 삶의 흐름을 봄의 언어로 담았습니다.",
+          "image": "images/2024/봄바람 흩날리며.jpg"
+        },
+        {
+          "title": "숨겨진 의미",
+          "material": "Mixed Media",
+          "size": "45.5×53cm",
+          "description": "보일 듯 말 듯 수수께끼를 풀어보라고 속삭이는 것들. 자연이 품고 있는 깊은 의미를 향해 마음 깊은 곳을 건드리는 작품입니다.",
+          "image": "images/2024/숨겨진 의미.jpg"
+        },
+        {
+          "title": "스러지는 것",
+          "material": "Mixed Media",
+          "size": "65.2×91cm",
+          "description": "꿈결처럼 아련하고 흐릿하게 스러져가는 것들. 잊혀가면서도 잔잔한 여운처럼 남는 기억의 단편들을 담았습니다.",
+          "image": "images/2024/스러지는 것.jpg"
+        },
+        {
+          "title": "잠들지 않는 밤",
+          "material": "Mixed Media",
+          "size": "80.3×116.7cm",
+          "description": "엉클어진 기억들이 꿈처럼 펼쳐지는 밤. 시간이 멈춘 듯한 그 순간들이 잠들지 못하는 밤을 채웁니다.",
+          "image": "images/2024/잠들지 않는 밤.jpg"
+        },
+        {
+          "title": "풀밭에서",
+          "material": "Mixed Media",
+          "size": "53×72.7cm",
+          "description": "담장 아래 풀밭에서 마주하는 기억들. 자연과 함께 호흡하며 내면에 잠재된 감정을 마주하는 순간을 담았습니다.",
+          "image": "images/2024/풀밭에서.jpg"
+        },
+        {
+          "title": "함께날다",
+          "material": "Mixed Media",
+          "size": "100×180cm",
+          "description": "꿈결처럼 잔잔한 여운, 물결처럼 이어지는 삶의 흐름, 바람결에 실려 함께 날아오르는 순간. 그 모든 결(結)들이 하나로 어우러집니다.",
+          "image": "images/2024/함께날다.jpg"
         }
       ]
     },
     {
       "id": "2023",
       "year": 2023,
-      "description": "흐르는 강을 주제로 물의 다양한 표정과 움직임을 탐구했습니다. 강은 시간의 흐름과 삶의 여정을 상징합니다.",
-      "thumbnail": "https://picsum.photos/seed/2023t/1200/750",
+      "description": "정중동(靜中動) — 정적을 깨는 작은 몸짓을 이어갑니다. 고요한 연못에서 피어나는 생명들, 꿈결·물결·바람결이 하나로 어우러지는 풍경 속에서 이십여 년의 화풍을 벗어 새로운 동(動)을 향해 나아가는 여정의 기록입니다.",
+      "thumbnail": "images/2023/꿈결물결바람결.jpg",
       "works": [
         {
-          "title": "섬진강의 봄",
-          "material": "유화",
-          "size": "100×120cm",
-          "description": "섬진강변의 봄 풍경을 담은 작품으로, 강물의 유유한 흐름과 주변 자연을 표현했습니다.",
-          "image": "https://picsum.photos/seed/2023-1/800/600"
+          "title": "Blossom",
+          "material": "Mixed Media",
+          "size": "91×65.2cm",
+          "description": "정적 속에서 피어오르는 꽃. 연꽃처럼 고요한 연못에서 피어나는 생명의 동(動)을 담았습니다. 바느질의 결과 민화의 형식이 나란히 스며듭니다.",
+          "image": "images/2023/Blossom.jpg"
         },
         {
-          "title": "여울목",
-          "material": "아크릴",
-          "size": "60×80cm",
-          "description": "강물이 바위를 만나 여울을 이루는 역동적인 순간을 강렬한 붓터치로 담았습니다.",
-          "image": "https://picsum.photos/seed/2023-2/600/800"
+          "title": "Blossom 2",
+          "material": "Mixed Media",
+          "size": "72.7×53cm",
+          "description": "Blossom 연작 두 번째. 과거를 소환하는 민화의 형식과 현대적 바느질 표현이 이질적으로 공존하며, 그 사이에서 정중동이 드러납니다.",
+          "image": "images/2023/Blossom 2.jpg"
         },
         {
-          "title": "강안개",
-          "material": "수채화",
-          "size": "70×90cm",
-          "description": "이른 아침 강 위에 피어오르는 안개의 몽환적인 분위기를 수채화로 포착했습니다.",
-          "image": "https://picsum.photos/seed/2023-3/600/800"
+          "title": "Ponder in Pond2",
+          "material": "Mixed Media",
+          "size": "112×162cm",
+          "description": "연못 속의 ponder들, 그 두 번째. 제각기 울퉁불퉁한 몸짓들이 물속에서 뒤섞여 대중의 목소리가 됩니다. 관객은 물고기에 자기 자신을 투영하며 고민하는 자로 거듭납니다.",
+          "image": "images/2023/Ponder in Pond2.jpg"
+        },
+        {
+          "title": "그 긴 여름후",
+          "material": "Mixed Media",
+          "size": "100×180cm",
+          "description": "긴 정(靜)의 시간이 지나고. 굳어 있던 것들이 흔들리기 시작하는 그 이후, 연못은 이미 안으로부터 들끓고 있습니다.",
+          "image": "images/2023/그 긴 여름후.jpg"
+        },
+        {
+          "title": "그 여름날",
+          "material": "Mixed Media",
+          "size": "53×72.7cm",
+          "description": "작은 동(動)이 연쇄적인 균열을 일으키던 그 여름날의 기억. 지느러미 하나의 움직임이 연잎마저 흔들었습니다.",
+          "image": "images/2023/그 여름날.jpg"
+        },
+        {
+          "title": "꿈결물결바람결",
+          "material": "Mixed Media",
+          "size": "112×162cm",
+          "description": "꿈결, 물결, 바람결이 하나로 어우러지는 정중동의 세계. 고요함 속에서 끊임없이 움직이는 세 결(結)의 이야기를 담은 연작입니다.",
+          "image": "images/2023/꿈결물결바람결.jpg"
+        },
+        {
+          "title": "꿈결물결바람결2",
+          "material": "Mixed Media",
+          "size": "112×162cm",
+          "description": "꿈결물결바람결 연작 두 번째. 부동의 연못 위로 파동이 이어집니다.",
+          "image": "images/2023/꿈결물결바람결2.jpg"
+        },
+        {
+          "title": "꿈결물결바람결3",
+          "material": "Mixed Media",
+          "size": "112×162cm",
+          "description": "꿈결물결바람결 연작 세 번째. 전부를 압도하는 풍경은 늠름한 무게를 유지하면서도, 그 안은 이미 역동하고 있습니다.",
+          "image": "images/2023/꿈결물결바람결3.jpg"
+        },
+        {
+          "title": "달빛 담장",
+          "material": "Mixed Media",
+          "size": "80.3×116.7cm",
+          "description": "고요한 담장 위로 스며드는 달빛. 정(靜)의 공간에 동(動)의 빛이 물드는 순간, 날카롭게 정제된 현대적 표현과 고즈넉한 민화의 형식이 공존합니다.",
+          "image": "images/2023/달빛 담장.jpg"
+        },
+        {
+          "title": "Falling",
+          "material": "Mixed Media",
+          "size": "41×53cm",
+          "description": "무너짐, 혹은 자유로운 낙하. 이십여 년의 화풍을 벗어 던지는 과정에서 느끼는 해방감을 담았습니다.",
+          "image": "images/2023/Falling.jpg"
+        },
+        {
+          "title": "꿈결",
+          "material": "Mixed Media",
+          "size": "41×53cm",
+          "description": "꿈처럼 흘러가는 결. 정중동의 고요함과 움직임이 꿈결처럼 뒤섞이는 순간입니다.",
+          "image": "images/2023/꿈결.jpg"
+        },
+        {
+          "title": "꿈의 길",
+          "material": "Mixed Media",
+          "size": "45×100cm",
+          "description": "새로운 동(動)을 모색하는 작가의 여정. 또 다른 정중동의 시도로서 꿈의 길을 걷는 이야기입니다.",
+          "image": "images/2023/꿈의 길.jpg"
+        },
+        {
+          "title": "봄의 시작",
+          "material": "Mixed Media",
+          "size": "45×100cm",
+          "description": "긴 정(靜)을 깨고 시작되는 봄. 잠든 못을 깨우는 첫 몸짓, 새로운 화풍을 향한 첫 걸음을 담았습니다.",
+          "image": "images/2023/봄의 시작.jpg"
+        },
+        {
+          "title": "홍조",
+          "material": "Mixed Media",
+          "size": "53×72.7cm",
+          "description": "붉게 물드는 순간. 겉보기에 고요한 연못이 이미 안으로부터 들끓듯, 내면의 동(動)이 겉으로 드러나는 순간입니다.",
+          "image": "images/2023/홍조.jpg"
         }
       ]
     },
     {
       "id": "2022",
       "year": 2022,
-      "description": "가을 단상을 주제로 깊어가는 가을의 색채와 정서를 담았습니다. 낙엽과 황금빛 들판, 쓸쓸하면서도 아름다운 계절의 끝을 표현했습니다.",
-      "thumbnail": "https://picsum.photos/seed/2022t/1200/750",
+      "description": "정중동(靜中動) — 정적을 깨는 작은 몸짓이 시작됩니다. 작가 고유의 바느질로 정제된 현대적 표현과 민화의 고즈넉함이 나란히 스며들며, 이십여 년의 화풍을 벗어 새로운 동(動)을 모색하는 여정이 열립니다.",
+      "thumbnail": "images/2022/pond'er in pond.jpg",
       "works": [
         {
-          "title": "단풍의 절정",
-          "material": "유화",
-          "size": "100×80cm",
-          "description": "붉고 황금빛으로 물든 단풍 숲의 절정을 강렬한 색채로 담아냈습니다.",
-          "image": "https://picsum.photos/seed/2022-1/600/800"
+          "title": "Self portrait",
+          "material": "Mixed Media",
+          "size": "90×90cm",
+          "description": "이십여 년 간 고수하던 화풍을 벗어 던지며 새로운 자아를 마주하는 자화상. 정(靜) 속에서 동(動)을 모색하는 작가 자신을 담았습니다.",
+          "image": "images/2022/Self portrait.jpg"
         },
         {
-          "title": "낙엽 지는 오후",
-          "material": "혼합매체",
-          "size": "80×100cm",
-          "description": "낙엽이 천천히 떨어지는 오후의 고요한 정경을 혼합매체로 표현했습니다.",
-          "image": "https://picsum.photos/seed/2022-2/800/600"
+          "title": "무릉도원",
+          "material": "Mixed Media",
+          "size": "45×100cm",
+          "description": "고요한 이상향, 정(靜)의 세계. 현실과 이상의 경계에 걸쳐 있는 내면 풍경으로, 민화의 형식을 빌려 과거를 소환합니다.",
+          "image": "images/2022/무릉도원.jpg"
         },
         {
-          "title": "황금 들녘",
-          "material": "유화",
-          "size": "120×90cm",
-          "description": "수확을 앞둔 황금빛 들판의 풍요로움과 아름다움을 파노라마처럼 담았습니다.",
-          "image": "https://picsum.photos/seed/2022-3/800/600"
+          "title": "pond'er",
+          "material": "Mixed Media",
+          "size": "60×60cm",
+          "description": "연못 안에 있는 자들(pond'er)이 고민하는 자들(ponder)로 변하는 순간. 잠든 못을 깨우는 고기들의 작은 몸짓을 담았습니다.",
+          "image": "images/2022/pond'er.jpg"
         },
         {
-          "title": "마지막 잎",
-          "material": "수채화",
-          "size": "30×40cm",
-          "description": "앙상한 나뭇가지에 홀로 매달린 마지막 잎의 고독과 의연함을 작은 화폭에 담았습니다.",
-          "image": "https://picsum.photos/seed/2022-4/600/800"
+          "title": "pond'er in pond",
+          "material": "Mixed Media",
+          "size": "162×112cm",
+          "description": "연못 안의 pond'er들. 제각기 울퉁불퉁한 몸짓들이 물속에서 뒤섞여 대중의 목소리가 되고, 관객은 스스로를 투영하며 고민하는 자로 거듭납니다.",
+          "image": "images/2022/pond'er in pond.jpg"
+        },
+        {
+          "title": "somewhere deep 깊은곳 어딘가",
+          "material": "Mixed Media",
+          "size": "38×38cm",
+          "description": "연못 깊은 곳 어딘가에서 고민하는 자들. 겉보기에 동요치 않는 연못이 이미 안으로부터 들끓고 있는 그 깊이를 표현했습니다.",
+          "image": "images/2022/somewhere deep 깊은곳 어딘가.jpg"
+        },
+        {
+          "title": "바람결",
+          "material": "Mixed Media",
+          "size": "60×60cm",
+          "description": "정적을 깨는 바람의 결. 잠든 연못 위로 스치는 바람처럼, 굳어 있던 연잎마저 흔드는 작은 동(動)이 일렁이기 시작합니다.",
+          "image": "images/2022/바람결.jpg"
+        },
+        {
+          "title": "Self Complacence",
+          "material": "Mixed Media",
+          "size": "90×90cm",
+          "description": "자기만족과 자기 안주 사이. 오랜 화풍 안에서 안주하던 과거의 자아를 직면하며, 또 다른 정중동의 시도를 예고합니다.",
+          "image": "images/2022/Self Complacence.jpg"
         }
       ]
     },
     {
       "id": "2021",
       "year": 2021,
-      "description": "치유의 시간을 주제로 팬데믹 이후의 회복과 자연으로의 귀환을 담았습니다. 자연과의 재연결을 통한 내면의 치유를 표현했습니다.",
-      "thumbnail": "https://picsum.photos/seed/2021t/1200/750",
+      "description": "",
+      "thumbnail": "images/2021/버킷리스트.jpg",
       "works": [
         {
-          "title": "귀환",
-          "material": "유화",
-          "size": "80×100cm",
-          "description": "오랜 단절 끝에 자연으로 돌아오는 순간의 감동과 치유를 표현한 작품입니다.",
-          "image": "https://picsum.photos/seed/2021-1/600/800"
+          "title": "How sweet",
+          "material": "Mixed Media",
+          "size": "35×35cm",
+          "description": "",
+          "image": "images/2021/How sweet.jpg"
         },
         {
-          "title": "숲의 치유",
-          "material": "아크릴",
-          "size": "90×90cm",
-          "description": "울창한 숲속에서 느끼는 자연의 치유 에너지를 싱그러운 녹색으로 담았습니다.",
-          "image": "https://picsum.photos/seed/2021-2/800/800"
+          "title": "Living",
+          "material": "Mixed Media",
+          "size": "35×35cm",
+          "description": "",
+          "image": "images/2021/Living.jpg"
         },
         {
-          "title": "봄비 내리는 날",
-          "material": "수채화",
-          "size": "60×80cm",
-          "description": "봄비가 내리는 날의 촉촉하고 생명력 넘치는 자연의 모습을 담았습니다.",
-          "image": "https://picsum.photos/seed/2021-3/600/800"
+          "title": "The shape of water",
+          "material": "Mixed Media",
+          "size": "60×60cm",
+          "description": "",
+          "image": "images/2021/The shape of water.jpg"
+        },
+        {
+          "title": "고독은",
+          "material": "Mixed Media",
+          "size": "60×60cm",
+          "description": "",
+          "image": "images/2021/고독은.jpg"
+        },
+        {
+          "title": "노을 잔상",
+          "material": "Mixed Media",
+          "size": "60×60cm",
+          "description": "",
+          "image": "images/2021/노을 잔상.jpg"
+        },
+        {
+          "title": "시간의 퇴적",
+          "material": "Mixed Media",
+          "size": "60×60cm",
+          "description": "",
+          "image": "images/2021/시간의 퇴적.jpg"
+        },
+        {
+          "title": "음악처럼",
+          "material": "Mixed Media",
+          "size": "60×60cm",
+          "description": "",
+          "image": "images/2021/음악처럼.jpg"
+        },
+        {
+          "title": "흰여울",
+          "material": "Mixed Media",
+          "size": "60×60cm",
+          "description": "",
+          "image": "images/2021/흰여울.jpg"
+        },
+        {
+          "title": "버킷리스트",
+          "material": "Mixed Media",
+          "size": "100×160cm",
+          "description": "",
+          "image": "images/2021/버킷리스트.jpg"
         }
       ]
     },
     {
       "id": "2020",
       "year": 2020,
-      "description": "멈춘 세계를 주제로 팬데믹으로 정지된 일상 속에서 발견한 자연의 목소리를 담았습니다. 고요 속에서 더 선명하게 들리는 자연의 소리를 표현했습니다.",
-      "thumbnail": "https://picsum.photos/seed/2020t/1200/750",
+      "description": "",
+      "thumbnail": "images/2020/우연히 만나다.jpg",
       "works": [
         {
-          "title": "정적",
-          "material": "유화",
-          "size": "100×100cm",
-          "description": "모든 것이 멈춘 듯한 고요한 풍경 속에서 느끼는 역설적인 생명감을 표현했습니다.",
-          "image": "https://picsum.photos/seed/2020-1/800/800"
-        },
-        {
-          "title": "창밖의 계절",
-          "material": "아크릴",
-          "size": "60×80cm",
-          "description": "집 안에서 바라보는 계절의 변화를 통해 자연과의 연결을 이어가는 작품입니다.",
-          "image": "https://picsum.photos/seed/2020-2/600/800"
-        },
-        {
-          "title": "텅 빈 광장",
-          "material": "수채화",
-          "size": "80×60cm",
-          "description": "사람이 사라진 광장에 자연이 들어오는 모습을 담담하게 담아냈습니다.",
-          "image": "https://picsum.photos/seed/2020-3/800/600"
+          "title": "우연히 만나다",
+          "material": "",
+          "size": "90×90cm",
+          "description": "",
+          "image": "images/2020/우연히 만나다.jpg"
         }
       ]
     },
     {
       "id": "2019",
       "year": 2019,
-      "description": "바다를 향해라는 주제로 광활한 바다의 다양한 표정을 탐구했습니다. 바다는 자유와 무한한 가능성의 상징입니다.",
-      "thumbnail": "https://picsum.photos/seed/2019t/1200/750",
+      "description": "",
+      "thumbnail": "images/2019/Nine Rooms.tif",
       "works": [
         {
-          "title": "수평선 너머",
-          "material": "유화",
-          "size": "120×80cm",
-          "description": "광활한 수평선을 바라보며 느끼는 무한한 자유와 동경을 파노라마 형식으로 담았습니다.",
-          "image": "https://picsum.photos/seed/2019-1/800/600"
-        },
-        {
-          "title": "파도",
-          "material": "아크릴",
-          "size": "80×100cm",
-          "description": "역동적으로 부서지는 파도의 에너지를 강렬한 붓터치와 색채로 표현했습니다.",
-          "image": "https://picsum.photos/seed/2019-2/600/800"
-        },
-        {
-          "title": "해질 무렵 바다",
-          "material": "파스텔",
-          "size": "50×70cm",
-          "description": "노을이 물드는 바다의 황홀한 색채를 파스텔의 부드러운 질감으로 표현했습니다.",
-          "image": "https://picsum.photos/seed/2019-3/600/800"
-        },
-        {
-          "title": "갯벌의 아침",
-          "material": "수채화",
-          "size": "60×80cm",
-          "description": "물이 빠진 갯벌에 펼쳐지는 생명의 다양성과 새벽빛의 조화를 담았습니다.",
-          "image": "https://picsum.photos/seed/2019-4/800/600"
+          "title": "Nine Rooms",
+          "material": "Mixed Media",
+          "size": "90×90cm",
+          "description": "",
+          "image": "images/2019/Nine Rooms.tif"
         }
       ]
     },
     {
       "id": "2018",
       "year": 2018,
-      "description": "산의 사계를 주제로 한 해 동안 산이 보여주는 네 가지 얼굴을 담았습니다. 계절에 따라 변화하는 산의 모습에서 자연의 순환을 발견합니다.",
-      "thumbnail": "https://picsum.photos/seed/2018t/1200/750",
+      "description": "",
+      "thumbnail": "images/2018/이 사람을 보라2.jpg",
       "works": [
         {
-          "title": "산의 봄",
-          "material": "유화",
-          "size": "80×100cm",
-          "description": "봄을 맞아 연두빛으로 물드는 산의 생동감을 밝고 경쾌한 색채로 표현했습니다.",
-          "image": "https://picsum.photos/seed/2018-1/600/800"
+          "title": "Flowers",
+          "material": "Mixed Media",
+          "size": "25×25cm (ea., 30pieces)",
+          "description": "",
+          "image": "images/2018/Flowers.jpg"
         },
         {
-          "title": "여름 산",
-          "material": "아크릴",
-          "size": "100×80cm",
-          "description": "짙은 녹색으로 가득 찬 한여름 산의 울창함과 생명력을 담았습니다.",
-          "image": "https://picsum.photos/seed/2018-2/800/600"
+          "title": "Soft",
+          "material": "Mixed Media",
+          "size": "60×60cm",
+          "description": "",
+          "image": "images/2018/Soft.jpg"
         },
         {
-          "title": "가을 산",
-          "material": "유화",
-          "size": "80×100cm",
-          "description": "붉게 물든 가을 산의 화려한 색채의 향연을 두터운 마티에르로 표현했습니다.",
-          "image": "https://picsum.photos/seed/2018-3/600/800"
+          "title": "그리움",
+          "material": "Mixed Media",
+          "size": "60×60cm",
+          "description": "",
+          "image": "images/2018/그리움.jpg"
         },
         {
-          "title": "겨울 산",
-          "material": "수채화",
-          "size": "70×90cm",
-          "description": "눈에 덮인 겨울 산의 순백의 장엄함을 여백을 살려 표현했습니다.",
-          "image": "https://picsum.photos/seed/2018-4/600/800"
+          "title": "위로",
+          "material": "Mixed Media",
+          "size": "50×50cm",
+          "description": "",
+          "image": "images/2018/위로.jpg"
+        },
+        {
+          "title": "이 사람을 보라2",
+          "material": "Mixed Media",
+          "size": "120×120cm",
+          "description": "",
+          "image": "images/2018/이 사람을 보라2.jpg"
         }
       ]
     },
     {
       "id": "2017",
       "year": 2017,
-      "description": "들녘의 노래를 주제로 평원과 들판의 소박하고 아름다운 풍경을 담았습니다. 농촌의 정겨운 풍경과 계절의 변화를 사계절에 걸쳐 표현했습니다.",
-      "thumbnail": "https://picsum.photos/seed/2017t/1200/750",
+      "description": "",
+      "thumbnail": "images/2017/인생예찬1.jpg",
       "works": [
         {
-          "title": "보리밭",
-          "material": "유화",
-          "size": "100×80cm",
-          "description": "바람에 일렁이는 보리밭의 생동감과 초록빛 아름다움을 넓은 붓질로 담았습니다.",
-          "image": "https://picsum.photos/seed/2017-1/800/600"
+          "title": "Hole",
+          "material": "Mixed Media",
+          "size": "240×120cm",
+          "description": "",
+          "image": "images/2017/Hole.jpg"
         },
         {
-          "title": "해바라기 밭",
-          "material": "아크릴",
-          "size": "80×100cm",
-          "description": "태양을 향해 고개를 든 해바라기들의 당당함과 활력을 강렬한 색채로 표현했습니다.",
-          "image": "https://picsum.photos/seed/2017-2/600/800"
+          "title": "Life",
+          "material": "Mixed Media",
+          "size": "90×90cm",
+          "description": "",
+          "image": "images/2017/Life.jpg"
         },
         {
-          "title": "황혼의 들판",
-          "material": "유화",
-          "size": "120×90cm",
-          "description": "해가 지는 들판의 황금빛 노을과 고요한 평화를 파노라마 형식으로 담았습니다.",
-          "image": "https://picsum.photos/seed/2017-3/800/600"
+          "title": "Ocean",
+          "material": "Mixed Media",
+          "size": "35×35cm",
+          "description": "",
+          "image": "images/2017/Ocean.jpg"
+        },
+        {
+          "title": "Sky",
+          "material": "Mixed Media",
+          "size": "35×35cm",
+          "description": "",
+          "image": "images/2017/Sky.jpg"
+        },
+        {
+          "title": "그 겨울, 바람이 불다",
+          "material": "Mixed Media",
+          "size": "100×45cm (ea., 4pieces)",
+          "description": "",
+          "image": "images/2017/그 겨울, 바람이 불다.jpg"
+        },
+        {
+          "title": "기억-찬란한 순간",
+          "material": "Mixed Media",
+          "size": "100×45cm (ea., 4pieces)",
+          "description": "",
+          "image": "images/2017/기억-찬란한 순간.jpg"
+        },
+        {
+          "title": "기억의 물결(말말말)",
+          "material": "Mixed Media",
+          "size": "160×80cm",
+          "description": "",
+          "image": "images/2017/기억의 물결(말말말).jpg"
+        },
+        {
+          "title": "빠져들다",
+          "material": "Mixed Media",
+          "size": "80×160cm",
+          "description": "",
+          "image": "images/2017/빠져들다.jpg"
+        },
+        {
+          "title": "인생예찬1",
+          "material": "Mixed Media",
+          "size": "180×100cm",
+          "description": "",
+          "image": "images/2017/인생예찬1.jpg"
+        },
+        {
+          "title": "인생예찬2",
+          "material": "Mixed Media",
+          "size": "180×100cm",
+          "description": "",
+          "image": "images/2017/인생예찬2.jpg"
+        },
+        {
+          "title": "참을 수 없는 존재의 가벼움",
+          "material": "Mixed Media",
+          "size": "60×60cm",
+          "description": "",
+          "image": "images/2017/참을 수 없는 존재의 가벼움.jpg"
         }
       ]
     },
     {
       "id": "2016",
       "year": 2016,
-      "description": "새벽과 황혼을 주제로 하루의 시작과 끝의 경계에서 만나는 빛과 색채를 탐구했습니다. 가장 드라마틱한 두 순간의 하늘을 담았습니다.",
-      "thumbnail": "https://picsum.photos/seed/2016t/1200/750",
+      "description": "",
+      "thumbnail": "images/2016/민화1.jpg",
       "works": [
         {
-          "title": "여명",
-          "material": "파스텔",
-          "size": "60×80cm",
-          "description": "어둠이 걷히고 빛이 스며드는 새벽의 미묘한 색채 변화를 파스텔로 표현했습니다.",
-          "image": "https://picsum.photos/seed/2016-1/800/600"
+          "title": "민화1",
+          "material": "",
+          "size": "30×30cm",
+          "description": "",
+          "image": "images/2016/민화1.jpg"
         },
         {
-          "title": "붉은 노을",
-          "material": "유화",
-          "size": "100×80cm",
-          "description": "하늘을 붉게 물들이는 저녁 노을의 장엄한 아름다움을 유화로 담았습니다.",
-          "image": "https://picsum.photos/seed/2016-2/800/600"
+          "title": "민화2",
+          "material": "",
+          "size": "",
+          "description": "",
+          "image": "images/2016/민화2.jpg"
         },
         {
-          "title": "새벽 안개",
-          "material": "수채화",
-          "size": "80×60cm",
-          "description": "새벽 들판에 내려앉은 안개의 신비로운 분위기를 수채화의 투명함으로 표현했습니다.",
-          "image": "https://picsum.photos/seed/2016-3/800/600"
+          "title": "민화3",
+          "material": "",
+          "size": "",
+          "description": "",
+          "image": "images/2016/민화3.jpg"
+        },
+        {
+          "title": "민화4",
+          "material": "",
+          "size": "",
+          "description": "",
+          "image": "images/2016/민화4.jpg"
+        },
+        {
+          "title": "민화5",
+          "material": "",
+          "size": "",
+          "description": "",
+          "image": "images/2016/민화5.jpg"
+        },
+        {
+          "title": "민화6",
+          "material": "",
+          "size": "",
+          "description": "",
+          "image": "images/2016/민화6.jpg"
         }
       ]
     },
     {
       "id": "2015",
       "year": 2015,
-      "description": "숲속의 고요를 주제로 숲이 가진 신비롭고 생명력 넘치는 내면의 세계를 탐구했습니다. 빛과 그림자, 생명의 순환을 숲을 통해 표현했습니다.",
-      "thumbnail": "https://picsum.photos/seed/2015t/1200/750",
+      "description": "",
+      "thumbnail": "images/2015/향기로운산.jpg",
       "works": [
         {
-          "title": "빛이 드는 숲",
-          "material": "유화",
-          "size": "80×100cm",
-          "description": "나뭇잎 사이로 스며드는 빛이 만들어내는 숲 안의 드라마틱한 명암을 담았습니다.",
-          "image": "https://picsum.photos/seed/2015-1/600/800"
+          "title": "Blooming",
+          "material": "Mixed Media",
+          "size": "160×80cm",
+          "description": "",
+          "image": "images/2015/Blooming.jpg"
         },
         {
-          "title": "이끼 낀 바위",
-          "material": "수채화",
-          "size": "50×60cm",
-          "description": "오랜 세월 이끼로 뒤덮인 바위에서 발견하는 시간의 흔적과 자연의 인내를 표현했습니다.",
-          "image": "https://picsum.photos/seed/2015-2/600/800"
+          "title": "Fresh",
+          "material": "Mixed Media",
+          "size": "80×80cm",
+          "description": "",
+          "image": "images/2015/Fresh.jpg"
         },
         {
-          "title": "대나무 숲",
-          "material": "혼합매체",
-          "size": "70×100cm",
-          "description": "곧게 뻗은 대나무들이 만들어내는 리듬감과 청아한 공간감을 혼합매체로 담았습니다.",
-          "image": "https://picsum.photos/seed/2015-3/600/800"
+          "title": "기억-봄날",
+          "material": "",
+          "size": "100×45cm (ea., 4pieces)",
+          "description": "",
+          "image": "images/2015/기억-봄날.jpg"
         },
         {
-          "title": "고목",
-          "material": "유화",
-          "size": "60×80cm",
-          "description": "수백 년을 살아온 고목의 위엄과 생명력을 세밀하고 힘 있는 붓질로 표현했습니다.",
-          "image": "https://picsum.photos/seed/2015-4/600/800"
+          "title": "산-그림자",
+          "material": "",
+          "size": "200×40cm",
+          "description": "",
+          "image": "images/2015/산-그림자.jpg"
+        },
+        {
+          "title": "향기로운산",
+          "material": "",
+          "size": "100×135cm",
+          "description": "",
+          "image": "images/2015/향기로운산.jpg"
         }
       ]
     },
     {
       "id": "2014",
       "year": 2014,
-      "description": "물의 기억을 주제로 강, 호수, 연못 등 다양한 물의 모습과 그 속에 담긴 기억을 탐구했습니다. 물은 시간과 기억의 또 다른 이름입니다.",
-      "thumbnail": "https://picsum.photos/seed/2014t/1200/750",
+      "description": "",
+      "thumbnail": "images/2014/여운1.tif",
       "works": [
         {
-          "title": "연꽃 연못",
-          "material": "유화",
-          "size": "100×100cm",
-          "description": "탁한 물에서 피어나는 연꽃의 순결함과 아름다움을 정방형 화면에 담았습니다.",
-          "image": "https://picsum.photos/seed/2014-1/800/800"
+          "title": "여운1",
+          "material": "",
+          "size": "",
+          "description": "",
+          "image": "images/2014/여운1.tif"
         },
         {
-          "title": "고요한 호수",
-          "material": "수채화",
-          "size": "80×60cm",
-          "description": "산이 그대로 반영되는 고요한 호수의 표면을 수채화의 번짐으로 표현했습니다.",
-          "image": "https://picsum.photos/seed/2014-2/800/600"
-        },
-        {
-          "title": "비 오는 강",
-          "material": "아크릴",
-          "size": "70×90cm",
-          "description": "빗방울이 수면에 만들어내는 무수한 원들과 그 생동감을 담아냈습니다.",
-          "image": "https://picsum.photos/seed/2014-3/600/800"
+          "title": "여운2",
+          "material": "",
+          "size": "",
+          "description": "",
+          "image": "images/2014/여운2.tif"
         }
       ]
     },
     {
       "id": "2013",
       "year": 2013,
-      "description": "하늘의 색을 주제로 다양한 하늘의 표정을 담았습니다. 맑은 날, 흐린 날, 폭풍 전야의 하늘까지 그 변화무쌍한 아름다움을 포착했습니다.",
-      "thumbnail": "https://picsum.photos/seed/2013t/1200/750",
+      "description": "",
+      "thumbnail": "images/2013/따로 또 같이.jpg",
       "works": [
         {
-          "title": "여름 구름",
-          "material": "유화",
-          "size": "100×80cm",
-          "description": "한여름 하늘 높이 솟아오른 뭉게구름의 역동적인 형태와 그 아래 펼쳐지는 빛을 담았습니다.",
-          "image": "https://picsum.photos/seed/2013-1/800/600"
+          "title": "I Have a Dream",
+          "material": "Mixed Media",
+          "size": "60×60cm",
+          "description": "",
+          "image": "images/2013/I Have a Dream.tif"
         },
         {
-          "title": "폭풍 전야",
-          "material": "아크릴",
-          "size": "80×100cm",
-          "description": "폭풍이 오기 직전 불안하고 웅장한 하늘의 드라마틱한 순간을 포착했습니다.",
-          "image": "https://picsum.photos/seed/2013-2/600/800"
+          "title": "I Have a Dream2",
+          "material": "",
+          "size": "90×90cm",
+          "description": "",
+          "image": "images/2013/I Have a Dream2.tif"
         },
         {
-          "title": "청명한 하늘",
-          "material": "수채화",
-          "size": "60×80cm",
-          "description": "가을 하늘의 맑고 투명한 파란색을 수채화의 깨끗한 색감으로 표현했습니다.",
-          "image": "https://picsum.photos/seed/2013-3/800/600"
+          "title": "colorful flowers",
+          "material": "",
+          "size": "30×30cm (4pieces)",
+          "description": "",
+          "image": "images/2013/colorful flowers.jpg"
+        },
+        {
+          "title": "나비의꿈2",
+          "material": "Mixed Media",
+          "size": "70×70cm",
+          "description": "",
+          "image": "images/2013/나비의꿈2.jpg"
+        },
+        {
+          "title": "따로 또 같이",
+          "material": "",
+          "size": "100×100cm",
+          "description": "",
+          "image": "images/2013/따로 또 같이.jpg"
+        },
+        {
+          "title": "따로 또 같이2",
+          "material": "",
+          "size": "110×110cm",
+          "description": "",
+          "image": "images/2013/따로 또 같이2.jpg"
+        },
+        {
+          "title": "마음 깊은 곳",
+          "material": "Mixed Media",
+          "size": "90×90cm",
+          "description": "",
+          "image": "images/2013/마음 깊은 곳.jpg"
+        },
+        {
+          "title": "몽환",
+          "material": "Mixed Media",
+          "size": "60×60cm",
+          "description": "",
+          "image": "images/2013/몽환.jpg"
+        },
+        {
+          "title": "유혹",
+          "material": "Mixed Media",
+          "size": "60×60cm",
+          "description": "",
+          "image": "images/2013/유혹.jpg"
+        },
+        {
+          "title": "행복한 망상",
+          "material": "",
+          "size": "60×60cm",
+          "description": "",
+          "image": "images/2013/행복한 망상.jpg"
         }
       ]
     },
     {
       "id": "2012",
       "year": 2012,
-      "description": "시간의 흔적을 주제로 세월이 자연에 남긴 흔적들을 탐구했습니다. 오래된 것들이 가진 아름다움과 그 속에 담긴 이야기를 표현했습니다.",
-      "thumbnail": "https://picsum.photos/seed/2012t/1200/750",
+      "description": "",
+      "thumbnail": "images/2012/꿈꾸는 나비.jpg",
       "works": [
         {
-          "title": "풍화된 바위",
-          "material": "유화",
-          "size": "80×60cm",
-          "description": "오랜 세월 바람과 비에 깎인 바위의 표면에서 시간의 아름다운 조각을 발견했습니다.",
-          "image": "https://picsum.photos/seed/2012-1/800/600"
+          "title": "꿈꾸는 나비",
+          "material": "",
+          "size": "",
+          "description": "",
+          "image": "images/2012/꿈꾸는 나비.jpg"
         },
         {
-          "title": "낡은 담장",
-          "material": "수채화",
-          "size": "60×80cm",
-          "description": "이끼와 시간이 만들어낸 낡은 담장의 텍스처와 그 속의 풍경을 담담하게 담았습니다.",
-          "image": "https://picsum.photos/seed/2012-2/600/800"
-        },
-        {
-          "title": "고목의 뿌리",
-          "material": "혼합매체",
-          "size": "70×90cm",
-          "description": "땅 위로 드러난 고목의 뿌리에서 발견하는 생명력과 시간의 흐름을 표현했습니다.",
-          "image": "https://picsum.photos/seed/2012-3/600/800"
-        },
-        {
-          "title": "빈 집",
-          "material": "유화",
-          "size": "100×80cm",
-          "description": "사람이 떠난 오래된 집과 그 주변에 무성히 자란 자연의 모습을 담았습니다.",
-          "image": "https://picsum.photos/seed/2012-4/800/600"
+          "title": "rainbow,black, sunshine",
+          "material": "",
+          "size": "",
+          "description": "",
+          "image": "images/2012/rainbow,black, sunshine.jpg"
         }
       ]
     },
     {
       "id": "2011",
       "year": 2011,
-      "description": "빈 들판을 주제로 수확이 끝난 들판의 고요하고 쓸쓸한 아름다움을 담았습니다. 비움의 미학을 통해 여백의 의미를 탐구했습니다.",
-      "thumbnail": "https://picsum.photos/seed/2011t/1200/750",
+      "description": "은밀하게 숨겨둔 욕망을 슬그머니 꺼내어 들여다봅니다. 나비가 되어, 꽃이 되어, 구름이 되어 내 속의 이야기를 듣고, 드러내지는 못하나 끊임없이 갈구하는 꿈을 향해 한땀한땀 정성을 들여 다가간 작업들입니다.",
+      "thumbnail": "images/2011/구름에 기대 꿈을 그리다.jpg",
       "works": [
         {
-          "title": "수확 후",
-          "material": "유화",
-          "size": "120×80cm",
-          "description": "벼를 베고 난 후 황량하지만 풍요로운 기억을 간직한 들판을 담았습니다.",
-          "image": "https://picsum.photos/seed/2011-1/800/600"
+          "title": "구름에 기대 꿈을 그리다",
+          "material": "",
+          "size": "100×45cm (ea.)",
+          "description": "구름이 되어 꿈을 그려가는 시리즈. 손에 잡힐 듯 잡히지 않는 구름에 기대어 꿈을 향해 한땀한땀 다가가는 마음을 담았습니다.",
+          "image": "images/2011/구름에 기대 꿈을 그리다.jpg"
         },
         {
-          "title": "겨울 논",
-          "material": "수채화",
-          "size": "70×50cm",
-          "description": "얼어붙은 논에 새들이 내려앉는 겨울 풍경의 쓸쓸하고 아름다운 순간을 담았습니다.",
-          "image": "https://picsum.photos/seed/2011-2/800/600"
+          "title": "구름에 기대 꿈을 그리다2",
+          "material": "",
+          "size": "",
+          "description": "구름에 기대 꿈을 그리다 연작 두 번째.",
+          "image": "images/2011/구름에 기대 꿈을 그리다2.jpg"
         },
         {
-          "title": "빈 땅",
-          "material": "아크릴",
-          "size": "80×80cm",
-          "description": "비어있음 자체의 아름다움을 최소한의 색채와 형태로 표현한 추상적 풍경입니다.",
-          "image": "https://picsum.photos/seed/2011-3/800/800"
+          "title": "구름에 기대 꿈을 그리다3",
+          "material": "",
+          "size": "",
+          "description": "구름에 기대 꿈을 그리다 연작 세 번째.",
+          "image": "images/2011/구름에 기대 꿈을 그리다3.jpg"
+        },
+        {
+          "title": "구름에 기대 꿈을 그리다4",
+          "material": "",
+          "size": "",
+          "description": "구름에 기대 꿈을 그리다 연작 네 번째.",
+          "image": "images/2011/구름에 기대 꿈을 그리다4.jpg"
+        },
+        {
+          "title": "구름뒤에는",
+          "material": "",
+          "size": "60×60cm",
+          "description": "구름 뒤에 가려진 것들. 드러내지 못하고 숨겨둔 욕망과 꿈이 구름 너머에서 기다리고 있습니다.",
+          "image": "images/2011/구름뒤에는.jpg"
+        },
+        {
+          "title": "꿈꾸는 당신",
+          "material": "Mixed Media",
+          "size": "60×120cm",
+          "description": "은밀하게 숨겨둔 욕망을 꺼내어 들여다보는 당신. 내 속의 이야기를 물끄러미 바라보는 순간을 담았습니다.",
+          "image": "images/2011/꿈꾸는 당신.jpg"
+        },
+        {
+          "title": "꿈꾸는나비1",
+          "material": "Mixed Media",
+          "size": "45×100cm",
+          "description": "나비가 되어 꿈을 꾸다. 자유롭게 날고자 하는 내면의 갈망을 나비의 형상으로 표현한 연작입니다.",
+          "image": "images/2011/꿈꾸는나비1.jpg"
+        },
+        {
+          "title": "꿈꾸는나비2",
+          "material": "Mixed Media",
+          "size": "45×100cm",
+          "description": "꿈꾸는나비 연작 두 번째. 나비가 되어 내 속의 이야기를 들으며 꿈을 향해 날아갑니다.",
+          "image": "images/2011/꿈꾸는나비2.jpg"
+        },
+        {
+          "title": "꿈꾸는나비3",
+          "material": "",
+          "size": "90×90cm",
+          "description": "꿈꾸는나비 연작 세 번째. 한땀한땀 정성을 들여 다가가는 꿈, 그 꿈을 꾸는 나비를 담았습니다.",
+          "image": "images/2011/꿈꾸는나비3.jpg"
+        },
+        {
+          "title": "나비 날다 시리즈(1)",
+          "material": "",
+          "size": "180×100cm (ea.)",
+          "description": "나비가 되어 자유롭게 날다. 끊임없이 갈구하는 꿈을 향해 힘차게 날아오르는 순간을 대형 화면에 담았습니다.",
+          "image": "images/2011/나비 날다 시리즈(1).jpg"
+        },
+        {
+          "title": "나비 날다 시리즈(2)",
+          "material": "",
+          "size": "",
+          "description": "나비 날다 연작 두 번째. 꿈을 향해 날아가는 나비의 여정을 이어갑니다.",
+          "image": "images/2011/나비 날다 시리즈(2).jpg"
+        },
+        {
+          "title": "만들어가는 이야기II",
+          "material": "",
+          "size": "",
+          "description": "내 속의 이야기를 들으며 만들어가는 이야기 두 번째. 꿈과 욕망이 얽혀 이루는 삶의 서사입니다.",
+          "image": "images/2011/만들어가는 이야기II.jpg"
+        },
+        {
+          "title": "벨벳구름",
+          "material": "",
+          "size": "45×100cm",
+          "description": "구름이 되어 바라본 꿈. 부드럽고 화려한 벨벳 같은 질감으로 손에 닿을 듯한 꿈의 감촉을 표현했습니다.",
+          "image": "images/2011/벨벳구름.jpg"
+        },
+        {
+          "title": "비밀의화원3",
+          "material": "",
+          "size": "60×60cm",
+          "description": "꽃이 되어 피어나는 은밀한 욕망의 화원. 드러내지 못하고 숨겨둔 꿈들이 몰래 피어나는 비밀의 정원입니다.",
+          "image": "images/2011/비밀의화원3.jpg"
+        },
+        {
+          "title": "위험한 시도 대화",
+          "material": "",
+          "size": "65×135cm",
+          "description": "드러내지는 못하나 끊임없이 갈구하는 꿈을 향한 위험한 시도. 그 욕망과 현실 사이의 대화를 담았습니다.",
+          "image": "images/2011/위험한 시도 대화.jpg"
+        },
+        {
+          "title": "위험한시도 대화1",
+          "material": "",
+          "size": "60×60cm",
+          "description": "위험한 시도 대화 연작. 은밀한 욕망을 꺼내는 일 자체가 위험한 시도임을 표현했습니다.",
+          "image": "images/2011/위험한시도 대화1.jpg"
+        },
+        {
+          "title": "은근히 드러내기",
+          "material": "",
+          "size": "60×60cm",
+          "description": "드러내지는 못하나 끊임없이 갈구하는 것들을 은근히 내비치는 시도. 보일 듯 말 듯 스며나오는 내면을 담았습니다.",
+          "image": "images/2011/은근히 드러내기.jpg"
+        },
+        {
+          "title": "창문너머로",
+          "material": "",
+          "size": "125×125cm",
+          "description": "창문 너머로 바라보는 꿈. 손에 닿지 않는 것을 바라보는 그리움과 갈망을 대형 화면에 담았습니다.",
+          "image": "images/2011/창문너머로.jpg"
+        },
+        {
+          "title": "피어난 꿈",
+          "material": "",
+          "size": "60×60cm",
+          "description": "한땀한땀 정성을 들여 다가간 끝에 마침내 피어난 꿈. 꽃이 되어 피어오르는 소망을 표현했습니다.",
+          "image": "images/2011/피어난 꿈.jpg"
+        },
+        {
+          "title": "화려한 유혹",
+          "material": "",
+          "size": "60×60cm",
+          "description": "꽃이 되어 뿜어내는 화려한 유혹. 은밀하게 숨겨둔 욕망이 화려하게 드러나는 순간을 담았습니다.",
+          "image": "images/2011/화려한 유혹.jpg"
+        },
+        {
+          "title": "ILLUSION",
+          "material": "",
+          "size": "60×60cm",
+          "description": "환상. 꿈인지 욕망인지 구분할 수 없는 경계에서, 드러내지 못한 것들이 환상이 되어 떠오릅니다.",
+          "image": "images/2011/ILLUSION.tif"
+        },
+        {
+          "title": "Stinkbug.Butterfly",
+          "material": "",
+          "size": "",
+          "description": "노린재와 나비. 추함과 아름다움, 욕망과 꿈이 공존하는 내면의 두 얼굴을 담았습니다.",
+          "image": "images/2011/Stinkbug.Butterfly.jpg"
+        },
+        {
+          "title": "또다른 꿈",
+          "material": "",
+          "size": "60×60cm",
+          "description": "하나의 꿈 너머에 또 다른 꿈이 기다리고 있습니다. 끊임없이 이어지는 갈구와 소망을 담았습니다.",
+          "image": "images/2011/또다른 꿈.tif"
         }
       ]
     },
@@ -545,29 +1085,113 @@
     {
       "id": "2009",
       "year": 2009,
-      "description": "뿌리를 향해를 주제로 전통 자연관과 고향의 풍경을 탐구했습니다. 잊혀가는 농촌의 풍경과 그 속에 담긴 삶의 이야기를 담았습니다.",
-      "thumbnail": "https://picsum.photos/seed/2009t/1200/750",
+      "description": "한땀한땀 구름을 엮듯, 내 안의 나를 찾는 여행을 담았습니다. 타인과의 관계 속에서 결정되는 나의 이미지, 자유를 향한 갈망, 그리고 조각보처럼 얼기설기 모여 이루는 삶의 이야기들입니다.",
+      "thumbnail": "images/2009/그녀의 이야기.jpg",
       "works": [
         {
-          "title": "고향 마을",
-          "material": "유화",
-          "size": "100×80cm",
-          "description": "어린 시절의 기억 속 고향 마을의 정겨운 풍경을 따뜻한 색감으로 담았습니다.",
-          "image": "https://picsum.photos/seed/2009-1/800/600"
+          "title": "그녀의 이야기",
+          "material": "",
+          "size": "",
+          "description": "나를 둘러싼 사람들과의 관계들이 모여 만들어가는 이야기. 타인에 의해 보여지는 이미지와 내면의 자아가 중첩되는 순간을 담았습니다.",
+          "image": "images/2009/그녀의 이야기.jpg"
         },
         {
-          "title": "흙길",
-          "material": "수채화",
-          "size": "60×80cm",
-          "description": "비가 내린 후 농촌의 흙길과 그 주변의 소박한 풍경을 담담하게 표현했습니다.",
-          "image": "https://picsum.photos/seed/2009-2/800/600"
+          "title": "만들어가는 이야기II",
+          "material": "",
+          "size": "",
+          "description": "여러 사람들과의 관계들이 모여 만들어가는 나의 이야기, 그 두 번째 장입니다.",
+          "image": "images/2009/만들어가는 이야기II.jpg"
         },
         {
-          "title": "할머니의 텃밭",
-          "material": "아크릴",
-          "size": "70×90cm",
-          "description": "작은 텃밭에서 발견하는 생명의 경이로움과 손으로 가꾼 삶의 의미를 담았습니다.",
-          "image": "https://picsum.photos/seed/2009-3/600/800"
+          "title": "도도한 환상",
+          "material": "",
+          "size": "",
+          "description": "주목받고 싶은 욕망과 도도한 환상. 자신의 존재를 드러내고자 하는 내면의 갈망을 표현했습니다.",
+          "image": "images/2009/도도한 환상.jpg"
+        },
+        {
+          "title": "이 사람을 보라",
+          "material": "",
+          "size": "",
+          "description": "각자의 인생 드라마가 담긴 얼굴. 다양한 컬러로 각각의 드라마를 표현했습니다. 본인만이 뿜어내는 이미지의 컬러로.",
+          "image": "images/2009/이 사람을 보라.jpg"
+        },
+        {
+          "title": "비밀의 화원",
+          "material": "",
+          "size": "",
+          "description": "보석같은 꽃들, 아름다움에의 추구. 내면 깊숙이 간직한 아름다운 세계를 표현했습니다.",
+          "image": "images/2009/비밀의 화원.jpg"
+        },
+        {
+          "title": "나비의 꿈",
+          "material": "",
+          "size": "",
+          "description": "나비처럼 자유로운 영혼을 꿈꾸는 마음. 정형화된 구속으로부터 벗어나고자 하는 자유를 향한 갈망을 담았습니다.",
+          "image": "images/2009/나비의 꿈.jpg"
+        },
+        {
+          "title": "가두어놓기",
+          "material": "",
+          "size": "",
+          "description": "내 안에 떠도는 구름을 가두듯, 정형화된 가치관과 사회적 틀 안에 갇혀버린 자아를 표현했습니다.",
+          "image": "images/2009/가두어놓기.jpg"
+        },
+        {
+          "title": "호접지몽",
+          "material": "",
+          "size": "",
+          "description": "나비가 되는 꿈인지, 내가 나비인지. 꿈과 현실의 경계를 넘나드는 자유로운 영혼을 담았습니다.",
+          "image": "images/2009/호접지몽.jpg"
+        },
+        {
+          "title": "비밀의 화원II",
+          "material": "",
+          "size": "",
+          "description": "비밀의 화원 두 번째. 숨겨진 아름다움과 내면의 정원을 더 깊이 탐구했습니다.",
+          "image": "images/2009/비밀의 화원II.jpg"
+        },
+        {
+          "title": "가두어놓기II",
+          "material": "",
+          "size": "",
+          "description": "가두어놓기 두 번째. 구속과 해방 사이의 긴장감을 이어서 표현했습니다.",
+          "image": "images/2009/가두어놓기II.jpg"
+        },
+        {
+          "title": "CROSS",
+          "material": "",
+          "size": "",
+          "description": "결혼이란 사회적 형식으로 맺어진 관계. 두 삶이 교차하며 새로운 이야기를 만들어가는 순간을 담았습니다.",
+          "image": "images/2009/CROSS.jpg"
+        },
+        {
+          "title": "여자, 정혜",
+          "material": "",
+          "size": "",
+          "description": "얼굴에 새겨진 인생의 드라마. 한 여자의 고유한 이미지와 그녀만의 이야기를 담은 초상입니다.",
+          "image": "images/2009/여자, 정혜.jpg"
+        },
+        {
+          "title": "만들어가는 이야기",
+          "material": "",
+          "size": "",
+          "description": "나는 여러 사람들과의 관계들이 모여 만들어가는 이야기입니다. 조각보처럼 얼기설기 모여 이루는 삶을 표현했습니다.",
+          "image": "images/2009/만들어가는 이야기.jpg"
+        },
+        {
+          "title": "은근히 드러내기",
+          "material": "",
+          "size": "",
+          "description": "보일 듯 말 듯 아스라한 그리움. 드러내고 싶으면서도 숨기고 싶은 내면의 감정을 은근히 표현했습니다.",
+          "image": "images/2009/은근히 드러내기.jpg"
+        },
+        {
+          "title": "구름시리즈",
+          "material": "",
+          "size": "",
+          "description": "한땀한땀 구름을 엮으며 내 안에 떠도는 구름같은 헛된 꿈들, 잡힐 듯 잡히지 않는 것들을 담았습니다.",
+          "image": "images/2009/구름시리즈.jpg"
         }
       ]
     },

@@ -60,14 +60,14 @@ function renderIndex(data) {
   const contactEl = document.getElementById('about-contact');
   if (contactEl) {
     contactEl.innerHTML = `
-      <a href="mailto:${artist.email}">
-        <span>&#9993;</span> ${artist.email}
-      </a>
-      <a href="${artist.instagram}" target="_blank" rel="noopener">
-        <span>&#9654;</span> Instagram
-      </a>
+      ${artist.phone ? `<a href="tel:${artist.phone}"><span>&#9742;</span> ${artist.phone}</a>` : ''}
+      <a href="mailto:${artist.email}"><span>&#9993;</span> ${artist.email}</a>
+      <a href="${artist.instagram}" target="_blank" rel="noopener"><span>&#9654;</span> Instagram</a>
     `;
   }
+
+  // CV
+  renderCV(artist.cv);
 
   // Works
   const worksList = document.getElementById('works-list');
@@ -99,18 +99,45 @@ function renderIndex(data) {
   const contactLinks = document.getElementById('contact-links');
   if (contactLinks) {
     contactLinks.innerHTML = `
-      <a href="mailto:${artist.email}" class="contact-link">
-        <span>&#9993;</span> ${artist.email}
-      </a>
-      <a href="${artist.instagram}" target="_blank" rel="noopener" class="contact-link">
-        <span>&#9654;</span> Instagram
-      </a>
+      ${artist.phone ? `<a href="tel:${artist.phone}" class="contact-link"><span>&#9742;</span> ${artist.phone}</a>` : ''}
+      <a href="mailto:${artist.email}" class="contact-link"><span>&#9993;</span> ${artist.email}</a>
+      <a href="${artist.instagram}" target="_blank" rel="noopener" class="contact-link"><span>&#9654;</span> Instagram</a>
     `;
   }
 
   // Footer
   const year = new Date().getFullYear();
   setTextById('footer-text', `\u00A9 ${year} ${artist.name}. All rights reserved.`);
+}
+
+/* =====================
+   CV Section
+   ===================== */
+
+function renderCV(cv) {
+  const container = document.getElementById('cv-content');
+  if (!container || !cv) return;
+
+  const blocks = [
+    { heading: '학력',            data: cv.education,         full: false },
+    { heading: '개인전',          data: cv.soloExhibitions,   full: false },
+    { heading: '수상',            data: cv.awards,            full: false },
+    { heading: '강의',            data: cv.teaching,          full: false },
+    { heading: '단체전 및 아트페어', data: cv.groupExhibitions, full: true  },
+    { heading: '작품소장',        data: cv.collections,       full: true, grid: true },
+  ];
+
+  blocks.forEach(block => {
+    if (!block.data || block.data.length === 0) return;
+    const div = document.createElement('div');
+    div.className = 'cv-block' + (block.full ? ' cv-full' : '');
+    const items = block.data.map(item => `<li>${item}</li>`).join('');
+    div.innerHTML = `
+      <h3>${block.heading}</h3>
+      <ul class="cv-list${block.grid ? ' cv-collections' : ''}">${items}</ul>
+    `;
+    container.appendChild(div);
+  });
 }
 
 /* =====================
