@@ -842,7 +842,7 @@ footer {
     align-items: center;
     gap: 40px;
     z-index: 100;
-    padding-top: 64px;
+    padding-top: 120px;
   }
   .nav-links.open { display: flex; }
   .nav-links a {
