@@ -72,7 +72,6 @@ function renderIndex(data) {
   const contactEl = document.getElementById('about-contact');
   if (contactEl) {
     contactEl.innerHTML = `
-      ${artist.phone ? `<a href="tel:${artist.phone}"><span>&#9742;</span> ${artist.phone}</a>` : ''}
       <a href="mailto:${artist.email}"><span>&#9993;</span> ${artist.email}</a>
       <a href="${artist.instagram}" target="_blank" rel="noopener"><span>&#9654;</span> Instagram</a>
     `;
@@ -129,7 +128,6 @@ function renderIndex(data) {
   const contactLinks = document.getElementById('contact-links');
   if (contactLinks) {
     contactLinks.innerHTML = `
-      ${artist.phone ? `<a href="tel:${artist.phone}" class="contact-link"><span>&#9742;</span> ${artist.phone}</a>` : ''}
       <a href="mailto:${artist.email}" class="contact-link"><span>&#9993;</span> ${artist.email}</a>
       <a href="${artist.instagram}" target="_blank" rel="noopener" class="contact-link"><span>&#9654;</span> Instagram</a>
     `;
