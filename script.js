@@ -93,6 +93,7 @@ function renderIndex(data) {
   years.forEach((year, i) => {
     const item = document.createElement('div');
     item.className = `work-item${i % 2 === 1 ? ' reverse' : ''}`;
+    item.dataset.yearId = year.id;
     item.innerHTML = `
       <a href="year.html?year=${year.id}" class="work-thumb">
         <img
@@ -110,6 +111,23 @@ function renderIndex(data) {
     worksList.appendChild(item);
     observer.observe(item);
   });
+
+  // 연도 클릭 시 스크롤 위치 저장
+  worksList.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href^="year.html"]');
+    if (link) {
+      sessionStorage.setItem('indexScrollY', window.scrollY);
+    }
+  });
+
+  // 돌아왔을 때 스크롤 복원
+  const savedY = sessionStorage.getItem('indexScrollY');
+  if (savedY !== null) {
+    sessionStorage.removeItem('indexScrollY');
+    requestAnimationFrame(() => {
+      setTimeout(() => window.scrollTo({ top: parseInt(savedY), behavior: 'instant' }), 50);
+    });
+  }
 
   // Contact
   const contactLinks = document.getElementById('contact-links');
