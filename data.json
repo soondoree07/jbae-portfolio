@@ -461,7 +461,7 @@
       "id": "2021",
       "year": 2021,
       "description": "",
-      "thumbnail": "images/2021/버킷리스트.jpg",
+      "thumbnail": "images/2021/시간의 퇴적.jpg",
       "works": [
         {
           "title": "How sweet",
@@ -489,7 +489,16 @@
           "material": "Mixed Media",
           "size": "60×60cm",
           "description": "",
-          "image": "images/2021/고독은.jpg"
+          "image": "images/2021/고독은.jpg",
+          "group": "음악고독"
+        },
+        {
+          "title": "음악처럼",
+          "material": "Mixed Media",
+          "size": "60×60cm",
+          "description": "",
+          "image": "images/2021/음악처럼.jpg",
+          "group": "음악고독"
         },
         {
           "title": "노을 잔상",
@@ -504,13 +513,6 @@
           "size": "60×60cm",
           "description": "",
           "image": "images/2021/시간의 퇴적.jpg"
-        },
-        {
-          "title": "음악처럼",
-          "material": "Mixed Media",
-          "size": "60×60cm",
-          "description": "",
-          "image": "images/2021/음악처럼.jpg"
         },
         {
           "title": "흰여울",
@@ -640,14 +642,16 @@
           "material": "Mixed Media",
           "size": "100×45cm (ea., 4pieces)",
           "description": "",
-          "image": "images/2017/그 겨울, 바람이 불다.jpg"
+          "image": "images/2017/그 겨울, 바람이 불다.jpg",
+          "group": "기억겨울"
         },
         {
           "title": "기억-찬란한 순간",
           "material": "Mixed Media",
           "size": "100×45cm (ea., 4pieces)",
           "description": "",
-          "image": "images/2017/기억-찬란한 순간.jpg"
+          "image": "images/2017/기억-찬란한 순간.jpg",
+          "group": "기억겨울"
         },
         {
           "title": "기억의 물결(말말말)",
@@ -668,14 +672,16 @@
           "material": "Mixed Media",
           "size": "180×100cm",
           "description": "",
-          "image": "images/2017/인생예찬1.jpg"
+          "image": "images/2017/인생예찬1.jpg",
+          "group": "인생예찬"
         },
         {
           "title": "인생예찬2",
           "material": "Mixed Media",
           "size": "180×100cm",
           "description": "",
-          "image": "images/2017/인생예찬2.jpg"
+          "image": "images/2017/인생예찬2.jpg",
+          "group": "인생예찬"
         },
         {
           "title": "참을 수 없는 존재의 가벼움",
@@ -690,7 +696,7 @@
       "id": "2016",
       "year": 2016,
       "description": "",
-      "thumbnail": "images/2016/민화1.jpg",
+      "thumbnail": "images/2016/민화2.jpg",
       "works": [
         {
           "title": "민화1",
@@ -740,7 +746,7 @@
       "id": "2015",
       "year": 2015,
       "description": "",
-      "thumbnail": "images/2015/향기로운산.jpg",
+      "thumbnail": "images/2015/Blooming.jpg",
       "works": [
         {
           "title": "Blooming",
@@ -805,7 +811,7 @@
       "id": "2013",
       "year": 2013,
       "description": "",
-      "thumbnail": "images/2013/따로 또 같이.jpg",
+      "thumbnail": "images/2013/I Have a Dream.jpg",
       "works": [
         {
           "title": "I Have a Dream",
