@@ -838,11 +838,11 @@ footer {
     bottom: 0;
     background: rgba(42, 37, 32, 0.97);
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     gap: 40px;
     z-index: 100;
-    padding-top: 100px;
+    min-height: 100vh;
   }
   .nav-links.open { display: flex; }
   .nav-links a {
