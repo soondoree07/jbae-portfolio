@@ -599,7 +599,7 @@ footer {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  background-color: var(--beige);
+  background-color: #fff;
 }
 
 .masonry-item img {
