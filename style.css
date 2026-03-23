@@ -612,19 +612,31 @@ footer {
   transform: scale(1.05);
 }
 
-.masonry-caption {
-  padding: 16px 0 8px;
+.masonry-item--solo {
+  column-span: all;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.masonry-caption h3 {
-  font-size: 1rem;
-  color: var(--dark);
-  margin-bottom: 4px;
+.masonry-item--solo img {
+  width: 100%;
+  height: auto;
+}
+
+.masonry-item--small {
+  max-width: 240px;
+}
+
+.masonry-caption {
+  padding: 10px 0 6px;
 }
 
 .masonry-caption p {
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   color: var(--gray);
+  letter-spacing: 0.03em;
+  line-height: 1.4;
 }
 
 /* =====================
@@ -642,6 +654,18 @@ footer {
   flex: 1 1 calc(50% - 8px);
   min-width: calc(50% - 8px);
   margin-bottom: 0;
+}
+
+.masonry-group--small {
+  justify-content: center;
+  gap: 24px;
+}
+
+.masonry-group--small .masonry-item {
+  flex: 0 0 auto;
+  min-width: unset;
+  max-width: 260px;
+  width: 260px;
 }
 
 /* =====================

@@ -242,12 +242,13 @@ function renderYear(data, yearId) {
 
   function createMasonryItem(work, flatIdx) {
     const item = document.createElement('div');
-    item.className = 'masonry-item';
+    item.className = work.solo ? 'masonry-item masonry-item--solo'
+                   : work.small ? 'masonry-item masonry-item--small'
+                   : 'masonry-item';
     item.innerHTML = `
       <img src="${work.image}" alt="${work.title}" loading="lazy" />
       <div class="masonry-caption">
-        <h3>${work.title}</h3>
-        <p>${work.material} &middot; ${work.size}</p>
+        <p>${work.title} &nbsp;${work.material} &nbsp;${work.size} &nbsp;${work.year ?? yearData.year}</p>
       </div>
     `;
     item.addEventListener('click', () => openLightbox(flatIdx));
@@ -281,7 +282,8 @@ function renderYear(data, yearId) {
   displayGroups.forEach(dg => {
     if (dg.isGroup && dg.items.length > 1) {
       const groupEl = document.createElement('div');
-      groupEl.className = 'masonry-group';
+      const isSmallGroup = dg.items.some(({ work }) => work.small);
+      groupEl.className = isSmallGroup ? 'masonry-group masonry-group--small' : 'masonry-group';
       dg.items.forEach(({ work, idx }) => groupEl.appendChild(createMasonryItem(work, idx)));
       grid.appendChild(groupEl);
     } else {
