@@ -631,6 +631,23 @@ footer {
   color: var(--gray);
 }
 
+.masonry-item--full {
+  column-span: all;
+}
+
+.masonry-pair {
+  column-span: all;
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+  break-inside: avoid;
+}
+
+.masonry-pair .masonry-item {
+  flex: 1;
+  margin-bottom: 0;
+}
+
 /* =====================
    Lightbox
    ===================== */

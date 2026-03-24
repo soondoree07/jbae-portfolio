@@ -203,7 +203,6 @@ function renderYear(data, yearId) {
         <img src="${yearData.thumbnail}" alt="${yearData.year}년 대표 이미지" />
       </div>
       <div class="year-meta">
-        <div class="year-number">${yearData.year}</div>
         <p class="year-desc">${yearData.description}</p>
       </div>
     `;
@@ -218,19 +217,44 @@ function renderYear(data, yearId) {
   grid.innerHTML = '';
   gallerySection.style.display = 'block';
 
-  yearData.works.forEach((work, idx) => {
-    const item = document.createElement('div');
-    item.className = 'masonry-item';
-    item.innerHTML = `
-      <img src="${work.image}" alt="${work.title}" loading="lazy" />
-      <div class="masonry-caption">
-        <h3>${work.title}</h3>
-        <p>${work.material} &middot; ${work.size}</p>
-      </div>
-    `;
-    item.addEventListener('click', () => openLightbox(idx));
-    grid.appendChild(item);
-  });
+  let i = 0;
+  while (i < yearData.works.length) {
+    const work = yearData.works[i];
+    const next = yearData.works[i + 1];
+    if (work.layout === 'half' && next && next.layout === 'half') {
+      const pair = document.createElement('div');
+      pair.className = 'masonry-pair';
+      [i, i + 1].forEach(pairIdx => {
+        const w = yearData.works[pairIdx];
+        const item = document.createElement('div');
+        item.className = 'masonry-item';
+        item.innerHTML = `
+          <img src="${w.image}" alt="${w.title}" loading="lazy" />
+          <div class="masonry-caption">
+            <h3>${w.title}</h3>
+            <p>${w.material} &middot; ${w.size}</p>
+          </div>
+        `;
+        item.addEventListener('click', () => openLightbox(pairIdx));
+        pair.appendChild(item);
+      });
+      grid.appendChild(pair);
+      i += 2;
+    } else {
+      const item = document.createElement('div');
+      item.className = `masonry-item${work.layout === 'full' ? ' masonry-item--full' : ''}`;
+      item.innerHTML = `
+        <img src="${work.image}" alt="${work.title}" loading="lazy" />
+        <div class="masonry-caption">
+          <h3>${work.title}</h3>
+          <p>${work.material} &middot; ${work.size}</p>
+        </div>
+      `;
+      item.addEventListener('click', () => openLightbox(i));
+      grid.appendChild(item);
+      i++;
+    }
+  }
 }
 
 /* =====================
