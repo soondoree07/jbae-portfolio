@@ -188,6 +188,44 @@ function renderCV(cv) {
 }
 
 /* =====================
+   Size Normalization
+   ===================== */
+
+function parseWorkDims(sizeStr) {
+  if (!sizeStr) return null;
+  const match = sizeStr.replace(/\s/g, '').match(/([\d.]+)[×x]([\d.]+)/);
+  if (!match) return null;
+  return { w: parseFloat(match[1]), h: parseFloat(match[2]) };
+}
+
+function computeSizeNorm(data) {
+  let maxDim = 0, minDim = Infinity;
+  data.years.forEach(year => {
+    (year.works || []).forEach(work => {
+      const list = (work.type === 'group' && work.works) ? work.works : [work];
+      list.forEach(w => {
+        const d = parseWorkDims(w.size);
+        if (d) {
+          const m = Math.max(d.w, d.h);
+          if (m > maxDim) maxDim = m;
+          if (m < minDim) minDim = m;
+        }
+      });
+    });
+  });
+  return { minDim: minDim === Infinity ? 0 : minDim, maxDim };
+}
+
+function calcDisplayWidth(sizeStr, norm) {
+  const d = parseWorkDims(sizeStr);
+  if (!d || norm.maxDim === 0) return 720;
+  const dim = Math.max(d.w, d.h);
+  const t = norm.maxDim === norm.minDim ? 0.5
+            : (dim - norm.minDim) / (norm.maxDim - norm.minDim);
+  return Math.round(360 + t * 660); // 360px ~ 1020px
+}
+
+/* =====================
    Year Page
    ===================== */
 
@@ -240,13 +278,26 @@ function renderYear(data, yearId) {
   });
   currentWorks = flatWorks;
 
-  function createMasonryItem(work, flatIdx) {
+  const norm = computeSizeNorm(data);
+
+  function createMasonryItem(work, flatIdx, options) {
     const item = document.createElement('div');
-    item.className = work.solo ? 'masonry-item masonry-item--solo'
-                   : work.large ? 'masonry-item masonry-item--large'
-                   : work.compact ? 'masonry-item masonry-item--compact'
-                   : work.small ? 'masonry-item masonry-item--small'
-                   : 'masonry-item';
+    item.className = 'masonry-item';
+
+    if (options && options.widthPct !== undefined) {
+      // 그룹 내 비율 배치
+      item.style.flex = `0 0 calc(${options.widthPct}% - 8px)`;
+      item.style.minWidth = '0';
+      item.style.overflow = 'hidden';
+    } else {
+      // 독립 작품: 물리적 크기 기반 비례 너비
+      const w = calcDisplayWidth(work.size, norm);
+      item.style.flex = '0 0 100%';
+      item.style.maxWidth = w + 'px';
+      item.style.marginLeft = 'auto';
+      item.style.marginRight = 'auto';
+    }
+
     item.innerHTML = `
       <img src="${work.image}" alt="${work.title}" loading="lazy" />
       <div class="masonry-caption">
@@ -284,9 +335,20 @@ function renderYear(data, yearId) {
   displayGroups.forEach(dg => {
     if (dg.isGroup && dg.items.length > 1) {
       const groupEl = document.createElement('div');
-      const isSmallGroup = dg.items.some(({ work }) => work.small);
-      groupEl.className = isSmallGroup ? 'masonry-group masonry-group--small' : 'masonry-group';
-      dg.items.forEach(({ work, idx }) => groupEl.appendChild(createMasonryItem(work, idx)));
+      groupEl.className = 'masonry-group';
+
+      // 물리적 가로 크기 비율로 flex-basis 계산
+      const totalW = dg.items.reduce((sum, { work }) => {
+        const d = parseWorkDims(work.size);
+        return sum + (d ? d.w : 50);
+      }, 0);
+
+      dg.items.forEach(({ work, idx }) => {
+        const d = parseWorkDims(work.size);
+        const pct = d ? (d.w / totalW) * 100 : 50;
+        groupEl.appendChild(createMasonryItem(work, idx, { widthPct: pct }));
+      });
+
       grid.appendChild(groupEl);
     } else {
       dg.items.forEach(({ work, idx }) => grid.appendChild(createMasonryItem(work, idx)));
