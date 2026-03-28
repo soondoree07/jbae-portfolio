@@ -601,7 +601,6 @@ footer {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  background-color: #fff;
 }
 
 .masonry-item img {
