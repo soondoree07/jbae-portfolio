@@ -334,15 +334,15 @@ function renderYear(data, yearId) {
       const groupEl = document.createElement('div');
       groupEl.className = 'masonry-group';
 
-      // 물리적 가로 크기 비율로 flex-basis 계산
+      // 물리적 가로(두 번째 숫자) 비율로 flex-basis 계산
       const totalW = dg.items.reduce((sum, { work }) => {
         const d = parseWorkDims(work.size);
-        return sum + (d ? d.w : 50);
+        return sum + (d ? d.h : 50);
       }, 0);
 
       dg.items.forEach(({ work, idx }) => {
         const d = parseWorkDims(work.size);
-        const pct = d ? (d.w / totalW) * 100 : 50;
+        const pct = d ? (d.h / totalW) * 100 : 50;
         groupEl.appendChild(createMasonryItem(work, idx, { widthPct: pct }));
       });
 
