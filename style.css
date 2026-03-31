@@ -597,6 +597,9 @@ footer {
 
 .masonry-item {
   cursor: pointer;
+}
+
+.masonry-item-img {
   overflow: hidden;
 }
 
@@ -611,7 +614,13 @@ footer {
 }
 
 .masonry-caption {
-  display: none;
+  padding: 8px 4px 4px;
+  text-align: center;
+  font-family: var(--font-serif);
+  font-size: 0.82rem;
+  color: var(--gray);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
 }
 
 /* =====================

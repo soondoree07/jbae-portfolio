@@ -281,9 +281,11 @@ function renderYear(data, yearId) {
     const item = document.createElement('div');
     item.className = 'masonry-item';
     item.innerHTML = `
-      <img src="${work.image}" alt="${work.title}" loading="lazy" />
+      <div class="masonry-item-img">
+        <img src="${work.image}" alt="${work.title}" loading="lazy" />
+      </div>
       <div class="masonry-caption">
-        <p>${work.title} &nbsp;${work.material} &nbsp;${work.size}</p>
+        <p>${work.title}</p>
       </div>
     `;
     item.addEventListener('click', () => openLightbox(flatIdx));
