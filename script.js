@@ -319,6 +319,9 @@ function renderYear(data, yearId) {
   displayGroups.forEach(dg => {
     dg.items.forEach(({ work, idx }) => grid.appendChild(createMasonryItem(work, idx)));
   });
+
+  // 첫 작품 바로 열기
+  openLightbox(0);
 }
 
 /* =====================
