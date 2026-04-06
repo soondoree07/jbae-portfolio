@@ -280,7 +280,7 @@ function renderYear(data, yearId) {
         <img src="${work.image}" alt="${work.title}" loading="lazy" />
       </div>
       <div class="masonry-caption">
-        <p>${work.title}</p>
+        <p>${work.title.replace(/\n/g, '<br>')}</p>
       </div>
     `;
     item.addEventListener('click', () => openLightbox(flatIdx));
@@ -349,7 +349,8 @@ function updateLightbox() {
     img.alt = work.title;
   }
 
-  setTextById('lightbox-title', work.title);
+  const lbTitle = document.getElementById('lightbox-title');
+  if (lbTitle) lbTitle.innerHTML = work.title.replace(/\n/g, '<br>');
   setTextById('lightbox-desc', work.description);
   setTextById('lb-counter', `${currentIndex + 1} / ${currentWorks.length}`);
 
