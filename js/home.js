@@ -61,11 +61,9 @@ function renderContact(artist){
   bindCopyLines(box);
 }
 
-function renderColophon(artist, chapters){
-  const works = chapters.reduce((sum, c) => sum + flattenWorks(c).length, 0);
-  pick('.colophon').innerHTML = `
-    <span>© ${new Date().getFullYear()} ${esc(artist.name)}</span>
-    <span>${chapters.length}개 시기 · 작품 ${works}점</span>`;
+function renderColophon(artist){
+  pick('.colophon').innerHTML =
+    `<span>© ${new Date().getFullYear()} ${esc(artist.name)}</span>`;
 }
 
 /* 주소에 #about 같은 자리표가 붙어 있으면 그 자리로 데려간다.
@@ -91,7 +89,7 @@ async function start(){
     renderAbout(artist);
     renderCV(artist.cv, pick('.cv'));
     renderContact(artist);
-    renderColophon(artist, chapters);
+    renderColophon(artist);
     revealOnScroll();
     jumpToHash();
   }catch(err){

@@ -3,7 +3,6 @@
 
 const DONE_TEXT = '복사했어요';
 const FAIL_TEXT = '직접 복사해 주세요';
-const HINT_TEXT = '눌러서 복사';
 const RESET_AFTER = 2200;
 
 async function writeToClipboard(text){
@@ -27,7 +26,7 @@ export function copyLineHTML(value, label){
   return `
     <button class="copy-line" type="button" data-copy="${value}" aria-label="${label} 복사">
       <span class="copy-value">${value}</span>
-      <span class="copy-note" aria-live="polite">${HINT_TEXT}</span>
+      <span class="copy-note" aria-live="polite"></span>
     </button>`;
 }
 
@@ -54,10 +53,11 @@ export function bindCopyLines(root){
 
     clearTimeout(timer);
     note.textContent = ok ? DONE_TEXT : FAIL_TEXT;
+    line.classList.add('is-shown');
     line.classList.toggle('is-done', ok);
     timer = setTimeout(() => {
-      note.textContent = HINT_TEXT;
-      line.classList.remove('is-done');
+      note.textContent = '';
+      line.classList.remove('is-shown', 'is-done');
     }, RESET_AFTER);
   });
 }
