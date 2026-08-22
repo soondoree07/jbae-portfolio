@@ -37,7 +37,10 @@ async function start(){
   pick('.brand-ko').textContent = data.artist.name;
   pick('.brand-en').textContent = data.artist.nameEn;
   pick('.chapter-hero h1').textContent = label;
-  pick('.chapter-hero p').textContent = chapter.description;
+  /* 설명이 없는 시기가 여덟 곳이라, 비어 있으면 자리째 없앤다 */
+  const blurb = pick('.chapter-hero p');
+  if(chapter.description) blurb.textContent = chapter.description;
+  else blurb.remove();
   pick('.chapter-count').textContent = `작품 ${works.length}점`;
 
   const gallery = pick('.gallery');

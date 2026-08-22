@@ -17,22 +17,10 @@ function renderHero(artist, chapters){
   pick('.hero-name').textContent = artist.name;
   pick('.hero-en').textContent = artist.nameEn;
   pick('.hero-tagline').textContent = artist.tagline;
+  /* 히어로에는 작품만 건다. 제목·재료·크기는 붙이지 않는다. */
   pick('.hero-plate').innerHTML = `
-    <img src="${esc(thumbOf(chapter))}" alt="${esc(chapter.year)}년 작품 ${esc(lead.title || '')}"
-         ${chapter.w ? `width="${chapter.w}" height="${chapter.h}"` : ''} fetchpriority="high">
-    <figcaption>
-      <b>${esc(lead.title || '')}</b>
-      <span>${esc([lead.material, lead.size].filter(Boolean).join(' · '))}</span>
-    </figcaption>`;
-}
-
-/* 설명이 없는 시기가 여덟 곳이다. 빈 자리는 그 해 작품 제목으로 채운다. */
-function chapterBlurb(chapter, works){
-  if(chapter.description) return esc(chapter.description);
-  const names = works.slice(0, 3).map(w => `「${w.title.replace(/\n/g, ' ')}」`);
-  if(!names.length) return '';
-  const rest = works.length - names.length;
-  return esc(names.join(' · ') + (rest > 0 ? ` 외 ${rest}점` : ''));
+    <img src="${esc(thumbOf(chapter))}" alt="${esc(lead.title || chapter.year + '년 작품')}"
+         ${chapter.w ? `width="${chapter.w}" height="${chapter.h}"` : ''} fetchpriority="high">`;
 }
 
 function renderChapters(chapters, mount){
@@ -45,7 +33,6 @@ function renderChapters(chapters, mount){
         <div class="chapter-text">
           <a class="chapter-year" href="${href}">${esc(chapterLabel(chapter))}</a>
           <span class="chapter-count">작품 ${count}점</span>
-          <p class="chapter-desc">${chapterBlurb(chapter, works)}</p>
         </div>
         <a class="chapter-plate" href="${href}" tabindex="-1" aria-hidden="true">
           <img src="${esc(thumbOf(chapter))}" alt="" loading="lazy"
@@ -105,7 +92,7 @@ async function start(){
   }catch(err){
     console.error(err);
     pick('.chapters').innerHTML =
-      '<p class="chapter-desc">작품을 불러오지 못했어요. 잠시 후 새로고침해 주세요.</p>';
+      '<p class="load-error">작품을 불러오지 못했어요. 잠시 후 새로고침해 주세요.</p>';
   }
 }
 

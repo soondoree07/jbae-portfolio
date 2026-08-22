@@ -32,11 +32,11 @@
 /* ---------- 히어로 ---------- */
 .hero{
   min-height:92vh;display:flex;flex-direction:column;justify-content:center;
-  gap:var(--s7);padding-block:var(--s10) var(--s7);
+  gap:var(--s7);padding-block:var(--s10) var(--s8);
 }
 .hero-inner{
   flex:1;display:grid;align-items:center;
-  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:var(--s8);
+  grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:var(--s8);
 }
 .hero-name{font-size:clamp(44px,7vw,88px);line-height:1.06;letter-spacing:-.02em;margin-bottom:var(--s5)}
 .hero-en{
@@ -44,26 +44,9 @@
   font-size:13px;letter-spacing:.36em;color:var(--ink-soft);margin-bottom:var(--s4);
 }
 .hero-tagline{font-size:clamp(16px,1.7vw,20px);color:var(--ink-soft);max-width:32ch;line-height:1.85}
-.hero-cue{
-  display:inline-flex;flex-direction:column;align-items:flex-start;gap:var(--s3);
-  font-size:11px;letter-spacing:.24em;color:var(--ink-soft);text-transform:uppercase;
-}
-.hero-cue span{
-  width:1px;height:42px;background:linear-gradient(var(--line),transparent);
-  animation:cue 2.8s var(--ease) infinite;
-}
-@keyframes cue{0%,100%{transform:scaleY(.3);opacity:.5}50%{transform:scaleY(1);opacity:1}}
-.hero-cue span{transform-origin:top}
-
 /* 대표작 — 벽에 걸리듯 살짝 기울여 얹는다 */
-.hero-plate{background:var(--paper);border:1px solid var(--line)}
+.hero-plate{border:1px solid var(--line)}
 .hero-plate img{width:100%;height:auto}
-.hero-plate figcaption{
-  padding:var(--s3) var(--s4);font-size:12.5px;color:var(--ink-soft);
-  display:flex;justify-content:space-between;gap:var(--s4);
-  border-top:1px solid var(--line);
-}
-.hero-plate figcaption b{font-weight:400;color:var(--ink)}
 
 /* ---------- 섹션 ---------- */
 .band{padding-block:var(--s10)}
@@ -72,7 +55,6 @@
 .hero + .band{padding-block-start:var(--s8)}
 .chapter-hero + .band{padding-block-start:var(--s6)}
 .band-head{margin-bottom:var(--s8);max-width:52ch}
-.band-head p{color:var(--ink-soft);margin-top:var(--s4)}
 
 /* ---------- 작품 연보 ---------- */
 .chapters{display:flex;flex-direction:column;gap:var(--s10)}
@@ -94,10 +76,8 @@
 .chapter-year:hover{color:var(--clay-deep);border-bottom-color:var(--clay-deep)}
 .chapter-count{
   font-size:12px;letter-spacing:.18em;color:var(--clay);text-transform:uppercase;
-  display:block;margin-bottom:var(--s5);
+  display:block;
 }
-.chapter-desc{color:var(--ink-soft);max-width:38ch}
-
 .chapter-plate{
   display:block;overflow:hidden;background:var(--paper);
   border:1px solid var(--line);
@@ -120,7 +100,6 @@
   .hero{min-height:0;padding-block:var(--s9) var(--s5)}
   .hero-inner{grid-template-columns:1fr;gap:var(--s6)}
   .hero-tagline{max-width:32ch}
-  .hero-cue{margin-top:var(--s6)}
   .chapter,.chapter:nth-child(even){grid-template-columns:1fr;gap:var(--s5)}
   .chapter:nth-child(even) .chapter-text{order:0}
   .chapters{gap:var(--s8)}
