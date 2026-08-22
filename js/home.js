@@ -25,14 +25,12 @@ function renderHero(artist, chapters){
 
 function renderChapters(chapters, mount){
   mount.innerHTML = chapters.map(chapter => {
-    const works = flattenWorks(chapter);
-    const count = works.length;
     const href = `year.html?year=${encodeURIComponent(chapter.id)}`;
     return `
       <article class="chapter reveal">
         <div class="chapter-text">
           <a class="chapter-year" href="${href}">${esc(chapterLabel(chapter))}</a>
-          <span class="chapter-count">작품 ${count}점</span>
+          ${chapter.description ? `<p class="chapter-desc">${esc(chapter.description)}</p>` : ''}
         </div>
         <a class="chapter-plate" href="${href}" tabindex="-1" aria-hidden="true">
           <img src="${esc(thumbOf(chapter))}" alt="" loading="lazy"

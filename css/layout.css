@@ -74,10 +74,7 @@
   transition:border-color .3s var(--ease), color .3s var(--ease);
 }
 .chapter-year:hover{color:var(--clay-deep);border-bottom-color:var(--clay-deep)}
-.chapter-count{
-  font-size:12px;letter-spacing:.18em;color:var(--clay);text-transform:uppercase;
-  display:block;
-}
+.chapter-desc{color:var(--ink-soft);max-width:38ch}
 .chapter-plate{
   display:block;overflow:hidden;background:var(--paper);
   border:1px solid var(--line);

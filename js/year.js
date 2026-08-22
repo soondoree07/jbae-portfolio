@@ -41,7 +41,6 @@ async function start(){
   const blurb = pick('.chapter-hero p');
   if(chapter.description) blurb.textContent = chapter.description;
   else blurb.remove();
-  pick('.chapter-count').textContent = `작품 ${works.length}점`;
 
   const gallery = pick('.gallery');
   gallery.innerHTML = works.map(pieceHTML).join('');
