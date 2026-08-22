@@ -45,6 +45,22 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
    같은 padding 속기형을 두 군데서 쓰면 한쪽이 다른 쪽을 통째로 지운다. */
 .page{max-width:var(--page);margin:0 auto;padding-inline:var(--s5);position:relative;z-index:2}
 
+/* 손가락으로 누르기에 44px 보다 작은 글자 링크들.
+   보이는 모양은 그대로 두고 눌리는 범위만 넓힌다. 여백을 주면 밑줄이 글자에서 떨어진다. */
+.brand,
+.masthead-nav a,
+.chapter-year,
+.backlink,
+.about-line a{position:relative}
+.brand::after,
+.masthead-nav a::after,
+.chapter-year::after,
+.backlink::after,
+.about-line a::after{
+  content:"";position:absolute;left:0;right:0;top:50%;
+  transform:translateY(-50%);height:44px;
+}
+
 /* 화면에는 안 보이고 스크린리더만 읽는 텍스트 */
 /* 머리띠가 고정이라 앵커로 뛰면 제목이 가려진다. 그만큼 미리 멈춘다. */
 section[id], [id^="cv-"]{scroll-margin-top:84px}
