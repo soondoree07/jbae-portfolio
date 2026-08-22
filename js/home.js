@@ -1,6 +1,7 @@
 /* 첫 화면 — 히어로, 작품 연보, 작가, 약력, 문의 */
 
-import { loadData, visibleChapters, chapterLabel, thumbOf, esc, flattenWorks } from './data.js';
+import { loadData, visibleChapters, chapterLabel, thumbOf, esc, flattenWorks, instagramHandle } from './data.js';
+import { copyLineHTML, bindCopyLines } from './copy.js';
 import { renderCV } from './cv.js';
 import { revealOnScroll, stickyMasthead } from './motion.js';
 
@@ -47,13 +48,17 @@ function renderAbout(artist){
   pick('.about-bio').textContent = artist.bio;
   pick('.about-lines').innerHTML = `
     <div class="about-line"><dt>이메일</dt><dd><a href="mailto:${esc(artist.email)}">${esc(artist.email)}</a></dd></div>
-    <div class="about-line"><dt>인스타그램</dt><dd><a href="${esc(artist.instagram)}" target="_blank" rel="noopener">@artist_jbae</a></dd></div>`;
+    <div class="about-line"><dt>인스타그램</dt><dd><a href="${esc(artist.instagram)}" target="_blank" rel="noopener">${esc(instagramHandle(artist.instagram))}</a></dd></div>`;
 }
 
+/* 메일 프로그램이 없는 사람은 mailto 를 눌러도 아무 일이 안 일어난다.
+   그래서 이 자리는 주소를 그대로 보여주고 눌러서 복사하게 한다. */
 function renderContact(artist){
-  pick('.contact-links').innerHTML = `
-    <a class="btn btn-solid" href="mailto:${esc(artist.email)}">메일 보내기</a>
-    <a class="btn btn-quiet" href="${esc(artist.instagram)}" target="_blank" rel="noopener">인스타그램</a>`;
+  const box = pick('.contact-links');
+  box.innerHTML =
+    copyLineHTML(esc(artist.email), '이메일 주소') +
+    copyLineHTML(esc(instagramHandle(artist.instagram)), '인스타그램 아이디');
+  bindCopyLines(box);
 }
 
 function renderColophon(artist, chapters){

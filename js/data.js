@@ -51,6 +51,12 @@ export function chapterLabel(chapter){
   return String(chapter.id).replace('-', '–');
 }
 
+/** https://www.instagram.com/artist_jbae/ → @artist_jbae */
+export function instagramHandle(url){
+  const name = String(url || '').replace(/\/+$/, '').split('/').pop();
+  return name ? `@${name}` : '';
+}
+
 export function thumbOf(item){
   return item.thumb || item.image || item.thumbnail;
 }
