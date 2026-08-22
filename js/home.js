@@ -43,12 +43,9 @@ function renderChapters(chapters, mount){
     return `
       <article class="chapter reveal">
         <div class="chapter-text">
-          <span class="chapter-year">${esc(chapterLabel(chapter))}</span>
+          <a class="chapter-year" href="${href}">${esc(chapterLabel(chapter))}</a>
           <span class="chapter-count">작품 ${count}점</span>
           <p class="chapter-desc">${chapterBlurb(chapter, works)}</p>
-          <a class="btn btn-quiet" href="${href}">
-            이 시기 보기 <span class="btn-arrow" aria-hidden="true">→</span>
-          </a>
         </div>
         <a class="chapter-plate" href="${href}" tabindex="-1" aria-hidden="true">
           <img src="${esc(thumbOf(chapter))}" alt="" loading="lazy"

@@ -3,14 +3,15 @@
 /* ---------- 머리띠 ---------- */
 .masthead{
   position:fixed;top:0;left:0;right:0;z-index:30;
+  border-bottom:1px solid transparent;
   display:flex;align-items:center;justify-content:space-between;gap:var(--s4);
   padding:var(--s4) var(--s5);
-  transition:background .4s var(--ease), box-shadow .4s var(--ease);
+  transition:background .4s var(--ease), border-color .4s var(--ease);
 }
 .masthead.is-stuck{
-  background:rgba(242,236,225,.92);
+  background:rgba(242,236,225,.94);
   backdrop-filter:blur(10px);
-  box-shadow:var(--shadow-s);
+  border-bottom:1px solid var(--line);
 }
 .brand{display:flex;align-items:baseline;gap:var(--s2);color:var(--ink)}
 .brand:hover{color:var(--ink)}
@@ -19,16 +20,14 @@
 
 .masthead-nav{display:flex;align-items:center;gap:var(--s1)}
 .masthead-nav a{
-  color:var(--ink-soft);font-size:13px;letter-spacing:.08em;
-  padding:var(--s2) var(--s3);border-radius:var(--r-s);
-  transition:color .25s var(--ease), background .25s var(--ease);
+  color:var(--ink-soft);font-size:13px;letter-spacing:.1em;
+  padding:var(--s2) var(--s3);
+  border-bottom:1px solid transparent;
+  transition:color .25s var(--ease), border-color .25s var(--ease);
 }
-.masthead-nav a:hover{color:var(--ink);background:rgba(210,198,179,.4)}
-.masthead-nav .is-cta{
-  color:var(--paper);background:var(--clay);
-  padding:var(--s2) var(--s4);box-shadow:var(--shadow-s);
-}
-.masthead-nav .is-cta:hover{color:var(--paper);background:var(--clay-deep)}
+.masthead-nav a:hover{color:var(--ink);border-bottom-color:var(--ink)}
+.masthead-nav .is-cta{color:var(--clay)}
+.masthead-nav .is-cta:hover{color:var(--clay-deep);border-bottom-color:var(--clay-deep)}
 
 /* ---------- 히어로 ---------- */
 .hero{
@@ -57,22 +56,21 @@
 .hero-cue span{transform-origin:top}
 
 /* 대표작 — 벽에 걸리듯 살짝 기울여 얹는다 */
-.hero-plate{
-  border-radius:var(--r-l);overflow:hidden;background:var(--paper);
-  box-shadow:var(--shadow-l);transform:rotate(-1.1deg);
-  transition:transform 1s var(--ease);
-}
-.hero-plate:hover{transform:rotate(0deg) scale(1.012)}
+.hero-plate{background:var(--paper);border:1px solid var(--line)}
 .hero-plate img{width:100%;height:auto}
 .hero-plate figcaption{
-  padding:var(--s4) var(--s5);font-size:12.5px;color:var(--ink-soft);
+  padding:var(--s3) var(--s4);font-size:12.5px;color:var(--ink-soft);
   display:flex;justify-content:space-between;gap:var(--s4);
+  border-top:1px solid var(--line);
 }
 .hero-plate figcaption b{font-weight:400;color:var(--ink)}
 
 /* ---------- 섹션 ---------- */
 .band{padding-block:var(--s10)}
 .band + .band{padding-block-start:0}
+/* 앞 구획이 이미 아래 여백을 두었으니 이어지는 구획은 덜 띄운다 */
+.hero + .band{padding-block-start:var(--s8)}
+.chapter-hero + .band{padding-block-start:var(--s6)}
 .band-head{margin-bottom:var(--s8);max-width:52ch}
 .band-head p{color:var(--ink-soft);margin-top:var(--s4)}
 
@@ -84,34 +82,34 @@
 }
 .chapter:nth-child(even){grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)}
 .chapter:nth-child(even) .chapter-text{order:2}
-/* 손으로 놓은 듯 줄을 살짝 어긋나게 */
-.chapter:nth-child(3n+1) .chapter-plate{transform:translateY(-14px) rotate(.7deg)}
-.chapter:nth-child(3n+2) .chapter-plate{transform:translateY(10px) rotate(-.8deg)}
-.chapter:nth-child(3n+3) .chapter-plate{transform:translateY(-4px) rotate(.4deg)}
 
 .chapter-year{
   font-family:var(--font-display);font-size:clamp(34px,4.6vw,56px);
-  line-height:1;letter-spacing:-.01em;display:block;margin-bottom:var(--s4);
+  line-height:1;letter-spacing:-.01em;display:inline-block;
+  margin-bottom:var(--s4);color:var(--ink);
   font-variant-numeric:tabular-nums;
+  border-bottom:1px solid var(--line-firm);
+  transition:border-color .3s var(--ease), color .3s var(--ease);
 }
+.chapter-year:hover{color:var(--clay-deep);border-bottom-color:var(--clay-deep)}
 .chapter-count{
   font-size:12px;letter-spacing:.18em;color:var(--clay);text-transform:uppercase;
   display:block;margin-bottom:var(--s5);
 }
-.chapter-desc{color:var(--ink-soft);max-width:38ch;margin-bottom:var(--s6)}
+.chapter-desc{color:var(--ink-soft);max-width:38ch}
 
 .chapter-plate{
-  display:block;border-radius:var(--r-l);overflow:hidden;background:var(--paper);
-  box-shadow:var(--shadow-m);
-  transition:transform .8s var(--ease), box-shadow .8s var(--ease);
+  display:block;overflow:hidden;background:var(--paper);
+  border:1px solid var(--line);
+  transition:border-color .4s var(--ease);
 }
-.chapter-plate img{width:100%;height:auto;transition:transform 1.2s var(--ease)}
-.chapter-plate:hover{box-shadow:var(--shadow-l)}
-.chapter-plate:hover img{transform:scale(1.035)}
+.chapter-plate img{width:100%;height:auto;transition:transform 1.1s var(--ease)}
+.chapter-plate:hover{border-color:var(--line-firm)}
+.chapter-plate:hover img{transform:scale(1.02)}
 
 /* ---------- 바닥글 ---------- */
 .colophon{
-  border-top:1px dashed var(--line);margin-top:var(--s9);
+  border-top:1px solid var(--line);margin-top:var(--s9);
   padding-block:var(--s6) var(--s7);
   display:flex;flex-wrap:wrap;gap:var(--s4);justify-content:space-between;
   font-size:12.5px;color:var(--ink-soft);
@@ -125,10 +123,6 @@
   .hero-cue{margin-top:var(--s6)}
   .chapter,.chapter:nth-child(even){grid-template-columns:1fr;gap:var(--s5)}
   .chapter:nth-child(even) .chapter-text{order:0}
-  .chapter-plate,
-  .chapter:nth-child(3n+1) .chapter-plate,
-  .chapter:nth-child(3n+2) .chapter-plate,
-  .chapter:nth-child(3n+3) .chapter-plate{transform:none}
   .chapters{gap:var(--s8)}
   .band{padding-block:var(--s8)}
 }
