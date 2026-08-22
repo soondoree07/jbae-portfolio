@@ -55,18 +55,17 @@ function renderChapters(chapters, mount){
   }).join('');
 }
 
+/* 전화번호는 공개 페이지에 내지 않는다 (기획서 방침). data.json 에는 남아 있지만 화면에는 쓰지 않는다. */
 function renderAbout(artist){
   pick('.about-bio').textContent = artist.bio;
   pick('.about-lines').innerHTML = `
     <div class="about-line"><dt>이메일</dt><dd><a href="mailto:${esc(artist.email)}">${esc(artist.email)}</a></dd></div>
-    <div class="about-line"><dt>전화</dt><dd><a href="tel:${esc(artist.phone.replace(/-/g,''))}">${esc(artist.phone)}</a></dd></div>
     <div class="about-line"><dt>인스타그램</dt><dd><a href="${esc(artist.instagram)}" target="_blank" rel="noopener">@artist_jbae</a></dd></div>`;
 }
 
 function renderContact(artist){
   pick('.contact-links').innerHTML = `
     <a class="btn btn-solid" href="mailto:${esc(artist.email)}">메일 보내기</a>
-    <a class="btn btn-quiet" href="tel:${esc(artist.phone.replace(/-/g,''))}">${esc(artist.phone)}</a>
     <a class="btn btn-quiet" href="${esc(artist.instagram)}" target="_blank" rel="noopener">인스타그램</a>`;
 }
 
