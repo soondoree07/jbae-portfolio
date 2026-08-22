@@ -1,48 +1,76 @@
 # 진행 상황 (2026-08-22 KST 기준)
 
-배정혜(J.Bae) 화가 포트폴리오. 바닐라 HTML/CSS/JS + `data.json` 기반.
-**UI 전면 개편 진행 중** — 무드 확정, Claude Design 시안 대기.
+배정혜(J.Bae) 화가 포트폴리오. 바닐라 HTML/CSS/JS + `data.json`.
+**UI 전면 개편 1차 완료 — 배포함.**
 
-## 오늘 완료한 것
-- 레포·배포 상태 점검: https://soondoree07.github.io/jbae-portfolio/ 정상 (index·data.json·한글 파일명 이미지 모두 200)
-- **무드 8종을 실제 작품·실제 문구로 렌더해 비교** → 비교 화면 아티팩트 발행
-  https://claude.ai/code/artifact/d522a091-9f47-4907-ba0e-62819d5fa796
-- **무드 3번 "자연 결(textile)" 확정.** 따뜻한 모래빛 + 고운바탕/본고딕 + 부드러운 곡률
-- **UI 구조도 전부 바꿔도 된다**는 방침 확정 (기존 5단 구성에 얽매이지 않음)
-- 확정 무드 기준 Claude Design 프롬프트 완성 → `docs/claude-design-prompts.md`
-- UI/UX Pro Max 스킬로 팔레트·폰트 후보 조회 후, 실제 작품 색을 직접 확인해 팔레트 확정
+- 공개 주소: https://soondoree07.github.io/jbae-portfolio/
+- 로컬 확인: `python3 -m http.server 8899` → http://localhost:8899
+  (`data.json`을 fetch로 읽고 JS 모듈을 써서 파일 더블클릭으로는 안 열린다)
 
-## 개편에 반영할 결정 사항
-- **더미 데이터 연도(2026·2010·2008·2007, 작품 12점)는 그대로 두고 계속 숨김.** 나중에 결정
-- **연도 상세 = 갤러리 기본 + "순서대로 보기" 버튼**(라이트박스 슬라이드) 두 방식 모두 제공
-  (현재는 갤러리·네비·footer를 전부 숨기고 라이트박스만 뜨는 반쪽 상태)
-- 먹선·바느질 기법을 그래픽으로 흉내내는 표현은 제외. 질감은 종이·천 결 수준까지만
-- 다크 모드 만들지 않음 (라이트 단일)
+## 확정된 디자인
 
-## ★ 레이아웃 결정 제약 — 작품 이미지 비율
-세로로 긴 작품이 거의 없다. **가로형 56점 / 정사각 62점 / 세로형 4점.**
-「구름에 기대 꿈을 그리다」는 **8.28 : 1 파노라마**(100×45cm 15점 세트), 5:1·4:1도 여럿.
-→ 핀터레스트식 세로 Masonry는 이 데이터에 맞지 않는다. 가변 폭 가로 흐름이나
-   비율에 따라 칸 수가 달라지는 그리드를 써야 하고, crop은 최소로.
+**무드 "자연 결"** — 무드 8종을 실제 작품으로 렌더해 비교한 뒤 선택.
+비교 화면: https://claude.ai/code/artifact/d522a091-9f47-4907-ba0e-62819d5fa796
 
-## 다음 액션
-1. `docs/claude-design-prompts.md`의 프롬프트를 Claude Design에 붙여넣어 시안 생성 — **사용자 차례**
-2. 받은 시안으로 사이트 새로 구현, 모션까지 살려서
-3. `data.json` 연결 (작가 정보 + 12개 시기 + 작품 122점)
-4. 연도 상세(갤러리 + 순서대로 보기) 구현
-5. 실사용 마감 → commit·push → Pages 확인
+| 항목 | 값 |
+|---|---|
+| 바탕 / 면 | `#E8E0D3` / `#F2ECE1` |
+| 글자 / 보조 | `#3A332A` / `#857B6B` |
+| 선 / 진한 선 | `#D2C6B3` / `#B9A98F` |
+| 강조 | `#9C6B4A` |
+| 글씨 | 고운바탕(제목) + 본고딕(본문, 300 웨이트) |
 
-## 남아 있는 실사용 이슈 (개편과 함께 처리)
+**형태는 각지게.** 사용자 지시로 2차 수정에서 둥근 모서리·그림자·기울임을 전부 걷어냈다.
+경계는 1px 선으로만 잡는다. 버튼 형태를 쓰지 않고 밑줄 달린 글자로 처리한다.
+`css/tokens.css`에 곡률·그림자 변수가 아예 없다 — 되살리지 말 것.
+
+## 구조
+
+```
+index.html   히어로 → 작품 연보(12시기) → 작가 → 약력 → 문의
+year.html    한 시기의 작품 전체. ?year=2023 처럼 붙여 연다
+css/  tokens · base · layout · components
+js/   data · motion · home · year · cv · lightbox
+tools/build_image_meta.py   이미지 크기 측정 + 썸네일 생성
+docs/qr/                    사이트 이동 QR 5종
+```
+
+- 작품 연보에 "이 시기 보기" 버튼은 **없다.** 연도 숫자 자체가 링크다
+- 연도 상세 = 비율 맞춤 격자 + "순서대로 보기"(라이트박스 슬라이드)
+
+## ★ 작품 이미지 비율 — 레이아웃의 전제
+
+세로형이 거의 없다. **가로형 56점 / 정사각 62점 / 세로형 4점.**
+「구름에 기대 꿈을 그리다」는 **8.28 : 1 파노라마**(100×45cm 15점 세트).
+
+→ 핀터레스트식 세로 Masonry를 쓰면 안 된다. 비율에 따라 칸 수를 바꾼다
+   (`js/data.js`의 `spanOf`: 3:1 이상은 한 줄 통째, 1.55 이상은 2칸, 나머지 1칸).
+   좁은 화면에서 파노라마는 높이를 지키고 가로로 민다.
+
+**작품을 추가하면 반드시 `python3 tools/build_image_meta.py` 를 돌린다.**
+이미지 크기를 재서 `data.json`에 `w` `h` `thumb`를 넣고 썸네일을 만든다.
+빼먹으면 격자가 틀어지고 로딩 중 화면이 밀린다.
+
+## 다음에 할 것 (사용자가 지정)
+
+1. **작품 순서 바꾸기** — `data.json`의 각 시기 `works` 배열 순서가 곧 화면 순서다
+2. **작품 크기(칸 배분) 조정** — `js/data.js`의 `spanOf` 기준값을 만지거나
+   개별 작품에 칸 수를 직접 지정하는 필드를 추가하는 방법이 있다
+3. **이메일·전화번호 노출 여부** — 지금은 작가 구획과 문의 구획 두 곳에 다 나온다
+   (`js/home.js`의 `renderAbout` / `renderContact`)
+
+## 남은 숙제
+
 | 항목 | 내용 |
 |---|---|
-| 이미지 무게 | `images/` 69MB, 최대 6.8MB, 1MB 초과 7장. 리사이즈·WebP·srcset 없음 |
-| SEO·공유 | title이 "작가 포트폴리오", description·OG·파비콘·sitemap 전부 없음 |
-| 접근성 | 라이트박스 포커스 트랩 없음 |
-| 문서 | README가 옛 폴더명(`artist_portfolio`) 기준 |
-| 도메인 | github.io 주소 사용 중 |
+| **시기 설명 8곳 비어 있음** | 2025·2022·2021·2018–2020·2017·2016·2014–2015·2012–2013. 지금은 그 해 작품 제목으로 임시로 채운다(`chapterBlurb`). 작가님께 한두 줄씩 받으면 좋다 |
+| 더미 시기 4개 | 2026·2010·2008·2007은 picsum 자리표시자라 화면에 안 나온다. 처리 방침 미정 |
+| 원본 이미지 무게 | `images/` 69MB. 격자는 썸네일(11MB)을 쓰지만 라이트박스는 원본을 쓴다. 최대 6.8MB |
+| 도메인 | github.io 주소 사용 중. 개인 도메인을 붙여도 QR은 그대로 작동한다 |
 
 ## 참고
-- 데이터 구조: `data.json` = `{ artist:{name,nameEn,tagline,bio,email,phone,instagram,cv:{education,soloExhibitions,groupExhibitions,awards,teaching,collections}}, years:[{id,year,description,thumbnail,works:[{title,material,size,description,image}]}] }`
-- 약력 분량: 학력 2 / 개인전 7 / 단체전 70 / 수상 3 / 강의 2 / 소장처 13 — 단체전 70줄은 접기 필요
-- 작품 크기 25cm~240cm, 일부는 "100×45cm (15pieces)"처럼 여러 점 한 세트
-- `artist_portfolio`는 2026-06-27 삭제됨. 원본 .tif 132개는 `~/artist_originals`에 보존
+
+- `data.json` = `{ artist:{name,nameEn,tagline,bio,email,phone,instagram,cv:{...}}, years:[{id,year,description,thumbnail,thumb,w,h,works:[...]}] }`
+- 약력 각 줄은 **두 칸 이상 띄어쓰기**로 연도/이름/장소를 나눈다. 이 구분에 맞춰 표로 그려진다
+- 약력 분량: 학력 2 / 개인전 7 / 단체전 70 / 수상 3 / 강의 2 / 소장처 13. 단체전은 기본으로 접혀 있다
+- `artist_portfolio`는 2026-06-27 삭제. 원본 .tif 132개는 `~/artist_originals`에 보존
