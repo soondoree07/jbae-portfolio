@@ -1,0 +1,33 @@
+/* 무드 "자연 결" — 색·글씨·간격·곡률의 단일 출처.
+   값을 바꾸려면 여기만 고친다. 다른 파일은 이 변수만 참조한다. */
+:root{
+  /* 색 */
+  --sand:      #E8E0D3;  /* 바탕 */
+  --paper:     #F2ECE1;  /* 얹히는 면 */
+  --paper-hi:  #F8F4EC;  /* 밝은 면 */
+  --ink:       #3A332A;  /* 본문 */
+  --ink-soft:  #857B6B;  /* 보조 */
+  --line:      #D2C6B3;  /* 선 */
+  --clay:      #9C6B4A;  /* 강조 */
+  --clay-deep: #7C5236;  /* 강조 눌림 */
+
+  /* 글씨 */
+  --font-display: "Gowun Batang", "Nanum Myeongjo", serif;
+  --font-body:    "Noto Sans KR", system-ui, -apple-system, sans-serif;
+
+  /* 4px 리듬 */
+  --s1:4px;  --s2:8px;   --s3:12px; --s4:16px;  --s5:24px;
+  --s6:32px; --s7:48px;  --s8:64px; --s9:96px;  --s10:140px;
+
+  /* 곡률 — 손으로 다듬은 정도까지만 */
+  --r-s:8px; --r-m:12px; --r-l:18px;
+
+  /* 그림자 — 크고 흐리게, 진하지 않게 */
+  --shadow-s:0 2px 10px rgba(58,51,42,.06);
+  --shadow-m:0 14px 34px -14px rgba(58,51,42,.24);
+  --shadow-l:0 34px 76px -30px rgba(58,51,42,.36);
+
+  --page:1180px;
+  --ease:cubic-bezier(.2,.7,.3,1);
+  --dur:.6s;
+}

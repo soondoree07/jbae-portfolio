@@ -1,0 +1,173 @@
+/* 버튼, 작가 카드, 약력, 작품 격자, 라이트박스, 등장 모션 */
+
+/* ---------- 버튼 ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:var(--s2);
+  padding:var(--s3) var(--s5);border-radius:var(--r-m);
+  font-size:14px;letter-spacing:.02em;
+  transition:transform .3s var(--ease), background .3s var(--ease),
+             color .3s var(--ease), box-shadow .3s var(--ease);
+}
+.btn-solid{background:var(--clay);color:var(--paper);box-shadow:var(--shadow-s)}
+.btn-solid:hover{background:var(--clay-deep);color:var(--paper);transform:translateY(-2px);box-shadow:var(--shadow-m)}
+.btn-quiet{border:1px solid var(--line);color:var(--ink);background:var(--paper)}
+.btn-quiet:hover{border-color:var(--clay);color:var(--clay);transform:translateY(-2px)}
+.btn-arrow{transition:transform .3s var(--ease)}
+.btn:hover .btn-arrow{transform:translateX(4px)}
+
+/* ---------- 작가 ---------- */
+.about{
+  background:var(--paper);border-radius:var(--r-l);
+  padding:var(--s8);box-shadow:var(--shadow-s);
+  display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:var(--s8);
+}
+.about-bio{font-size:17px;line-height:2;max-width:44ch}
+.about-lines{display:flex;flex-direction:column;gap:var(--s4);align-self:start}
+.about-line{display:flex;flex-direction:column;gap:2px}
+.about-line dt{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.about-line dd{margin:0;font-size:15px}
+
+/* ---------- 약력 ---------- */
+.cv{display:flex;flex-direction:column;gap:var(--s2)}
+.cv-block{border-top:1px solid var(--line);padding-top:var(--s4)}
+.cv-head{
+  width:100%;display:flex;align-items:baseline;justify-content:space-between;gap:var(--s4);
+  padding:var(--s2) 0;text-align:left;
+}
+.cv-head h3{font-size:20px}
+.cv-meta{display:flex;align-items:center;gap:var(--s3);color:var(--ink-soft);font-size:12.5px}
+.cv-count{font-variant-numeric:tabular-nums}
+.cv-mark{
+  position:relative;width:22px;height:22px;border:1px solid var(--line);border-radius:50%;
+  transition:border-color .35s var(--ease), color .35s var(--ease);
+}
+.cv-mark::before,.cv-mark::after{
+  content:"";position:absolute;top:50%;left:50%;background:currentColor;
+}
+.cv-mark::before{width:9px;height:1px;transform:translate(-50%,-50%)}
+.cv-mark::after{
+  width:1px;height:9px;transform:translate(-50%,-50%) scaleY(1);
+  transition:transform .35s var(--ease);
+}
+.cv-head:hover .cv-mark{border-color:var(--clay);color:var(--clay)}
+.cv-head[aria-expanded="true"] .cv-mark{border-color:var(--clay);color:var(--clay)}
+.cv-head[aria-expanded="true"] .cv-mark::after{transform:translate(-50%,-50%) scaleY(0)}
+
+.cv-list{
+  display:grid;gap:var(--s1);
+  padding-block:var(--s3) var(--s5);
+  font-size:14.5px;
+}
+.cv-block[data-collapsed="true"] .cv-list,
+.cv-block[data-collapsed="true"] .cv-tags{display:none}
+.cv-row{
+  display:grid;grid-template-columns:88px minmax(0,1fr) minmax(0,.85fr);
+  gap:var(--s4);padding:var(--s2) 0;border-bottom:1px dashed rgba(210,198,179,.55);
+}
+.cv-row:last-child{border-bottom:0}
+.cv-row .yr{color:var(--clay);font-variant-numeric:tabular-nums;font-size:13px}
+.cv-row .place{color:var(--ink-soft);font-size:13.5px}
+.cv-row.is-plain{grid-template-columns:88px minmax(0,1fr)}
+.cv-tags{display:flex;flex-wrap:wrap;gap:var(--s2);padding-block:var(--s3) var(--s5)}
+.cv-tags li{
+  border:1px solid var(--line);border-radius:999px;
+  padding:5px var(--s3);font-size:13px;color:var(--ink-soft);background:var(--paper);
+}
+
+/* ---------- 작품 격자 (연도 상세) ---------- */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+  gap:var(--s6) var(--s5);
+  align-items:start;
+}
+/* min-width:0 이 없으면 안쪽 이미지가 넓을 때 격자 칸이 통째로 부풀어 오른다 */
+.piece{display:flex;flex-direction:column;gap:var(--s3);margin:0;min-width:0}
+.piece[data-span="2"]{grid-column:span 2}
+.piece[data-span="full"]{grid-column:1/-1}
+@media (max-width:560px){
+  /* minmax(0,1fr) 이어야 파노라마가 칸을 밀어내지 않는다 */
+  .gallery{grid-template-columns:minmax(0,1fr)}
+  .piece[data-span="2"]{grid-column:span 1}
+  /* 가로로 아주 긴 작품은 좁은 화면에서 실낱처럼 눌린다. 높이를 지키고 옆으로 밀어 본다. */
+  .piece[data-span="full"] .piece-plate{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .piece[data-span="full"] img{height:190px;width:auto;max-width:none}
+}
+.piece-plate{
+  display:block;width:100%;padding:0;border-radius:var(--r-m);overflow:hidden;
+  background:var(--paper);box-shadow:var(--shadow-s);
+  transition:transform .5s var(--ease), box-shadow .5s var(--ease);
+}
+.piece-plate img{width:100%;height:auto}
+.piece-plate:hover{transform:translateY(-5px);box-shadow:var(--shadow-m)}
+.piece-cap{display:flex;flex-direction:column;gap:2px}
+.piece-title{font-family:var(--font-display);font-size:16px;line-height:1.4}
+.piece-meta{font-size:12.5px;color:var(--ink-soft)}
+
+/* ---------- 연도 상세 머리 ---------- */
+.chapter-hero{padding-block:var(--s9) var(--s6);display:flex;flex-direction:column;gap:var(--s4)}
+.contact-links{display:flex;flex-wrap:wrap;gap:var(--s3)}
+.chapter-hero h1{font-size:clamp(38px,6vw,68px);line-height:1;font-variant-numeric:tabular-nums}
+.chapter-hero p{color:var(--ink-soft);max-width:46ch}
+.chapter-tools{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s3)}
+.backlink{font-size:13px;letter-spacing:.06em;color:var(--ink-soft)}
+.backlink:hover{color:var(--clay)}
+
+/* ---------- 라이트박스 ---------- */
+.viewer{
+  position:fixed;inset:0;z-index:60;display:none;
+  background:rgba(46,40,32,.965);
+  backdrop-filter:blur(3px);
+  padding:var(--s5);
+}
+.viewer[open]{display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:var(--s4)}
+.viewer-bar{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);color:var(--paper)}
+.viewer-count{font-size:12.5px;letter-spacing:.14em;color:rgba(242,236,225,.65);font-variant-numeric:tabular-nums}
+.viewer-close{
+  width:40px;height:40px;border-radius:50%;color:var(--paper);
+  border:1px solid rgba(242,236,225,.28);display:grid;place-items:center;font-size:17px;
+  transition:background .3s var(--ease), transform .3s var(--ease);
+}
+.viewer-close:hover{background:rgba(242,236,225,.14);transform:rotate(90deg)}
+/* grid 로 두면 안쪽 행이 이미지 원래 높이만큼 늘어나서 max-height:100% 가 무력해진다.
+   flex 로 두어야 100% 의 기준이 실제로 남은 높이가 된다. */
+.viewer-stage{display:flex;align-items:center;justify-content:center;min-height:0;overflow:hidden}
+.viewer-stage img{max-width:100%;max-height:100%;object-fit:contain;border-radius:var(--r-s)}
+.viewer-foot{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s5);
+  color:var(--paper);
+}
+.viewer-info{display:flex;flex-direction:column;gap:var(--s1);min-width:0}
+.viewer-title{font-family:var(--font-display);font-size:21px;line-height:1.35}
+.viewer-meta{font-size:13px;color:rgba(242,236,225,.72)}
+.viewer-desc{font-size:13.5px;color:rgba(242,236,225,.82);max-width:52ch;line-height:1.8}
+.viewer-steps{display:flex;gap:var(--s2);flex-shrink:0}
+.viewer-step{
+  width:44px;height:44px;border-radius:50%;color:var(--paper);
+  border:1px solid rgba(242,236,225,.28);display:grid;place-items:center;
+  transition:background .3s var(--ease), transform .3s var(--ease);
+}
+.viewer-step:hover{background:rgba(242,236,225,.14)}
+.viewer-step:active{transform:scale(.94)}
+@media (max-width:640px){
+  .viewer{padding:var(--s4)}
+  .viewer-foot{flex-direction:column;align-items:stretch;gap:var(--s3)}
+  .viewer-steps{justify-content:center}
+  .viewer-desc{display:none}
+}
+body.is-locked{overflow:hidden}
+
+/* ---------- 등장 모션 ---------- */
+.reveal{
+  opacity:0;transform:translateY(26px);
+  transition:opacity .9s var(--ease), transform .9s var(--ease);
+  transition-delay:calc(var(--i,0) * 90ms);
+}
+.reveal.is-in{opacity:1;transform:none}
+
+/* ---------- 좁은 화면 ---------- */
+@media (max-width:900px){
+  .about{grid-template-columns:1fr;gap:var(--s6);padding:var(--s6)}
+  .cv-row{grid-template-columns:72px minmax(0,1fr);gap:var(--s3)}
+  .cv-row .place{grid-column:2;font-size:13px}
+}

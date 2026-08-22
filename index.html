@@ -1,90 +1,103 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>작가 포트폴리오</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600&family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>배정혜 J.Bae | 한국화 작가 포트폴리오</title>
+  <meta name="description" content="한복천에 바느질과 먹선으로 꿈결·물결·바람결을 잇는 한국화 작가 배정혜의 작품 포트폴리오. 2007년부터 오늘까지의 작업을 시기별로 봅니다.">
+  <link rel="canonical" href="https://soondoree07.github.io/jbae-portfolio/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="배정혜 J.Bae">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="배정혜 J.Bae | 한국화 작가 포트폴리오">
+  <meta property="og:description" content="한복천에 바느질과 먹선으로 꿈결·물결·바람결을 잇는 한국화 작가 배정혜의 작품 포트폴리오. 2007년부터 오늘까지의 작업을 시기별로 봅니다.">
+  <meta property="og:image" content="https://soondoree07.github.io/jbae-portfolio/og-image.jpg">
+  <meta property="og:url" content="https://soondoree07.github.io/jbae-portfolio/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#E8E0D3">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
-<body>
+<body id="top">
+  <header class="masthead">
+    <a class="brand" href="index.html">
+      <span class="brand-ko">배정혜</span>
+      <span class="brand-en">J.Bae</span>
+    </a>
+    <nav class="masthead-nav" aria-label="주요 메뉴">
+      <a href="index.html#works">작품</a>
+      <a href="index.html#about">작가</a>
+      <a href="index.html#cv-band">약력</a>
+      <a class="is-cta" href="index.html#contact">문의</a>
+    </nav>
+  </header>
 
-  <!-- Navigation -->
-  <nav id="main-nav">
-    <a href="index.html" class="nav-logo" id="nav-name"></a>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#about">소개</a></li>
-      <li><a href="#cv">약력</a></li>
-      <li><a href="#works">작품</a></li>
-      <li><a href="#contact">연락</a></li>
-    </ul>
-    <button class="nav-hamburger" id="nav-hamburger" aria-label="메뉴 열기" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <!-- Hero -->
-  <section id="hero">
-    <div class="hero-bg" id="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1 id="hero-name"></h1>
-      <p id="hero-tagline"></p>
-    </div>
-    <div class="hero-scroll">scroll</div>
-  </section>
-
-  <!-- About -->
-  <section id="about">
-    <div class="about-inner">
-      <div class="about-text">
-        <span class="section-label">About</span>
-        <h2 class="section-title" id="about-name"></h2>
-        <p class="about-bio" id="about-bio">불러오는 중...</p>
-        <div class="about-contact" id="about-contact"></div>
+  <main>
+    <section class="page hero">
+      <div class="hero-inner">
+        <div>
+          <span class="hero-en"></span>
+          <h1 class="hero-name"></h1>
+          <p class="hero-tagline"></p>
+        </div>
+        <figure class="hero-plate"></figure>
       </div>
-    </div>
-  </section>
+      <p class="hero-cue">내려서 작품 보기<span aria-hidden="true"></span></p>
+    </section>
 
-  <!-- CV -->
-  <section id="cv">
-    <div class="cv-inner">
-      <span class="section-label">CV</span>
-      <h2 class="section-title">약력</h2>
-      <div id="cv-content" class="cv-grid"></div>
-    </div>
-  </section>
-
-  <!-- Works -->
-  <section id="works">
-    <div class="works-inner">
-      <div class="works-header">
-        <span class="section-label">Works</span>
+    <section class="page band" id="works">
+      <div class="band-head">
+        <span class="eyebrow">Works</span>
         <h2 class="section-title">작품 연보</h2>
+        <p>시기를 고르면 그 해 작품을 모두 볼 수 있어요.</p>
       </div>
-      <div id="works-list">
-        <div class="loading">불러오는 중...</div>
+      <div class="chapters"></div>
+    </section>
+
+    <section class="page band" id="about">
+      <div class="band-head">
+        <span class="eyebrow">Artist</span>
+        <h2 class="section-title">작가</h2>
       </div>
-    </div>
-  </section>
+      <div class="about reveal">
+        <p class="about-bio"></p>
+        <dl class="about-lines"></dl>
+      </div>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <div class="contact-inner">
-      <span class="section-label">Contact</span>
-      <h2 class="section-title">연락하기</h2>
-      <p class="contact-desc">작품 구매, 전시 협의, 그 외 문의 사항은 아래로 연락 주세요.</p>
-      <div class="contact-links" id="contact-links"></div>
-    </div>
-  </section>
+    <section class="page band" id="cv-band">
+      <div class="band-head">
+        <span class="eyebrow">Curriculum Vitae</span>
+        <h2 class="section-title">약력</h2>
+        <p>제목을 누르면 펼쳐집니다.</p>
+      </div>
+      <div class="cv"></div>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p id="footer-text"></p>
+    <section class="page band" id="contact">
+      <div class="band-head">
+        <span class="eyebrow">Contact</span>
+        <h2 class="section-title">문의하기</h2>
+        <p>작품 구매, 전시 협의, 그 밖의 문의를 편하게 남겨 주세요.</p>
+      </div>
+      <div class="contact-links reveal"></div>
+    </section>
+  </main>
+
+  <footer class="page">
+    <div class="colophon"></div>
   </footer>
 
-  <script src="script.js"></script>
+  <script type="module" src="js/home.js"></script>
 </body>
 </html>
