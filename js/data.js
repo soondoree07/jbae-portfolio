@@ -61,7 +61,7 @@ export function esc(value){
     ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
 }
 
-/** 제목에 든 줄바꿈은 <br> 로 살린다. */
-export function titleHTML(value){
-  return esc(value).replace(/\n/g, '<br>');
+/** 작품 제목은 한 줄로 쓴다. 데이터에 든 줄바꿈은 빈칸으로 바꾼다. */
+export function titleText(value){
+  return esc(String(value ?? '').replace(/\s*\n\s*/g, ' '));
 }

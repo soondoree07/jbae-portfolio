@@ -1,7 +1,7 @@
 /* 작품 하나를 크게 보는 화면.
    누른 자리에서 자라나듯 열리고, 좌우·키보드·스와이프로 넘긴다. */
 
-import { esc, titleHTML } from './data.js';
+import { esc, titleText } from './data.js';
 import { prefersStillness } from './motion.js';
 
 let works = [];
@@ -66,7 +66,7 @@ function paint(){
   if(!work) return;
   stage.innerHTML = `<img src="${esc(work.image)}" alt="${esc(work.title)}"
     ${work.w ? `width="${work.w}" height="${work.h}"` : ''}>`;
-  elTitle.innerHTML = titleHTML(work.title);
+  elTitle.innerHTML = titleText(work.title);
   elMeta.textContent = [work.material, work.size].filter(Boolean).join(' · ');
   elDesc.textContent = work.description || '';
   elCount.textContent = `${at + 1} / ${works.length}`;

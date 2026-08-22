@@ -1,6 +1,6 @@
 /* 한 시기의 작품 전체 — 비율에 맞춰 놓은 격자 + 순서대로 보기 */
 
-import { loadData, findChapter, flattenWorks, chapterLabel, spanOf, thumbOf, esc, titleHTML } from './data.js';
+import { loadData, findChapter, flattenWorks, chapterLabel, spanOf, thumbOf, esc, titleText } from './data.js';
 import { revealOnScroll, stickyMasthead } from './motion.js';
 import { setupViewer, open as openViewer } from './lightbox.js';
 
@@ -15,7 +15,7 @@ function pieceHTML(work, index){
              ${work.w ? `width="${work.w}" height="${work.h}"` : ''}>
       </button>
       <figcaption class="piece-cap">
-        <span class="piece-title">${titleHTML(work.title)}</span>
+        <span class="piece-title" title="${titleText(work.title)}">${titleText(work.title)}</span>
         <span class="piece-meta">${esc([work.material, work.size].filter(Boolean).join(' · '))}</span>
       </figcaption>
     </figure>`;
