@@ -15,7 +15,7 @@
 /* ---------- 작가 ---------- */
 .about{
   background:var(--paper);border:1px solid var(--line);
-  padding:var(--s8);
+  padding:var(--s6);
   display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:var(--s8);
 }
 .about-bio{font-size:17px;line-height:2;max-width:44ch}
@@ -188,7 +188,7 @@ body.is-locked{overflow:hidden}
 /* ---------- 좁은 화면 ---------- */
 @media (max-width:640px){
   /* 좁은 화면에서는 제목과 연락처를 붙이고, 이메일 아래에 인스타가 오게 세로로 세운다 */
-  #contact .band-head{margin-bottom:var(--s5)}
+  #contact .band-head{margin-bottom:var(--s6)}
   .contact-links{flex-direction:column;align-items:flex-start;gap:var(--s6)}
 }
 
