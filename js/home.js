@@ -33,7 +33,7 @@ function renderChapters(chapters, mount){
           <a class="chapter-year" href="${href}">${esc(chapterLabel(chapter))}</a>
           ${chapter.description
             ? `<p class="chapter-desc">${esc(chapter.description)}</p>`
-            : '<p class="chapter-desc is-empty">비어있음</p>'}
+            : '<p class="chapter-desc is-empty" aria-hidden="true"></p>'}
         </div>
         <a class="chapter-plate" href="${href}" tabindex="-1" aria-hidden="true">
           <img src="${esc(thumbOf(chapter))}" alt="" loading="lazy"

@@ -75,8 +75,9 @@
 }
 .chapter-year:hover{color:var(--clay-deep);border-bottom-color:var(--clay-deep)}
 .chapter-desc{color:var(--ink-soft);max-width:38ch}
-/* 아직 글이 없는 시기 — '비어있음' 한 줄 뒤에 빈 줄 넷을 남겨 자리를 잡아 둔다 */
-.chapter-desc.is-empty{color:var(--line-firm);min-height:calc(5 * 1.75em)}
+/* 아직 글이 없는 시기 — 글자는 넣지 않고 다섯 줄 높이만 남겨 둔다.
+   설명이 채워질 때 아래 시기들이 밀리지 않게 자리를 미리 잡아두는 것이다. */
+.chapter-desc.is-empty{min-height:calc(5 * 1.75em)}
 .chapter-plate{
   display:block;overflow:hidden;background:var(--paper);
   border:1px solid var(--line);
