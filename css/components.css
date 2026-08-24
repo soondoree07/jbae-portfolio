@@ -186,6 +186,12 @@ body.is-locked{overflow:hidden}
 .reveal.is-in{opacity:1;transform:none}
 
 /* ---------- 좁은 화면 ---------- */
+@media (max-width:640px){
+  /* 좁은 화면에서는 제목과 연락처를 붙이고, 이메일 아래에 인스타가 오게 세로로 세운다 */
+  #contact .band-head{margin-bottom:var(--s5)}
+  .contact-links{flex-direction:column;align-items:flex-start;gap:var(--s6)}
+}
+
 @media (max-width:900px){
   .about{grid-template-columns:1fr;gap:var(--s6);padding:var(--s6)}
   .cv-row{grid-template-columns:72px minmax(0,1fr);gap:var(--s3)}
