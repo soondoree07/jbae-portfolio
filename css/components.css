@@ -32,8 +32,6 @@
   padding:var(--s2) 0;min-height:44px;text-align:left;
 }
 .cv-head h3{font-size:20px}
-.cv-meta{display:flex;align-items:center;gap:var(--s3);color:var(--ink-soft);font-size:12.5px}
-.cv-count{font-variant-numeric:tabular-nums}
 .cv-mark{
   position:relative;width:14px;height:14px;color:var(--ink-soft);
   transition:color .35s var(--ease);

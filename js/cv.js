@@ -38,10 +38,7 @@ export function renderCV(cv, mount){
       <section class="cv-block reveal" data-collapsed="${!block.open}">
         <button class="cv-head" type="button" aria-expanded="${block.open}" aria-controls="${id}">
           <h3>${esc(block.title)}</h3>
-          <span class="cv-meta">
-            <span class="cv-count">${items.length}</span>
-            <span class="cv-mark" aria-hidden="true"></span>
-          </span>
+          <span class="cv-mark" aria-hidden="true"></span>
         </button>
         ${block.tags ? `<div id="${id}">${body}</div>` : body}
       </section>`;
