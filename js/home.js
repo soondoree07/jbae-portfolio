@@ -1,8 +1,9 @@
 /* 첫 화면 — 히어로, 작품 연보, 작가, 약력, 문의 */
 
-import { loadData, visibleChapters, chapterLabel, thumbOf, esc, flattenWorks, instagramHandle } from './data.js';
+import { loadData, visibleChapters, chapterLabel, thumbOf, esc, flattenWorks, instagramHandle, isPanorama } from './data.js';
 import { copyLineHTML, bindCopyLines } from './copy.js';
 import { renderCV } from './cv.js';
+import { rememberSpot, restoreSpot } from './return-spot.js';
 import { revealOnScroll, stickyMasthead } from './motion.js';
 
 /* 히어로에 걸 대표작. 태그라인 "꿈결·물결·바람결"과 같은 이름의 작품이라 이 시기를 쓴다. */
@@ -35,7 +36,7 @@ function renderChapters(chapters, mount){
             ? `<p class="chapter-desc">${esc(chapter.description)}</p>`
             : '<p class="chapter-desc is-empty" aria-hidden="true"></p>'}
         </div>
-        <a class="chapter-plate" href="${href}" tabindex="-1" aria-hidden="true">
+        <a class="chapter-plate${isPanorama(chapter) ? ' is-band' : ''}" href="${href}" tabindex="-1" aria-hidden="true">
           <img src="${esc(thumbOf(chapter))}" alt="" loading="lazy"
                ${chapter.w ? `width="${chapter.w}" height="${chapter.h}"` : ''}>
         </a>
@@ -85,13 +86,16 @@ async function start(){
     pick('.brand-en').textContent = artist.nameEn;
 
     renderHero(artist, chapters);
-    renderChapters(chapters, pick('.chapters'));
+    const chapterList = pick('.chapters');
+    renderChapters(chapters, chapterList);
+    rememberSpot(chapterList);
     renderAbout(artist);
     renderCV(artist.cv, pick('.cv'));
     renderContact(artist);
     renderColophon(artist);
     revealOnScroll();
-    jumpToHash();
+    /* 시기에서 돌아온 길이면 떠났던 자리로 간다. 그 밖에는 주소의 자리표를 따른다. */
+    if(!restoreSpot()) jumpToHash();
   }catch(err){
     console.error(err);
     pick('.chapters').innerHTML =

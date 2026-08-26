@@ -34,16 +34,19 @@ export function flattenWorks(chapter){
   return out;
 }
 
+/** 3:1을 넘는 띠 모양 작품. 격자에서도 시기 대표 자리에서도 따로 다뤄야 한다. */
+export function isPanorama(item){
+  return !!(item.w && item.h) && item.w / item.h >= 3;
+}
+
 /**
  * 가로로 긴 작품이 잘리지 않도록 격자에서 차지할 칸 수를 정한다.
  * 이 작가의 작품은 세로형이 거의 없고 3:1을 넘는 파노라마가 있다.
  */
 export function spanOf(work){
   if(!work.w || !work.h) return 1;
-  const ratio = work.w / work.h;
-  if(ratio >= 3) return 'full';
-  if(ratio >= 1.55) return 2;
-  return 1;
+  if(isPanorama(work)) return 'full';
+  return work.w / work.h >= 1.55 ? 2 : 1;
 }
 
 /** '2018-2020' 같은 묶음 시기는 붙임표를 반각에서 전각으로 바꿔 읽기 좋게 한다. */

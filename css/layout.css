@@ -83,6 +83,9 @@
   border:1px solid var(--line);
   transition:border-color .4s var(--ease);
 }
+/* 3:1 넘는 띠 모양 작품은 설명 글보다 한참 낮아 칸 위쪽에 홀로 떠 보인다.
+   크기는 그대로 두고 글 높이의 한가운데로 내린다. 나머지 시기는 위 맞춤 그대로다. */
+.chapter-plate.is-band{align-self:center}
 .chapter-plate img{width:100%;height:auto;transition:transform 1.1s var(--ease)}
 .chapter-plate:hover{border-color:var(--line-firm)}
 .chapter-plate:hover img{transform:scale(1.02)}
