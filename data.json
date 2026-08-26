@@ -507,7 +507,7 @@
       "id": "2022",
       "year": 2022,
       "description": "그림과 글, 사진에서 출발해 기억 속에 남아 있는 장면과 감정을 화면 위에 하나씩 불러낸다. 색을 겹치고, 선을 긋고, 이미지를 반복하며 때로는 천과 종이, 바느질과 같은 손의 노동을 더한다. 서로 다른 재료와 시간이 포개질수록 화면에는 하나의 풍경이 아니라 내가 지나온 시간의 흔적이 남는다.",
-      "thumbnail": "images/2022/바람결.jpg",
+      "thumbnail": "images/2022/Self portrait.jpg",
       "works": [
         {
           "title": "Self portrait",
@@ -576,8 +576,8 @@
         }
       ],
       "w": 1920,
-      "h": 1913,
-      "thumb": "images/thumb/2022/바람결.webp"
+      "h": 1920,
+      "thumb": "images/thumb/2022/Self portrait.webp"
     },
     {
       "id": "2021",
@@ -691,7 +691,7 @@
       "id": "2018-2020",
       "year": "2018–2020",
       "description": "그림과 글, 사진으로 나의 이야기를 먼저 꺼내 놓고, 그 위에 바느질과 뜨개질처럼 시간과 노동이 필요한 행위를 겹겹이 쌓아간다. 서로 다른 재료들은 한 화면 안에서 만나 시각을 넘어 촉각과 감각을 자극하고, 그 과정에서 하나의 이야기는 조금씩 풍성해진다.",
-      "thumbnail": "images/2018/그리움.jpg",
+      "thumbnail": "images/2019/Nine Rooms.jpg",
       "works": [
         {
           "title": "우연히 만나다",
@@ -773,7 +773,7 @@
       ],
       "w": 1920,
       "h": 1920,
-      "thumb": "images/thumb/2018/그리움.webp"
+      "thumb": "images/thumb/2019/Nine Rooms.webp"
     },
     {
       "id": "2017",
@@ -910,8 +910,8 @@
     {
       "id": "2016",
       "year": 2016,
-      "description": "",
-      "thumbnail": "images/2016/민화2.jpg",
+      "description": "전통 민화가 자연의 아름다움에 삶의 소망과 염원을 함께 담아왔듯이, 나 역시 익숙한 이미지 안에 지금의 나의 마음을 겹쳐 놓고 싶었다. 민화의 꽃은 단순히 아름다운 장식이 아니라 행복과 풍요, 화합과 평안에 대한 사람들의 바람을 품어왔다.",
+      "thumbnail": "images/2016/민화4.jpg",
       "works": [
         {
           "title": "민화1",
@@ -976,13 +976,13 @@
       ],
       "w": 1920,
       "h": 1920,
-      "thumb": "images/thumb/2016/민화2.webp"
+      "thumb": "images/thumb/2016/민화4.webp"
     },
     {
       "id": "2014-2015",
       "year": "2014–2015",
-      "description": "",
-      "thumbnail": "images/2015/Blooming.jpg",
+      "description": "나는 낯선 순간에 주목한다. 꽃과 산은 전혀 다른 대상처럼 보이지만, 자세히 들여다보면 자연의 형태는 서로 닮아 있고 끊임없이 연결되어 있다. 꽃잎의 굴곡은 산의 능선이 되고, 꽃의 그림자는 깊은 골짜기가 되며, 색의 번짐은 안개나 계절의 빛처럼 느껴진다. 그래서 화면 속 꽃은 점차 풍경이 되고, 풍경은 다시 하나의 기억이 된다.",
+      "thumbnail": "images/2015/산-그림자.jpg",
       "works": [
         {
           "title": "Blooming",
@@ -1070,8 +1070,8 @@
         }
       ],
       "w": 1920,
-      "h": 956,
-      "thumb": "images/thumb/2015/Blooming.webp"
+      "h": 379,
+      "thumb": "images/thumb/2015/산-그림자.webp"
     },
     {
       "id": "2012-2013",
