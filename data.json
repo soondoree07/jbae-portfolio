@@ -370,7 +370,8 @@
           "solo": true,
           "w": 1920,
           "h": 1322,
-          "thumb": "images/thumb/2023/꿈결물결바람결.webp"
+          "thumb": "images/thumb/2023/꿈결물결바람결.webp",
+          "span": 2
         },
         {
           "title": "꿈결 물결 바람결 2",
@@ -381,7 +382,8 @@
           "solo": true,
           "w": 1920,
           "h": 1322,
-          "thumb": "images/thumb/2023/꿈결물결바람결2.webp"
+          "thumb": "images/thumb/2023/꿈결물결바람결2.webp",
+          "span": 2
         },
         {
           "title": "꿈의 길",
@@ -392,7 +394,8 @@
           "solo": true,
           "w": 1920,
           "h": 854,
-          "thumb": "images/thumb/2023/꿈의 길.webp"
+          "thumb": "images/thumb/2023/꿈의 길.webp",
+          "span": 1
         },
         {
           "title": "봄의 시작",
@@ -403,7 +406,8 @@
           "solo": true,
           "w": 1920,
           "h": 857,
-          "thumb": "images/thumb/2023/봄의 시작.webp"
+          "thumb": "images/thumb/2023/봄의 시작.webp",
+          "span": 1
         },
         {
           "title": "Blossom 2",
@@ -465,7 +469,8 @@
           "image": "images/2023/꿈결물결바람결3.jpg",
           "w": 1920,
           "h": 1347,
-          "thumb": "images/thumb/2023/꿈결물결바람결3.webp"
+          "thumb": "images/thumb/2023/꿈결물결바람결3.webp",
+          "span": 2
         },
         {
           "title": "달빛 담장",
@@ -1202,7 +1207,7 @@
         {
           "title": "꿈꾸는 나비",
           "material": "Mixed Media",
-          "size": "",
+          "size": "90×90cm",
           "description": "",
           "image": "images/2012/꿈꾸는 나비.jpg",
           "year": 2012,
@@ -1221,7 +1226,8 @@
           "solo": true,
           "w": 1920,
           "h": 600,
-          "thumb": "images/thumb/2012/rainbow,black, sunshine.webp"
+          "thumb": "images/thumb/2012/rainbow,black, sunshine.webp",
+          "span": 2
         }
       ],
       "w": 1920,

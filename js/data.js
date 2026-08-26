@@ -42,8 +42,13 @@ export function isPanorama(item){
 /**
  * 가로로 긴 작품이 잘리지 않도록 격자에서 차지할 칸 수를 정한다.
  * 이 작가의 작품은 세로형이 거의 없고 3:1을 넘는 파노라마가 있다.
+ *
+ * 사진 비율만 보면 실제 작품 크기와 어긋나는 곳이 생긴다.
+ * 45×100cm 짜리가 112×162cm 짜리보다 크게 걸리는 식이다.
+ * 그럴 때는 data.json 의 작품에 span 을 적어 손으로 바로잡는다 (1 · 2 · "full").
  */
 export function spanOf(work){
+  if(work.span) return work.span;
   if(!work.w || !work.h) return 1;
   if(isPanorama(work)) return 'full';
   return work.w / work.h >= 1.55 ? 2 : 1;
