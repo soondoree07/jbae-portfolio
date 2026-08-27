@@ -80,6 +80,11 @@
 .piece{display:flex;flex-direction:column;gap:var(--s3);margin:0;min-width:0}
 .piece[data-span="2"]{grid-column:span 2}
 .piece[data-span="full"]{grid-column:1/-1}
+/* 격자는 남는 자리를 알아서 채운다. 여기서부터 새 줄로 끊고 싶을 때 쓴다.
+   칸 수 규칙보다 뒤에 두어야 시작 칸을 덮어쓴다 */
+.piece[data-newrow]{grid-column-start:1}
+.piece[data-newrow][data-span="2"]{grid-column:1/span 2}
+.piece[data-newrow][data-span="full"]{grid-column:1/-1}
 @media (max-width:560px){
   /* minmax(0,1fr) 이어야 파노라마가 칸을 밀어내지 않는다 */
   .gallery{grid-template-columns:minmax(0,1fr)}

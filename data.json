@@ -525,7 +525,8 @@
           "group": "self-series",
           "w": 1920,
           "h": 1920,
-          "thumb": "images/thumb/2022/Self portrait.webp"
+          "thumb": "images/thumb/2022/Self portrait.webp",
+          "span": 2
         },
         {
           "title": "Self Complacence",
@@ -536,7 +537,8 @@
           "group": "self-series",
           "w": 1920,
           "h": 1919,
-          "thumb": "images/thumb/2022/Self Complacence.webp"
+          "thumb": "images/thumb/2022/Self Complacence.webp",
+          "span": 2
         },
         {
           "title": "무릉도원",
@@ -557,18 +559,8 @@
           "group": "pond-series",
           "w": 1920,
           "h": 1911,
-          "thumb": "images/thumb/2022/pond'er.webp"
-        },
-        {
-          "title": "somewhere deep 깊은곳 어딘가",
-          "material": "Mixed Media",
-          "size": "38×38cm",
-          "description": "연못 깊은 곳 어딘가에서 고민하는 자들. 겉보기에 동요치 않는 연못이 이미 안으로부터 들끓고 있는 그 깊이를 표현했습니다.",
-          "image": "images/2022/somewhere deep 깊은곳 어딘가.jpg",
-          "group": "pond-series",
-          "w": 1920,
-          "h": 1920,
-          "thumb": "images/thumb/2022/somewhere deep 깊은곳 어딘가.webp"
+          "thumb": "images/thumb/2022/pond'er.webp",
+          "newRow": true
         },
         {
           "title": "바람결",
@@ -580,6 +572,18 @@
           "w": 1920,
           "h": 1913,
           "thumb": "images/thumb/2022/바람결.webp"
+        },
+        {
+          "title": "somewhere deep 깊은곳 어딘가",
+          "material": "Mixed Media",
+          "size": "38×38cm",
+          "description": "연못 깊은 곳 어딘가에서 고민하는 자들. 겉보기에 동요치 않는 연못이 이미 안으로부터 들끓고 있는 그 깊이를 표현했습니다.",
+          "image": "images/2022/somewhere deep 깊은곳 어딘가.jpg",
+          "group": "pond-series",
+          "w": 1920,
+          "h": 1920,
+          "thumb": "images/thumb/2022/somewhere deep 깊은곳 어딘가.webp",
+          "newRow": true
         }
       ],
       "w": 1920,
@@ -731,7 +735,8 @@
           "year": 2018,
           "w": 1825,
           "h": 1518,
-          "thumb": "images/thumb/2018/Flowers.webp"
+          "thumb": "images/thumb/2018/Flowers.webp",
+          "span": 2
         },
         {
           "title": "Soft",

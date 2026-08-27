@@ -10,8 +10,10 @@ function pieceHTML(work, index){
   /* 같은 크기의 작품이 같은 높이로 걸리도록 칸의 비율을 정해 준다 */
   const ratio = displayRatio(work);
   const shape = ratio ? ` style="--ratio:${ratio.toFixed(4)}"` : '';
+  /* 격자는 빈자리를 알아서 채운다. 줄을 끊어 두고 싶으면 data.json 에 newRow 를 적는다 */
+  const row = work.newRow ? ' data-newrow="1"' : '';
   return `
-    <figure class="piece reveal" data-span="${spanOf(work)}"${shape}>
+    <figure class="piece reveal" data-span="${spanOf(work)}"${shape}${row}>
       <button class="piece-plate" type="button" data-index="${index}"
               aria-label="${esc(work.title)} 크게 보기">
         <img src="${esc(thumbOf(work))}" alt="${esc(work.title)}" loading="lazy"
