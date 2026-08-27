@@ -426,7 +426,8 @@
           "image": "images/2023/Ponder in Pond2.jpg",
           "w": 1920,
           "h": 1320,
-          "thumb": "images/thumb/2023/Ponder in Pond2.webp"
+          "thumb": "images/thumb/2023/Ponder in Pond2.webp",
+          "span": 2
         },
         {
           "title": "Blossom",

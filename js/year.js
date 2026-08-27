@@ -1,14 +1,17 @@
 /* 한 시기의 작품 전체 — 비율에 맞춰 놓은 격자 + 순서대로 보기 */
 
-import { loadData, findChapter, flattenWorks, chapterLabel, spanOf, thumbOf, esc, titleText } from './data.js';
+import { loadData, findChapter, flattenWorks, chapterLabel, spanOf, displayRatio, thumbOf, esc, titleText } from './data.js';
 import { revealOnScroll, stickyMasthead } from './motion.js';
 import { setupViewer, open as openViewer } from './lightbox.js';
 
 const pick = (sel) => document.querySelector(sel);
 
 function pieceHTML(work, index){
+  /* 같은 크기의 작품이 같은 높이로 걸리도록 칸의 비율을 정해 준다 */
+  const ratio = displayRatio(work);
+  const shape = ratio ? ` style="--ratio:${ratio.toFixed(4)}"` : '';
   return `
-    <figure class="piece reveal" data-span="${spanOf(work)}">
+    <figure class="piece reveal" data-span="${spanOf(work)}"${shape}>
       <button class="piece-plate" type="button" data-index="${index}"
               aria-label="${esc(work.title)} 크게 보기">
         <img src="${esc(thumbOf(work))}" alt="${esc(work.title)}" loading="lazy"

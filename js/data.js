@@ -34,9 +34,38 @@ export function flattenWorks(chapter){
   return out;
 }
 
+/**
+ * 실제 작품 크기(cm)에서 화면에 쓸 가로세로 비율을 뽑는다. 표기는 세로×가로 순이다.
+ *
+ * 사진 비율은 촬영마다 1~2% 씩 달라서, 같은 112×162cm 작품이 나란히 걸려도
+ * 높이가 어긋나 보인다. 작품 크기를 기준으로 삼으면 같은 크기는 언제나 같게 걸린다.
+ *
+ * 다만 연작은 예외다. '100×45cm (15pieces)' 는 낱장 크기라
+ * 열다섯 장을 이어 찍은 사진(8.28:1)과 아무 상관이 없다. 그대로 쓰면 작품이 잘려 나간다.
+ */
+const SERIES_MARK = /pieces|ea\./i;
+
+export function artRatio(work){
+  const size = work && work.size;
+  if(!size || SERIES_MARK.test(size)) return null;
+  const nums = String(size).match(/[\d.]+/g);
+  if(!nums || nums.length < 2) return null;
+  const height = parseFloat(nums[0]), width = parseFloat(nums[1]);
+  return height > 0 && width > 0 ? width / height : null;
+}
+
+/** 화면에 걸 비율. 작품 크기를 우선하고, 없으면 사진 비율로 물러선다. */
+export function displayRatio(item){
+  if(!item) return null;
+  const byArt = artRatio(item);
+  if(byArt) return byArt;
+  return item.w && item.h ? item.w / item.h : null;
+}
+
 /** 3:1을 넘는 띠 모양 작품. 격자에서도 시기 대표 자리에서도 따로 다뤄야 한다. */
 export function isPanorama(item){
-  return !!(item.w && item.h) && item.w / item.h >= 3;
+  const ratio = displayRatio(item);
+  return !!ratio && ratio >= 3;
 }
 
 /**
@@ -49,9 +78,10 @@ export function isPanorama(item){
  */
 export function spanOf(work){
   if(work.span) return work.span;
-  if(!work.w || !work.h) return 1;
-  if(isPanorama(work)) return 'full';
-  return work.w / work.h >= 1.55 ? 2 : 1;
+  const ratio = displayRatio(work);
+  if(!ratio) return 1;
+  if(ratio >= 3) return 'full';
+  return ratio >= 1.55 ? 2 : 1;
 }
 
 /** '2018-2020' 같은 묶음 시기는 붙임표를 반각에서 전각으로 바꿔 읽기 좋게 한다. */

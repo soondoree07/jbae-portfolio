@@ -85,15 +85,20 @@
   .gallery{grid-template-columns:minmax(0,1fr)}
   .piece[data-span="2"]{grid-column:span 1}
   /* 가로로 아주 긴 작품은 좁은 화면에서 실낱처럼 눌린다. 높이를 지키고 옆으로 밀어 본다. */
-  .piece[data-span="full"] .piece-plate{overflow-x:auto;-webkit-overflow-scrolling:touch}
-  .piece[data-span="full"] img{height:190px;width:auto;max-width:none}
+  .piece[data-span="full"] .piece-plate{overflow-x:auto;-webkit-overflow-scrolling:touch;aspect-ratio:auto}
+  .piece[data-span="full"] img{height:190px;width:auto;max-width:none;object-fit:fill}
 }
 .piece-plate{
   display:block;width:100%;padding:0;overflow:hidden;
   background:var(--paper);border:1px solid var(--line);
   transition:border-color .35s var(--ease);
+  /* 실제 작품 크기에서 뽑은 비율. 같은 112×162cm 는 어디서든 같은 높이로 걸린다 */
+  aspect-ratio:var(--ratio, auto);
 }
+/* 비율을 정해 준 칸에서는 이미지가 칸을 채운다. 사진과 작품 비율의 차이는 2% 안쪽이라
+   가장자리 몇 px 만 잠긴다. 비율이 없으면 예전처럼 사진 높이를 그대로 쓴다. */
 .piece-plate img{width:100%;height:auto;transition:transform .9s var(--ease)}
+.piece[style*="--ratio"] .piece-plate img{height:100%;object-fit:cover}
 .piece-plate:hover{border-color:var(--line-firm)}
 .piece-plate:hover img{transform:scale(1.02)}
 .piece-cap{display:flex;flex-direction:column;gap:2px}
