@@ -386,28 +386,15 @@
           "span": 2
         },
         {
-          "title": "꿈의 길",
+          "title": "꿈결 물결 바람결 3",
           "material": "Mixed Media",
-          "size": "45×100cm",
-          "description": "새로운 동(動)을 모색하는 작가의 여정. 또 다른 정중동의 시도로서 꿈의 길을 걷는 이야기입니다.",
-          "image": "images/2023/꿈의 길.jpg",
-          "solo": true,
+          "size": "112×162cm",
+          "description": "꿈결 물결 바람결 연작 세 번째. 전부를 압도하는 풍경은 늠름한 무게를 유지하면서도, 그 안은 이미 역동하고 있습니다.",
+          "image": "images/2023/꿈결물결바람결3.jpg",
           "w": 1920,
-          "h": 854,
-          "thumb": "images/thumb/2023/꿈의 길.webp",
-          "span": 1
-        },
-        {
-          "title": "봄의 시작",
-          "material": "Mixed Media",
-          "size": "45×100cm",
-          "description": "긴 정(靜)을 깨고 시작되는 봄. 고요를 깨우는 첫 몸직을 담았습니다.",
-          "image": "images/2023/봄의 시작.jpg",
-          "solo": true,
-          "w": 1920,
-          "h": 857,
-          "thumb": "images/thumb/2023/봄의 시작.webp",
-          "span": 1
+          "h": 1347,
+          "thumb": "images/thumb/2023/꿈결물결바람결3.webp",
+          "span": 2
         },
         {
           "title": "Blossom 2",
@@ -462,27 +449,6 @@
           "thumb": "images/thumb/2023/그 여름날.webp"
         },
         {
-          "title": "꿈결 물결 바람결 3",
-          "material": "Mixed Media",
-          "size": "112×162cm",
-          "description": "꿈결 물결 바람결 연작 세 번째. 전부를 압도하는 풍경은 늠름한 무게를 유지하면서도, 그 안은 이미 역동하고 있습니다.",
-          "image": "images/2023/꿈결물결바람결3.jpg",
-          "w": 1920,
-          "h": 1347,
-          "thumb": "images/thumb/2023/꿈결물결바람결3.webp",
-          "span": 2
-        },
-        {
-          "title": "달빛 담장",
-          "material": "Mixed Media",
-          "size": "80.3×116.7cm",
-          "description": "고요한 담장 위로 스며드는 달빛. 정(靜)의 공간에 동(動)의 빛이 물드는 순간, 날카롭게 정제된 현대적 표현과 고즈넉한 민화의 형식이 공존합니다.",
-          "image": "images/2023/달빛 담장.jpg",
-          "w": 1920,
-          "h": 1311,
-          "thumb": "images/thumb/2023/달빛 담장.webp"
-        },
-        {
           "title": "꿈결",
           "material": "Mixed Media",
           "size": "41×53cm",
@@ -502,6 +468,40 @@
           "w": 1920,
           "h": 1388,
           "thumb": "images/thumb/2023/홍조.webp"
+        },
+        {
+          "title": "달빛 담장",
+          "material": "Mixed Media",
+          "size": "80.3×116.7cm",
+          "description": "고요한 담장 위로 스며드는 달빛. 정(靜)의 공간에 동(動)의 빛이 물드는 순간, 날카롭게 정제된 현대적 표현과 고즈넉한 민화의 형식이 공존합니다.",
+          "image": "images/2023/달빛 담장.jpg",
+          "w": 1920,
+          "h": 1311,
+          "thumb": "images/thumb/2023/달빛 담장.webp"
+        },
+        {
+          "title": "꿈의 길",
+          "material": "Mixed Media",
+          "size": "45×100cm",
+          "description": "새로운 동(動)을 모색하는 작가의 여정. 또 다른 정중동의 시도로서 꿈의 길을 걷는 이야기입니다.",
+          "image": "images/2023/꿈의 길.jpg",
+          "solo": true,
+          "w": 1920,
+          "h": 854,
+          "thumb": "images/thumb/2023/꿈의 길.webp",
+          "span": 1
+        },
+        {
+          "title": "봄의 시작",
+          "material": "Mixed Media",
+          "size": "45×100cm",
+          "description": "긴 정(靜)을 깨고 시작되는 봄. 고요를 깨우는 첫 몸직을 담았습니다.",
+          "image": "images/2023/봄의 시작.jpg",
+          "solo": true,
+          "w": 1920,
+          "h": 857,
+          "thumb": "images/thumb/2023/봄의 시작.webp",
+          "span": 1
         }
       ],
       "w": 1920,
