@@ -736,7 +736,8 @@
           "w": 1825,
           "h": 1518,
           "thumb": "images/thumb/2018/Flowers.webp",
-          "span": 2
+          "span": 2,
+          "newRow": true
         },
         {
           "title": "Soft",
@@ -747,7 +748,8 @@
           "year": 2018,
           "w": 1920,
           "h": 1920,
-          "thumb": "images/thumb/2018/Soft.webp"
+          "thumb": "images/thumb/2018/Soft.webp",
+          "newRow": true
         },
         {
           "title": "그리움",
