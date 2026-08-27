@@ -471,16 +471,6 @@
           "thumb": "images/thumb/2023/홍조.webp"
         },
         {
-          "title": "달빛 담장",
-          "material": "Mixed Media",
-          "size": "80.3×116.7cm",
-          "description": "고요한 담장 위로 스며드는 달빛. 정(靜)의 공간에 동(動)의 빛이 물드는 순간, 날카롭게 정제된 현대적 표현과 고즈넉한 민화의 형식이 공존합니다.",
-          "image": "images/2023/달빛 담장.jpg",
-          "w": 1920,
-          "h": 1311,
-          "thumb": "images/thumb/2023/달빛 담장.webp"
-        },
-        {
           "title": "꿈의 길",
           "material": "Mixed Media",
           "size": "45×100cm",
@@ -490,6 +480,17 @@
           "w": 1920,
           "h": 854,
           "thumb": "images/thumb/2023/꿈의 길.webp",
+          "span": 2
+        },
+        {
+          "title": "달빛 담장",
+          "material": "Mixed Media",
+          "size": "80.3×116.7cm",
+          "description": "고요한 담장 위로 스며드는 달빛. 정(靜)의 공간에 동(動)의 빛이 물드는 순간, 날카롭게 정제된 현대적 표현과 고즈넉한 민화의 형식이 공존합니다.",
+          "image": "images/2023/달빛 담장.jpg",
+          "w": 1920,
+          "h": 1311,
+          "thumb": "images/thumb/2023/달빛 담장.webp",
           "span": 2
         },
         {
