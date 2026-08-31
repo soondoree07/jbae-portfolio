@@ -89,9 +89,9 @@
   /* minmax(0,1fr) 이어야 파노라마가 칸을 밀어내지 않는다 */
   .gallery{grid-template-columns:minmax(0,1fr)}
   .piece[data-span="2"]{grid-column:span 1}
-  /* 가로로 아주 긴 작품은 좁은 화면에서 실낱처럼 눌린다. 높이를 지키고 옆으로 밀어 본다. */
-  .piece[data-span="full"] .piece-plate{overflow-x:auto;-webkit-overflow-scrolling:touch;aspect-ratio:auto}
-  .piece[data-span="full"] img{height:190px;width:auto;max-width:none;object-fit:fill}
+  /* 가로로 아주 긴 작품도 화면 안에 다 담는다. 옆으로 미는 방식은 2026-08-31 에 버렸다 —
+     한 화면에 통째로 보이는 쪽을 택했다. 대신 눌러서 크게 볼 수 있다 */
+  .piece[data-span="full"]{grid-column:1/-1}
 }
 .piece-plate{
   display:block;width:100%;padding:0;overflow:hidden;
