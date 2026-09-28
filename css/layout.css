@@ -105,6 +105,8 @@
   .hero-tagline{max-width:32ch}
   .chapter,.chapter:nth-child(even){grid-template-columns:1fr;gap:var(--s5)}
   .chapter:nth-child(even) .chapter-text{order:0}
+  /* 한 줄로 쌓이면 비워 둔 자리가 연도와 작품 사이 빈틈으로만 보인다 */
+  .chapter-desc.is-empty{display:none}
   .chapters{gap:var(--s8)}
   .band{padding-block:var(--s8)}
 }
