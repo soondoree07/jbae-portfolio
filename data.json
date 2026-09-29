@@ -205,7 +205,8 @@
           "solo": true,
           "w": 1920,
           "h": 1340,
-          "thumb": "images/thumb/2024/Ponder in Pond3.webp"
+          "thumb": "images/thumb/2024/Ponder in Pond3.webp",
+          "span": 2
         },
         {
           "title": "깊은 곳 어딘가",
@@ -1079,7 +1080,8 @@
           "solo": true,
           "w": 1920,
           "h": 478,
-          "thumb": "images/thumb/2014/여운1.webp"
+          "thumb": "images/thumb/2014/여운1.webp",
+          "span": 2
         },
         {
           "title": "여운2",
@@ -1091,7 +1093,8 @@
           "solo": true,
           "w": 1920,
           "h": 481,
-          "thumb": "images/thumb/2014/여운2.webp"
+          "thumb": "images/thumb/2014/여운2.webp",
+          "span": 2
         }
       ],
       "w": 1920,
@@ -1104,6 +1107,32 @@
       "description": "",
       "thumbnail": "images/2013/I Have a Dream.jpg",
       "works": [
+        {
+          "title": "따로 또 같이",
+          "material": "Mixed Media",
+          "size": "100×100cm",
+          "description": "",
+          "image": "images/2013/따로 또 같이.jpg",
+          "year": 2013,
+          "solo": true,
+          "w": 1920,
+          "h": 1917,
+          "thumb": "images/thumb/2013/따로 또 같이.webp",
+          "span": 2
+        },
+        {
+          "title": "따로 또 같이2",
+          "material": "Mixed Media",
+          "size": "110×110cm",
+          "description": "",
+          "image": "images/2013/따로 또 같이2.jpg",
+          "year": 2013,
+          "solo": true,
+          "w": 1920,
+          "h": 1920,
+          "thumb": "images/thumb/2013/따로 또 같이2.webp",
+          "span": 2
+        },
         {
           "title": "I Have a Dream",
           "material": "Mixed Media",
@@ -1141,18 +1170,6 @@
           "thumb": "images/thumb/2013/나비의꿈2.webp"
         },
         {
-          "title": "따로 또 같이",
-          "material": "Mixed Media",
-          "size": "100×100cm",
-          "description": "",
-          "image": "images/2013/따로 또 같이.jpg",
-          "year": 2013,
-          "solo": true,
-          "w": 1920,
-          "h": 1917,
-          "thumb": "images/thumb/2013/따로 또 같이.webp"
-        },
-        {
           "title": "I Have a Dream2",
           "material": "Mixed Media",
           "size": "90×90cm",
@@ -1163,18 +1180,6 @@
           "w": 1903,
           "h": 1920,
           "thumb": "images/thumb/2013/I Have a Dream2.webp"
-        },
-        {
-          "title": "따로 또 같이2",
-          "material": "Mixed Media",
-          "size": "110×110cm",
-          "description": "",
-          "image": "images/2013/따로 또 같이2.jpg",
-          "year": 2013,
-          "solo": true,
-          "w": 1920,
-          "h": 1920,
-          "thumb": "images/thumb/2013/따로 또 같이2.webp"
         },
         {
           "title": "마음 깊은 곳",
@@ -1280,7 +1285,8 @@
           "image": "images/2011/구름에 기대 꿈을 그리다1.jpg",
           "w": 1399,
           "h": 949,
-          "thumb": "images/thumb/2011/구름에 기대 꿈을 그리다1.webp"
+          "thumb": "images/thumb/2011/구름에 기대 꿈을 그리다1.webp",
+          "span": 2
         },
         {
           "title": "구름에 기대 꿈을 그리다2",
@@ -1365,7 +1371,8 @@
           "group": "나비날다",
           "w": 1562,
           "h": 1326,
-          "thumb": "images/thumb/2011/나비 날다 시리즈(1).webp"
+          "thumb": "images/thumb/2011/나비 날다 시리즈(1).webp",
+          "span": 2
         },
         {
           "title": "나비 날다 시리즈(2)",
@@ -1376,7 +1383,8 @@
           "group": "나비날다",
           "w": 1550,
           "h": 1323,
-          "thumb": "images/thumb/2011/나비 날다 시리즈(2).webp"
+          "thumb": "images/thumb/2011/나비 날다 시리즈(2).webp",
+          "span": 2
         },
         {
           "title": "벨벳구름",
@@ -1437,7 +1445,8 @@
           "image": "images/2011/창문너머로.jpg",
           "w": 1329,
           "h": 1327,
-          "thumb": "images/thumb/2011/창문너머로.webp"
+          "thumb": "images/thumb/2011/창문너머로.webp",
+          "span": 2
         },
         {
           "title": "피어난 꿈",
@@ -1467,7 +1476,8 @@
           "image": "images/2011/Stinkbug.Butterfly.jpg",
           "w": 1920,
           "h": 603,
-          "thumb": "images/thumb/2011/Stinkbug.Butterfly.webp"
+          "thumb": "images/thumb/2011/Stinkbug.Butterfly.webp",
+          "span": 2
         }
       ],
       "w": 1328,
@@ -1672,7 +1682,8 @@
           "solo": true,
           "w": 1856,
           "h": 334,
-          "thumb": "images/thumb/2009/구름시리즈.webp"
+          "thumb": "images/thumb/2009/구름시리즈.webp",
+          "span": 2
         }
       ],
       "w": 1723,
