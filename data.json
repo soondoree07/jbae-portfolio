@@ -579,7 +579,10 @@
           "group": "pond-series",
           "w": 1920,
           "h": 1312,
-          "thumb": "images/thumb/2022/Ponder in Pond.webp"
+          "thumb": "images/thumb/2022/Ponder in Pond.webp",
+          "size": "112×162cm",
+          "material": "Mixed Media",
+          "span": 2
         },
         {
           "title": "somewhere deep 깊은곳 어딘가",
@@ -948,7 +951,7 @@
         {
           "title": "민화2",
           "material": "Mixed Media",
-          "size": "",
+          "size": "30×30cm",
           "description": "",
           "image": "images/2016/민화2.jpg",
           "w": 1920,
@@ -958,7 +961,7 @@
         {
           "title": "민화3",
           "material": "Mixed Media",
-          "size": "",
+          "size": "30×30cm",
           "description": "",
           "image": "images/2016/민화3.jpg",
           "w": 1920,
@@ -968,7 +971,7 @@
         {
           "title": "민화4",
           "material": "Mixed Media",
-          "size": "",
+          "size": "30×30cm",
           "description": "",
           "image": "images/2016/민화4.jpg",
           "w": 1920,
@@ -978,7 +981,7 @@
         {
           "title": "민화5",
           "material": "Mixed Media",
-          "size": "",
+          "size": "30×30cm",
           "description": "",
           "image": "images/2016/민화5.jpg",
           "w": 1920,
@@ -988,7 +991,7 @@
         {
           "title": "민화6",
           "material": "Mixed Media",
-          "size": "",
+          "size": "30×30cm",
           "description": "",
           "image": "images/2016/민화6.jpg",
           "w": 1920,
@@ -1069,7 +1072,7 @@
         {
           "title": "여운1",
           "material": "Mixed Media",
-          "size": "",
+          "size": "30×120cm",
           "description": "",
           "image": "images/2014/여운1.jpg",
           "year": 2014,
@@ -1081,7 +1084,7 @@
         {
           "title": "여운2",
           "material": "Mixed Media",
-          "size": "",
+          "size": "30×120cm",
           "description": "",
           "image": "images/2014/여운2.jpg",
           "year": 2014,
@@ -1236,7 +1239,7 @@
         {
           "title": "Rainbow,Black, Sunshine",
           "material": "Mixed Media",
-          "size": "",
+          "size": "ea.30×30cm",
           "description": "",
           "image": "images/2012/rainbow,black, sunshine.jpg",
           "year": 2012,
@@ -1281,8 +1284,8 @@
         },
         {
           "title": "구름에 기대 꿈을 그리다2",
-          "material": "",
-          "size": "",
+          "material": "Mixed Media",
+          "size": "ea.100×45cm",
           "solo": true,
           "description": "구름에 기대 꿈을 그리다 연작 두 번째.",
           "image": "images/2011/구름에 기대 꿈을 그리다2.jpg",
@@ -1292,8 +1295,8 @@
         },
         {
           "title": "구름에 기대 꿈을 그리다3",
-          "material": "",
-          "size": "",
+          "material": "Mixed Media",
+          "size": "ea.100×45cm",
           "solo": true,
           "description": "구름에 기대 꿈을 그리다 연작 세 번째.",
           "image": "images/2011/구름에 기대 꿈을 그리다3.jpg",
@@ -1303,8 +1306,8 @@
         },
         {
           "title": "구름에 기대 꿈을 그리다4",
-          "material": "",
-          "size": "",
+          "material": "Mixed Media",
+          "size": "ea.100×45cm",
           "solo": true,
           "description": "구름에 기대 꿈을 그리다 연작 네 번째.",
           "image": "images/2011/구름에 기대 꿈을 그리다4.jpg",
@@ -1356,7 +1359,7 @@
         {
           "title": "나비 날다 시리즈(1)",
           "material": "Mixed Media",
-          "size": "100×180cm (ea.)",
+          "size": "ea.180×100cm",
           "description": "나비가 되어 자유롭게 날다. 끊임없이 갈구하는 꿈을 향해 힘차게 날아오르는 순간을 대형 화면에 담았습니다.",
           "image": "images/2011/나비 날다 시리즈(1).jpg",
           "group": "나비날다",
@@ -1367,7 +1370,7 @@
         {
           "title": "나비 날다 시리즈(2)",
           "material": "Mixed Media",
-          "size": "",
+          "size": "ea.180×100cm",
           "description": "나비 날다 연작 두 번째. 꿈을 향해 날아가는 나비의 여정을 이어갑니다.",
           "image": "images/2011/나비 날다 시리즈(2).jpg",
           "group": "나비날다",
@@ -1449,7 +1452,7 @@
         {
           "title": "Stinkbug.Butterfly",
           "material": "Mixed Media",
-          "size": "",
+          "size": "ea.30×30cm",
           "description": "노린재와 나비. 추함과 아름다움, 욕망과 꿈이 공존하는 내면의 두 얼굴을 담았습니다.",
           "image": "images/2011/Stinkbug.Butterfly.jpg",
           "w": 1920,
