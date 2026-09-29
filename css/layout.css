@@ -55,6 +55,9 @@
 .hero + .band{padding-block-start:var(--s8)}
 .chapter-hero + .band{padding-block-start:var(--s6)}
 .band-head{margin-bottom:var(--s6);max-width:52ch}
+/* 연도·작품을 누르면 시기 상세로 간다는 걸 방문자들이 몰라서 한 줄만 둔다 (2026-09-29).
+   다른 구획에는 부제를 두지 않는다 */
+.band-note{margin-top:var(--s3);color:var(--ink-soft);font-size:15px}
 
 /* ---------- 작품 연보 ---------- */
 .chapters{display:flex;flex-direction:column;gap:var(--s10)}
