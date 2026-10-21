@@ -27,9 +27,8 @@ function picture(src, alt, label){
   return `<div class="cat-ph-image"><span>${label}</span></div>`;
 }
 
-/* 바깥 .cat-page 는 라이브러리가 display 를 직접 바꾸므로, 쪽 안 배치는 안쪽 .cat-sheet 가 맡는다 */
 function page(kind, inner, label){
-  return {kind, label, html:`<div class="cat-page cat-page--${kind}"><div class="cat-sheet">${inner}</div></div>`};
+  return {kind, label, inner};
 }
 
 function coverPage(cover){
@@ -97,8 +96,29 @@ export function buildPages(catalog){
   return pages;
 }
 
-/** 안쪽 쪽 아래에 쪽 번호를 단다. 표지와 뒤표지에는 달지 않는다. */
-export function withFolio(pageInfo, index, total){
-  if(index === 0 || index === total - 1 || pageInfo.kind === 'blank') return pageInfo.html;
-  return pageInfo.html.replace(/<\/div>$/, `<span class="cat-folio">${index + 1}</span></div>`);
+/** 표지·뒤표지는 두꺼운 종이라 뒷면이 비치지 않는다. 빈 쪽은 번호도 달지 않는다. */
+const isThick = info => info.kind === 'cover' || info.kind === 'back';
+
+/**
+ * 같은 종이의 뒷면. 표지(0)가 오른쪽에 홀로 서므로 종이 한 장은 (0,1) (2,3) (4,5) … 로 짝을 이룬다.
+ */
+function backSideOf(pages, index){
+  const partner = pages[index ^ 1];
+  if(!partner || isThick(pages[index]) || isThick(partner)) return null;
+  return partner;
+}
+
+/**
+ * 쪽 하나의 HTML.
+ * 바깥 .cat-page 는 라이브러리가 display 를 직접 바꾸므로, 쪽 안 배치는 안쪽 .cat-sheet 가 맡는다.
+ * 얇은 도록 종이처럼 뒷면 내용이 좌우가 뒤집힌 채 흐리게 비친다(.cat-through).
+ * 쪽 번호는 표지·뒤표지·빈 쪽에는 달지 않는다.
+ */
+export function pageHTML(pages, index){
+  const info = pages[index];
+  const back = backSideOf(pages, index);
+  const through = back
+    ? `<div class="cat-through" aria-hidden="true"><div class="cat-sheet">${back.inner}</div></div>` : '';
+  const folio = isThick(info) || info.kind === 'blank' ? '' : `<span class="cat-folio">${index + 1}</span>`;
+  return `<div class="cat-page cat-page--${info.kind}">${through}<div class="cat-sheet">${info.inner}</div>${folio}</div>`;
 }

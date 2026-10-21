@@ -2,7 +2,7 @@
    좁은 화면에서는 이것들을 '더 보기' 메뉴 안에 접어 둔다. */
 
 import { writeToClipboard } from './copy.js';
-import { withFolio } from './catalog-pages.js';
+import { pageHTML } from './catalog-pages.js';
 
 const AUTOPLAY_EVERY = 3500;
 const TOAST_FOR = 2200;
@@ -35,7 +35,7 @@ function setMoreOpen(open){
 
 /* ---------- 모아보기 ---------- */
 function thumbSheet(pageInfo){
-  const img = pageInfo.html.match(/<img src="([^"]+)"/);
+  const img = pageInfo.inner.match(/<img src="([^"]+)"/);
   return img ? `<img src="${img[1]}" alt="" loading="lazy">` : `<span>${pageInfo.label}</span>`;
 }
 
@@ -59,7 +59,7 @@ function showThumbs(book, visibleRange){
 /* ---------- 크게 보기: 지금 보이는 쪽을 크게 복제해 띄운다 ---------- */
 function showZoom(book, pages, visibleRange){
   const [from, to] = visibleRange(book);
-  const shown = pages.slice(from, to + 1).map((p, i) => withFolio(p, from + i, pages.length));
+  const shown = pages.slice(from, to + 1).map((_, i) => pageHTML(pages, from + i));
   const sheet = document.querySelector('.cat-zoom-sheet');
   sheet.innerHTML = shown.join('');
   sheet.classList.toggle('is-spread', shown.length > 1);

@@ -2,7 +2,7 @@
    쪽 넘김은 StPageFlip(js/vendor) 이 맡고, 여기서는 쪽 만들기 · 쪽 번호 · 넘김 단추를 잇는다.
    그림자는 쓰지 않는다. 라이브러리의 그늘도 전부 끈다. */
 
-import { buildPages, withFolio } from './catalog-pages.js';
+import { buildPages, pageHTML } from './catalog-pages.js';
 import { bindTools } from './catalog-tools.js';
 
 const SOURCE = 'catalog.json';
@@ -32,7 +32,7 @@ function writeHash(index){
 }
 
 function renderPages(bookEl, pages){
-  bookEl.innerHTML = pages.map((p, i) => withFolio(p, i, pages.length)).join('');
+  bookEl.innerHTML = pages.map((_, i) => pageHTML(pages, i)).join('');
   return bookEl.querySelectorAll('.cat-page');
 }
 
