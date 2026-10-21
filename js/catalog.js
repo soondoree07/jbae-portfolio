@@ -11,8 +11,8 @@ const PAGE_W = 595;
 const PAGE_H = 842;
 // 한 쪽 폭이 이보다 좁아지면(=화면 폭이 두 배 미만) 펼침면 대신 한 쪽씩 보여 준다.
 const SINGLE_PAGE_BELOW = 300;
-// 움직임을 끈 사용자에게는 넘기는 동작 없이 바로 바뀐다
-const FLIP_TIME = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 1 : 700;
+// 넘기는 동작이 도록의 핵심이라, 윈도우 애니메이션 효과를 꺼 둔(동작 줄이기) 화면에서도 그대로 둔다
+const FLIP_TIME = 700;
 
 async function loadCatalog(){
   const res = await fetch(SOURCE);
