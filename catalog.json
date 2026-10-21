@@ -1,0 +1,179 @@
+{
+  "_안내": "전시 도록 틀. 빈 값은 화면에 자리 표시로 나온다. works 항목 수만큼 작품 쪽이 생긴다.",
+  "cover": {
+    "title": "",
+    "subtitle": "배정혜 개인전",
+    "period": "",
+    "venue": "",
+    "image": ""
+  },
+  "greeting": {
+    "heading": "인사말",
+    "body": [],
+    "author": ""
+  },
+  "note": {
+    "heading": "작가 노트",
+    "body": []
+  },
+  "works": [
+    {
+      "title": "",
+      "material": "",
+      "size": "",
+      "year": "",
+      "image": ""
+    },
+    {
+      "title": "",
+      "material": "",
+      "size": "",
+      "year": "",
+      "image": ""
+    },
+    {
+      "title": "",
+      "material": "",
+      "size": "",
+      "year": "",
+      "image": ""
+    },
+    {
+      "title": "",
+      "material": "",
+      "size": "",
+      "year": "",
+      "image": ""
+    },
+    {
+      "title": "",
+      "material": "",
+      "size": "",
+      "year": "",
+      "image": ""
+    },
+    {
+      "title": "",
+      "material": "",
+      "size": "",
+      "year": "",
+      "image": ""
+    },
+    {
+      "title": "",
+      "material": "",
+      "size": "",
+      "year": "",
+      "image": ""
+    },
+    {
+      "title": "",
+      "material": "",
+      "size": "",
+      "year": "",
+      "image": ""
+    },
+    {
+      "title": "",
+      "material": "",
+      "size": "",
+      "year": "",
+      "image": ""
+    },
+    {
+      "title": "",
+      "material": "",
+      "size": "",
+      "year": "",
+      "image": ""
+    },
+    {
+      "title": "",
+      "material": "",
+      "size": "",
+      "year": "",
+      "image": ""
+    },
+    {
+      "title": "",
+      "material": "",
+      "size": "",
+      "year": "",
+      "image": ""
+    },
+    {
+      "title": "",
+      "material": "",
+      "size": "",
+      "year": "",
+      "image": ""
+    },
+    {
+      "title": "",
+      "material": "",
+      "size": "",
+      "year": "",
+      "image": ""
+    },
+    {
+      "title": "",
+      "material": "",
+      "size": "",
+      "year": "",
+      "image": ""
+    },
+    {
+      "title": "",
+      "material": "",
+      "size": "",
+      "year": "",
+      "image": ""
+    },
+    {
+      "title": "",
+      "material": "",
+      "size": "",
+      "year": "",
+      "image": ""
+    },
+    {
+      "title": "",
+      "material": "",
+      "size": "",
+      "year": "",
+      "image": ""
+    }
+  ],
+  "cv": {
+    "heading": "약력",
+    "rows": []
+  },
+  "colophon": {
+    "heading": "전시 정보",
+    "rows": [
+      {
+        "label": "전시",
+        "value": ""
+      },
+      {
+        "label": "기간",
+        "value": ""
+      },
+      {
+        "label": "장소",
+        "value": ""
+      },
+      {
+        "label": "문의",
+        "value": ""
+      },
+      {
+        "label": "누리집",
+        "value": "jbae.art"
+      }
+    ]
+  },
+  "back": {
+    "line": "J.Bae"
+  }
+}

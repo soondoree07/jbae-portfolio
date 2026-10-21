@@ -5,7 +5,7 @@ const DONE_TEXT = '복사했어요';
 const FAIL_TEXT = '직접 복사해 주세요';
 const RESET_AFTER = 2200;
 
-async function writeToClipboard(text){
+export async function writeToClipboard(text){
   if(navigator.clipboard && window.isSecureContext){
     try{ await navigator.clipboard.writeText(text); return true; }catch{ /* 아래 방법으로 넘어간다 */ }
   }
