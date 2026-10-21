@@ -76,12 +76,13 @@ body.catalog{--bar:56px}
   padding:10cqw 9cqw 12cqw;
   font-size:2.9cqw;line-height:1.9;
 }
-/* 뒷면이 비친다 — 얇은 종이를 빛에 댄 것처럼. 작품을 가리지 않게 아주 옅게 */
+/* 뒷면이 비친다 — 얇은 종이를 빛에 댄 것처럼. 넘기는 동안 들린 종이에서만 보인다(js/catalog-turn.js) */
 .cat-page{--through:.08}
 .cat-through{
   position:absolute;inset:0;transform:scaleX(-1);
-  opacity:var(--through);mix-blend-mode:multiply;pointer-events:none;
+  opacity:0;mix-blend-mode:multiply;pointer-events:none;
 }
+.cat-page.is-turning .cat-through{opacity:var(--through)}
 .cat-through .cat-ph,.cat-through .cat-ph-image span{color:var(--ink)}
 .cat-through img{filter:grayscale(1)}
 .cat-folio{

@@ -30,6 +30,7 @@ js/
   catalog.js          도록: 쪽 넘김 · 쪽 번호 · 넘김 단추
   catalog-pages.js    도록: catalog.json → 쪽 만들기 (빈 값은 자리 표시)
   catalog-tools.js    도록: 모아보기 · 자동 넘기기 · 크게 보기 · 전체 화면 · 링크 복사
+  catalog-turn.js     도록: 가운데 잡고 넘기기 · 넘기는 종이에만 뒷면 비침
   vendor/page-flip.browser.js  쪽 넘김 라이브러리 StPageFlip 2.0.7 (MIT)
 images/               작품 원본 (라이트박스가 쓴다)
 images/thumb/         격자·연보용 WebP 썸네일 (자동 생성)
@@ -73,6 +74,7 @@ docs/qr/              사이트로 이동하는 QR 코드
   전체 쪽 수가 홀수가 되면 뒤표지 앞에 빈 쪽이 저절로 들어간다
 
 넘길 때 그림자는 쓰지 않는다(`drawShadow:false` + 그늘 요소 숨김).
+넘기는 동안 들린 종이에만 같은 장 뒷면이 좌우 뒤집혀 8% 로 비친다(`--through`).
 지금은 홈에서 링크하지 않고 `noindex` 로 검색에서 빼 두었다.
 
 ## 알아둘 것
