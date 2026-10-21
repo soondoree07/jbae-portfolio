@@ -34,9 +34,10 @@ body.catalog{--bar:56px}
 .cat-more-toggle{display:none}
 
 .cat-count{display:flex;align-items:center;gap:var(--s2);margin-inline:var(--s2);font-size:13px;color:var(--ink-soft)}
+/* 16px 보다 작으면 아이폰이 누를 때 화면을 확대한다 */
 .cat-count-input{
   width:64px;height:32px;padding:0;text-align:center;
-  font:inherit;font-size:14px;color:var(--ink);font-variant-numeric:tabular-nums;
+  font:inherit;font-size:16px;color:var(--ink);font-variant-numeric:tabular-nums;
   background:var(--paper-hi);border:1px solid var(--line);border-radius:0;
 }
 .cat-count-input:focus{border-color:var(--clay);outline:none}
