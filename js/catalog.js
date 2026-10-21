@@ -4,7 +4,7 @@
 
 import { buildPages, pageHTML } from './catalog-pages.js';
 import { bindTools } from './catalog-tools.js';
-import { enableMiddleGrab, showThroughWhileTurning } from './catalog-turn.js';
+import { enableMiddleGrab, showThroughWhileTurning, fixHardPageOffset } from './catalog-turn.js';
 
 const SOURCE = 'catalog.json';
 // A4 세로 비율. 실제 크기는 화면에 맞춰 늘고 준다.
@@ -116,6 +116,7 @@ async function init(){
 
   const book = createBook(bookEl, pageFromHash(pages.length));
   book.loadFromHTML(pageEls);
+  fixHardPageOffset(book);
   enableMiddleGrab(book);
   showThroughWhileTurning(book);
 

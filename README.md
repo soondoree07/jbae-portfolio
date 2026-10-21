@@ -30,7 +30,7 @@ js/
   catalog.js          도록: 쪽 넘김 · 쪽 번호 · 넘김 단추
   catalog-pages.js    도록: catalog.json → 쪽 만들기 (빈 값은 자리 표시)
   catalog-tools.js    도록: 모아보기 · 자동 넘기기 · 크게 보기 · 전체 화면 · 링크 복사
-  catalog-turn.js     도록: 가운데 잡고 넘기기 · 넘기는 종이에만 뒷면 비침
+  catalog-turn.js     도록: 가운데 잡고 넘기기 · 넘기는 종이에만 뒷면 비침 · 표지 넘김 위치 보정
   vendor/page-flip.browser.js  쪽 넘김 라이브러리 StPageFlip 2.0.7 (MIT)
 images/               작품 원본 (라이트박스가 쓴다)
 images/thumb/         격자·연보용 WebP 썸네일 (자동 생성)
