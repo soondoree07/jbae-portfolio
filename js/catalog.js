@@ -44,6 +44,7 @@ function createBook(bookEl, startPage){
     minWidth:SINGLE_PAGE_BELOW, maxWidth:1200, minHeight:200, maxHeight:1700,
     showCover:true, usePortrait:true,
     drawShadow:false, maxShadowOpacity:0,
+    showPageCorners:false,  // 꼭짓점에 마우스만 올려도 접히지 않게 — 누를 때만 잡힌다
     flippingTime:FLIP_TIME, startPage,
   });
 }
