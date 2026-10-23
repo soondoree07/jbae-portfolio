@@ -41,33 +41,58 @@ function coverPage(cover){
     </div>`, '표지');
 }
 
-function writingPage(kind, block, label){
-  const sign = block.author !== undefined
-    ? `<p class="cat-sign">${textOr(block.author, '쓴 사람')}</p>` : '';
-  return page(kind, `
-    <h2 class="cat-heading">${escapeHTML(block.heading || label)}</h2>
-    <div class="cat-body">${paragraphs(block.body)}</div>${sign}`, label);
+/**
+ * 한 쪽에 다 안 들어가는 글은 catalog.json 에서 pages 로 쪽을 나눠 적는다.
+ * pages 가 없으면 key(body·rows) 하나가 한 쪽이다.
+ */
+function chunksOf(block, key){
+  return block.pages && block.pages.length ? block.pages : [block[key] || []];
+}
+
+/** 제목은 첫 쪽에만, 서명은 마지막 쪽에만 단다. */
+function headingOn(first, block, label){
+  return first ? `<h2 class="cat-heading">${escapeHTML(block.heading || label)}</h2>` : '';
+}
+
+function writingPages(kind, block, label){
+  const chunks = chunksOf(block, 'body');
+  return chunks.map((body, i) => {
+    const sign = i === chunks.length - 1 && block.author !== undefined
+      ? `<p class="cat-sign">${textOr(block.author, '쓴 사람')}</p>` : '';
+    return page(kind, `
+      ${headingOn(i === 0, block, label)}
+      <div class="cat-body">${paragraphs(body)}</div>${sign}`, label);
+  });
 }
 
 function workPage(work, order){
   const meta = [work.material, work.size, work.year].filter(Boolean).join(', ');
+  const about = work.description ? `<span class="cat-work-about">${escapeHTML(work.description)}</span>` : '';
   return page('work', `
     <figure class="cat-work">
       <div class="cat-work-art">${picture(work.image, work.title, `작품 ${order}`)}</div>
       <figcaption>
         <span class="cat-work-title">${textOr(work.title, '작품 제목')}</span>
         <span class="cat-work-meta">${meta ? escapeHTML(meta) : '<span class="cat-ph">재료, 크기, 연도</span>'}</span>
+        ${about}
       </figcaption>
     </figure>`, `작품 ${order}`);
 }
 
-function rowsPage(kind, block, label){
-  const rows = (block.rows || []);
-  const list = rows.length
-    ? rows.map(r => `<div class="cat-row"><dt>${escapeHTML(r.label)}</dt><dd>${textOr(r.value, '내용')}</dd></div>`).join('')
-    : '';
-  const body = list ? `<dl class="cat-rows">${list}</dl>` : `<div class="cat-body">${paragraphs([])}</div>`;
-  return page(kind, `<h2 class="cat-heading">${escapeHTML(block.heading || label)}</h2>${body}`, label);
+/** 줄 하나. section 이면 묶음 제목(개인전·수상 …), note 가 있으면 값 아래 작게 덧붙인다. */
+function rowHTML(row){
+  if(row.section) return `<div class="cat-row cat-row--section"><dt>${escapeHTML(row.section)}</dt></div>`;
+  const note = row.note ? `<span class="cat-row-note">${escapeHTML(row.note)}</span>` : '';
+  return `<div class="cat-row"><dt>${escapeHTML(row.label || '')}</dt><dd>${textOr(row.value, '내용')}${note}</dd></div>`;
+}
+
+function rowsPages(kind, block, label){
+  return chunksOf(block, 'rows').map((rows, i) => {
+    const body = rows.length
+      ? `<dl class="cat-rows">${rows.map(rowHTML).join('')}</dl>`
+      : `<div class="cat-body">${paragraphs([])}</div>`;
+    return page(kind, `${headingOn(i === 0, block, label)}${body}`, label);
+  });
 }
 
 function backPage(back){
@@ -85,11 +110,11 @@ function blankPage(){
 export function buildPages(catalog){
   const pages = [
     coverPage(catalog.cover || {}),
-    writingPage('greeting', catalog.greeting || {}, '인사말'),
-    writingPage('note', catalog.note || {}, '작가 노트'),
+    ...writingPages('greeting', catalog.greeting || {}, '인사말'),
+    ...writingPages('note', catalog.note || {}, '작가 노트'),
     ...(catalog.works || []).map((w, i) => workPage(w, i + 1)),
-    rowsPage('cv', catalog.cv || {}, '약력'),
-    rowsPage('colophon', catalog.colophon || {}, '전시 정보'),
+    ...rowsPages('cv', catalog.cv || {}, '약력'),
+    ...rowsPages('colophon', catalog.colophon || {}, '전시 정보'),
   ];
   if((pages.length + 1) % 2) pages.push(blankPage());
   pages.push(backPage(catalog.back || {}));
