@@ -123,31 +123,23 @@
     {
       "id": "2026",
       "year": 2026,
-      "description": "봄의 귀환을 주제로 새 생명과 순환의 이미지를 탐구한 작업들입니다. 긴 겨울 끝에 찾아오는 봄의 경이로움을 유화와 수채화로 담아냈습니다.",
-      "thumbnail": "https://picsum.photos/seed/2026t/1200/750",
+      "description": "",
+      "thumbnail": "images/2026/시리도록 아름다운.jpg",
       "works": [
         {
-          "title": "봄의 문턱",
+          "title": "시리도록 아름다운",
           "material": "Mixed Media",
-          "size": "80×100cm",
-          "description": "겨울이 물러가고 봄이 찾아오는 경계의 순간을 담았습니다. 눈 속에서 피어나는 첫 꽃망울의 생명력을 표현했습니다.",
-          "image": "https://picsum.photos/seed/2026-1/600/800"
-        },
-        {
-          "title": "연두빛 들판",
-          "material": "Mixed Media",
-          "size": "60×80cm",
-          "description": "새잎이 돋아나는 들판의 첫 번째 연두빛을 수채화 특유의 투명한 질감으로 표현했습니다.",
-          "image": "https://picsum.photos/seed/2026-2/800/600"
-        },
-        {
-          "title": "꽃비",
-          "material": "Mixed Media",
-          "size": "100×80cm",
-          "description": "벚꽃이 흩날리는 순간의 생동감과 덧없는 아름다움을 두터운 유화 붓터치로 담아냈습니다.",
-          "image": "https://picsum.photos/seed/2026-3/600/800"
+          "size": "80.3×116.7cm",
+          "description": "",
+          "image": "images/2026/시리도록 아름다운.jpg",
+          "w": 1920,
+          "h": 1312,
+          "thumb": "images/thumb/2026/시리도록 아름다운.webp"
         }
-      ]
+      ],
+      "w": 1920,
+      "h": 1312,
+      "thumb": "images/thumb/2026/시리도록 아름다운.webp"
     },
     {
       "id": "2025",
