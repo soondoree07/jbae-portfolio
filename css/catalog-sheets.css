@@ -61,7 +61,7 @@
 
 /* 작가 노트 — 펼침면 두 쪽. 내지(8.3pt)보다 키워 화면에서 읽기 쉽게 했다(사용자 요청) */
 .cat-note{position:absolute;left:calc(16 * var(--mm));top:calc(22 * var(--mm));width:calc(153 * var(--mm))}
-.cat-note-head{margin-bottom:calc(10 * var(--mm));font-size:calc(4.3 * var(--mm));font-weight:400}
+.cat-note-head{margin-bottom:calc(10 * var(--mm));font-size:calc(5 * var(--mm));font-weight:400}
 .cat-note-head b{font-weight:600;margin-right:calc(1.4 * var(--mm))}
 .cat-note-body{font-size:calc(4.6 * var(--mm));font-weight:300;line-height:calc(7.8 * var(--mm))}
 .cat-note-body p{white-space:pre-line}

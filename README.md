@@ -31,7 +31,7 @@ js/
   lightbox.js         작품 크게 보기
   catalog.js          도록: 쪽 넘김 · 쪽 번호 · 넘김 단추
   catalog-pages.js    도록: catalog.json → 쪽 만들기 (빈 값은 자리 표시)
-  catalog-layouts.js  도록: 작품 펼침면 배치 4종 (right · big · pair · portrait-left)
+  catalog-layouts.js  도록: 작품 펼침면 배치 5종 (right · big · pair · portraits · portrait-left)
   catalog-tools.js    도록: 모아보기 · 자동 넘기기 · 크게 보기 · 전체 화면 · 링크 복사
   catalog-turn.js     도록: 가운데 잡고 넘기기 · 넘기는 종이에만 뒷면 비침 · 표지 넘김 위치 보정
   vendor/page-flip.browser.js  쪽 넘김 라이브러리 StPageFlip 2.0.7 (MIT)
@@ -78,7 +78,7 @@ docs/qr/              사이트로 이동하는 QR 코드
 - `note` 작가 노트 — 펼침면 하나(두 쪽). `pages` 의 문단 묶음 하나가 한 쪽이다. 글을 바꾸면 넘치지 않는지 다시 본다
 - `works` 작품 (공모 신청서 연번 순). 그림 비율은 사이트 `data.json` 의 `w` `h` 에서 읽는다 — 도록에만 있는 작품은 안 된다
 - `spreads` 펼침면마다 배치 하나와 작품 번호(1부터). 작품을 더하거나 빼면 여기도 고친다
-  - `right` 오른쪽 쪽에 한 점 · `big` 두 쪽을 가로질러 크게(`align` left/right) · `pair` 두 점 같은 높이(한 점만 적으면 왼쪽 자리에만) · `portrait-left` 왼쪽 세로 + 오른쪽 가로
+  - `right` 오른쪽 쪽에 한 점 · `big` 두 쪽을 가로질러 크게(`align` left/right) · `pair` 두 점 같은 높이(한 점만 적으면 왼쪽 자리에만) · `portraits` 세로 둘을 쪽마다 하나씩 · `portrait-left` 왼쪽 세로 + 오른쪽 가로
 - `cv` 약력 `rows`(묶음 제목은 `section`), `colophon` 판권 문구
 - 쪽 순서: 표지 → (빈 쪽 · 속표지) → (작가 노트 두 쪽) → 작품 펼침면 → (약력 · 판권) → 뒤표지
 

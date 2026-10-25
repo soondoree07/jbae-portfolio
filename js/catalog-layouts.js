@@ -37,9 +37,18 @@ function big(works, align){
  * 한 점만 적으면 왼쪽 자리에만 놓는다 — 크기·높이가 다른 pair 펼침면과 같아 보인다.
  */
 function pair(works){
+  return sideBySide(works, {maxW:170, maxH:130, top:25});
+}
+
+/** 세로 그림 둘을 쪽마다 하나씩, 같은 높이로 크게 */
+function portraits(works){
+  return sideBySide(works, {maxW:160, maxH:209, top:11});
+}
+
+/** 왼쪽 쪽 바깥에 붙인 그림 하나, 오른쪽 쪽 바깥에 붙인 그림 하나. 둘의 높이를 맞춘다. */
+function sideBySide(works, {maxW, maxH, top}){
   const [a, b] = works;
-  const h = Math.min(130, ...works.map(w => 170 / w.ratio));
-  const top = 25;
+  const h = Math.min(maxH, ...works.map(w => maxW / w.ratio));
   const slots = [place(a, EDGE, top, {w:h * a.ratio, h}, 'left')];
   if(b) slots.push(place(b, OUTER - h * b.ratio, top, {w:h * b.ratio, h}, 'right'));
   return slots;
@@ -64,7 +73,7 @@ function right(works){
   return [place(a, OUTER - size.w, y, size, 'right')];
 }
 
-const LAYOUTS = {big, pair, 'portrait-left':portraitLeft, right};
+const LAYOUTS = {big, pair, portraits, 'portrait-left':portraitLeft, right};
 
 /** spreads 항목 하나 → 그림 자리 목록 */
 export function layoutSpread(spread, works){

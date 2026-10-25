@@ -1,5 +1,5 @@
 {
-  "_안내": "전시 도록. 짜임은 인쇄 도록 '도록 내지.pdf'(2024 한가람 전시)를 따른다. 작품은 works 순서(공모 신청서 연번)대로 spreads 에 번호(1부터)로 놓는다. 배치 종류: right(오른쪽 쪽에 한 점) · big(두 쪽을 가로질러 크게, align left|right) · pair(두 점 같은 높이, 한 점만 적으면 왼쪽 자리에만) · portrait-left(왼쪽 세로 + 오른쪽 가로). 작품을 더하면 spreads 에도 넣는다. 작가 노트는 pages(문단 묶음) 하나가 한 쪽이다. 빈 값은 화면에 흐린 자리 표시로 나온다. 표지 그림은 tools/build_catalog_cover.py 로 만든다.",
+  "_안내": "전시 도록. 짜임은 인쇄 도록 '도록 내지.pdf'(2024 한가람 전시)를 따른다. 작품은 works 순서(공모 신청서 연번)대로 spreads 에 번호(1부터)로 놓는다. 배치 종류: right(오른쪽 쪽에 한 점) · big(두 쪽을 가로질러 크게, align left|right) · pair(두 점 같은 높이, 한 점만 적으면 왼쪽 자리에만) · portraits(세로 둘을 쪽마다 하나씩) · portrait-left(왼쪽 세로 + 오른쪽 가로). 작품을 더하면 spreads 에도 넣는다. 작가 노트는 pages(문단 묶음) 하나가 한 쪽이다. 빈 값은 화면에 흐린 자리 표시로 나온다. 표지 그림은 tools/build_catalog_cover.py 로 만든다.",
   "cover": {
     "front": "images/catalog/cover-front.jpg",
     "back": "images/catalog/cover-back.jpg"
@@ -243,7 +243,8 @@
   ],
   "spreads": [
     {
-      "layout": "pair",
+      "layout": "big",
+      "align": "right",
       "works": [
         1
       ]
@@ -284,8 +285,9 @@
       ]
     },
     {
-      "layout": "right",
+      "layout": "portraits",
       "works": [
+        17,
         10
       ]
     },
@@ -318,15 +320,15 @@
       ]
     },
     {
-      "layout": "portrait-left",
+      "layout": "big",
+      "align": "left",
       "works": [
-        17,
         18
       ]
     },
     {
       "layout": "big",
-      "align": "left",
+      "align": "right",
       "works": [
         19
       ]
