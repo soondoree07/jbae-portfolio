@@ -32,15 +32,17 @@ function big(works, align){
   return [place(a, x, y, size, align === 'left' ? 'left' : 'right')];
 }
 
-/** 두 점을 같은 높이로 양쪽에 (내지 4·7·9·11·15쪽). 파노라마 둘도 이 배치를 쓴다. */
+/**
+ * 두 점을 같은 높이로 양쪽에 (내지 4·7·9·11·15쪽). 파노라마 둘도 이 배치를 쓴다.
+ * 한 점만 적으면 왼쪽 자리에만 놓는다 — 크기·높이가 다른 pair 펼침면과 같아 보인다.
+ */
 function pair(works){
   const [a, b] = works;
-  const h = Math.min(130, 170 / a.ratio, 170 / b.ratio);
+  const h = Math.min(130, ...works.map(w => 170 / w.ratio));
   const top = 25;
-  return [
-    place(a, EDGE, top, {w:h * a.ratio, h}, 'left'),
-    place(b, OUTER - h * b.ratio, top, {w:h * b.ratio, h}, 'right'),
-  ];
+  const slots = [place(a, EDGE, top, {w:h * a.ratio, h}, 'left')];
+  if(b) slots.push(place(b, OUTER - h * b.ratio, top, {w:h * b.ratio, h}, 'right'));
+  return slots;
 }
 
 /** 왼쪽 쪽에 세로 그림, 오른쪽 쪽 위에 가로 그림 (내지 14쪽을 좌우로 뒤집은 꼴) */
