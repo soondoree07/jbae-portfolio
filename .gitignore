@@ -3,3 +3,4 @@
 
 # Windows 탐색기 잔재
 *:Zone.Identifier
+__pycache__/
