@@ -72,24 +72,33 @@ function notePages(note, artist){
   });
 }
 
-/** 약력 한 줄 — "연도  내용 | 장소" */
-function cvRowHTML(row){
+/**
+ * 약력 한 줄 — "연도  내용 | 장소".
+ * 같은 묶음 안에서 바로 윗줄과 연도가 같으면 내지처럼 연도를 비운다.
+ */
+function cvRowHTML(row, prev){
   if(row.section) return `<h3 class="cat-cv-section">${escapeHTML(row.section)}</h3>`;
+  const sameYear = prev && !prev.section && prev.label && prev.label === row.label;
   const note = row.note ? `<span class="cat-cv-note">  |  ${escapeHTML(row.note)}</span>` : '';
-  return `<p class="cat-cv-row"><span class="cat-cv-year">${escapeHTML(row.label || '')}</span>`
+  return `<p class="cat-cv-row"><span class="cat-cv-year">${sameYear ? '' : escapeHTML(row.label || '')}</span>`
     + `<span>${escapeHTML(row.value)}${note}</span></p>`;
 }
 
-function cvPage(cv, info, contact){
-  return page('cv', `
-    <header class="cat-cv-head">
-      <h2><b>${escapeHTML(info.artist)}</b> <span>${escapeHTML(info.artistEn || '')}</span></h2>
-      <p class="cat-cv-contact">
-        <span>${escapeHTML(contact.email || '')}</span>
-        <span>인스타그램 ${escapeHTML(contact.instagram || '')}</span>
-      </p>
-    </header>
-    <div class="cat-cv-cols">${(cv.rows || []).map(cvRowHTML).join('')}</div>`, '약력');
+/** 약력은 펼침면 하나(두 쪽)에 네 단으로 흐른다 — 내지 약력 쪽과 같은 짜임 */
+function cvPages(cv, info, contact){
+  const rows = cv.rows || [];
+  const canvas = `
+    <div class="cat-canvas">
+      <header class="cat-cv-head">
+        <h2><b>${escapeHTML(info.artist)}</b> <span>${escapeHTML(info.artistEn || '')}</span></h2>
+        <p class="cat-cv-contact">
+          <span>${escapeHTML(contact.email || '')}</span>
+          <span>인스타그램 ${escapeHTML(contact.instagram || '')}</span>
+        </p>
+      </header>
+      <div class="cat-cv-cols">${rows.map((r, i) => cvRowHTML(r, rows[i - 1])).join('')}</div>
+    </div>`;
+  return [page('spread-left', canvas, '약력'), page('spread-right', canvas, '약력')];
 }
 
 function colophonPage(info, contact, colophon){
@@ -148,7 +157,7 @@ function withRatios(works, ratios){
 }
 
 /**
- * 도록 쪽 순서: 표지 → (빈 쪽 | 속표지) → (작가 노트 두 쪽) → 작품 펼침면들 → (약력 | 판권) → 뒤표지.
+ * 도록 쪽 순서: 표지 → (빈 쪽 | 속표지) → (작가 노트 두 쪽) → 작품 펼침면들 → (약력 두 쪽) → 판권 → 뒤표지.
  * 표지가 오른쪽에 홀로 서고, 뒤표지가 왼쪽에 홀로 서려면 전체 쪽 수가 짝수여야 한다.
  */
 export function buildPages(catalog, ratios){
@@ -161,7 +170,7 @@ export function buildPages(catalog, ratios){
     titlePage(info),
     ...notePages(catalog.note || {}, info.artist || ''),
     ...(catalog.spreads || []).flatMap(s => spreadPages(s, works)),
-    cvPage(catalog.cv || {}, info, contact),
+    ...cvPages(catalog.cv || {}, info, contact),
     colophonPage(info, contact, catalog.colophon || {}),
   ];
   if((pages.length + 1) % 2) pages.push(blankPage());

@@ -67,7 +67,7 @@
 .cat-note-body p{white-space:pre-line}
 .cat-note-body p + p{margin-top:calc(5.6 * var(--mm))}
 
-/* 약력 — 내지 약력 쪽의 왼쪽 두 단 */
+/* 약력 — 내지 약력 쪽처럼 펼침면 두 쪽에 네 단. 단 사이(181~189mm)에 책 가운데가 온다 */
 .cat-cv-head{position:absolute;left:calc(16 * var(--mm));top:calc(19 * var(--mm))}
 .cat-cv-head h2{font-size:calc(4.6 * var(--mm));font-weight:400}
 .cat-cv-head h2 b{font-weight:600}
@@ -77,13 +77,13 @@
   font-size:calc(2.58 * var(--mm));font-weight:300;
 }
 .cat-cv-cols{
-  position:absolute;left:calc(16 * var(--mm));top:calc(54 * var(--mm));
-  width:calc(155 * var(--mm));height:calc(172 * var(--mm));
-  columns:2;column-gap:calc(8 * var(--mm));column-fill:auto;
-  font-size:calc(2.58 * var(--mm));font-weight:300;line-height:calc(5.3 * var(--mm));
+  position:absolute;left:calc(16 * var(--mm));top:calc(50 * var(--mm));
+  width:calc(338 * var(--mm));height:calc(178 * var(--mm));
+  columns:4;column-gap:calc(8 * var(--mm));column-fill:auto;
+  font-size:calc(2.58 * var(--mm));font-weight:300;line-height:calc(4.6 * var(--mm));
 }
 .cat-cv-section{
-  break-after:avoid;margin-top:calc(10 * var(--mm));
+  break-after:avoid;margin-top:calc(7 * var(--mm));
   font-size:calc(2.75 * var(--mm));font-weight:600;line-height:calc(5.3 * var(--mm));
 }
 .cat-cv-section:first-child{margin-top:0}
