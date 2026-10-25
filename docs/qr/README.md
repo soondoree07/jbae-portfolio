@@ -55,10 +55,18 @@ python3 -m pip download segno -d /tmp/qrwheel --no-deps -q
 
 **https://jbae.art/catalog** 로 가는 QR — 「2027년 정부서울청사」 도록(꿈결 물결 바람결)이 바로 열린다. 다른 도록이 늘어도 이 주소는 계속 이 도록을 연다(`catalogs.json` 의 `default`). 모양·색·규격은 위 사이트 QR 과 같다(29×29, 오류 정정 H, 나비 11×11 모듈).
 
-| 바탕화면 `jbae-QR` 폴더 | 레포 `docs/qr` | 쓸 곳 |
+| 바탕화면 `엄마작품\QR\정부청사 도록 (jbae.art-catalog)` | 레포 `docs/qr` | 쓸 곳 |
 |---|---|---|
-| `정부청사 도록_1_화면용_기본.png` | `catalog-qr.png` | 기본. 화면·인쇄 모두 (1776px, 300dpi) |
-| `정부청사 도록_2_흑백.png` | `catalog-qr-mono.png` | 흑백 인쇄 |
-| `정부청사 도록_3_나비없음_아주작게쓸때.png` | `catalog-qr-plain.png` | 1.5cm 이하로 아주 작게 넣을 때 |
+| `1_화면용_기본.png` | `catalog-qr.png` | 기본. 화면·인쇄 모두 (1776px, 300dpi) |
+| `2_흑백.png` | `catalog-qr-mono.png` | 흑백 인쇄 |
+| `3_나비없음_아주작게쓸때.png` | `catalog-qr-plain.png` | 1.5cm 이하로 아주 작게 넣을 때 |
 
 다시 만들려면 `python3 tools/build_qr.py https://jbae.art/catalog docs/qr catalog-qr` — 만든 뒤 세 장을 다시 읽어 주소를 확인한다.
+
+## 인스타그램 QR (2026-10-25 추가)
+
+**https://instagram.com/artist_jbae** 로 가는 QR. 같은 모양이지만 주소가 길어 33×33 격자다(2.5cm 이상 권장).
+`insta-qr.png` · `insta-qr-mono.png` · `insta-qr-plain.png` — 바탕화면 `엄마작품\QR\인스타그램 (artist_jbae)` 에도 있다.
+표지2·엽서에 인쇄된 옛 인스타 QR(qrfy.io)은 이미 죽어 있다. 쓰지 않는다.
+
+바탕화면 QR 폴더 전체 안내는 `엄마작품\QR\읽어보기.md`.
