@@ -59,16 +59,13 @@
 }
 .cat-tp-venue{font-size:calc(3.88 * var(--mm));font-weight:600;line-height:1.5}
 
-/* 작가 노트 — 왼쪽 쪽 */
-.cat-note{position:absolute;left:calc(14 * var(--mm));top:calc(20.2 * var(--mm));width:calc(157 * var(--mm))}
-.cat-note-head{font-size:calc(2.79 * var(--mm));font-weight:400}
-.cat-note-head b{font-weight:600;margin-right:calc(1 * var(--mm))}
-.cat-note-body{
-  margin-top:calc(7 * var(--mm));
-  font-size:calc(2.93 * var(--mm));font-weight:300;line-height:calc(4.95 * var(--mm));
-}
+/* 작가 노트 — 펼침면 두 쪽. 내지(8.3pt)보다 키워 화면에서 읽기 쉽게 했다(사용자 요청) */
+.cat-note{position:absolute;left:calc(16 * var(--mm));top:calc(22 * var(--mm));width:calc(153 * var(--mm))}
+.cat-note-head{margin-bottom:calc(10 * var(--mm));font-size:calc(4.3 * var(--mm));font-weight:400}
+.cat-note-head b{font-weight:600;margin-right:calc(1.4 * var(--mm))}
+.cat-note-body{font-size:calc(4.6 * var(--mm));font-weight:300;line-height:calc(7.8 * var(--mm))}
 .cat-note-body p{white-space:pre-line}
-.cat-note-body p + p{margin-top:calc(4.95 * var(--mm))}
+.cat-note-body p + p{margin-top:calc(5.6 * var(--mm))}
 
 /* 약력 — 내지 약력 쪽의 왼쪽 두 단 */
 .cat-cv-head{position:absolute;left:calc(16 * var(--mm));top:calc(19 * var(--mm))}

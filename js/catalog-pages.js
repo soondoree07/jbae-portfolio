@@ -56,13 +56,20 @@ function titlePage(info){
     </div>`, '속표지');
 }
 
-function notePage(note, artist){
-  const body = (note.body || []).map(p => `<p>${escapeHTML(p)}</p>`).join('');
-  return `
-    <section class="cat-note">
-      <h2 class="cat-note-head"><b>${escapeHTML(artist)}</b> ${escapeHTML(note.heading || '작가노트')}</h2>
-      <div class="cat-note-body">${body}</div>
-    </section>`;
+/**
+ * 작가 노트는 펼침면 하나(두 쪽)에 싣는다. 어디서 쪽을 넘길지는 catalog.json 의 pages(문단 묶음)로 정한다.
+ * 제목은 첫 쪽에만 단다.
+ */
+function notePages(note, artist){
+  const chunks = note.pages && note.pages.length ? note.pages : [note.body || []];
+  return chunks.map((body, i) => {
+    const head = i === 0
+      ? `<h2 class="cat-note-head"><b>${escapeHTML(artist)}</b> ${escapeHTML(note.heading || '작가노트')}</h2>` : '';
+    return page('note', `
+      <section class="cat-note">${head}
+        <div class="cat-note-body">${body.map(p => `<p>${escapeHTML(p)}</p>`).join('')}</div>
+      </section>`, '작가 노트');
+  });
 }
 
 /** 약력 한 줄 — "연도  내용 | 장소" */
@@ -120,17 +127,13 @@ function slotHTML(slot){
     <p class="cat-cap cat-cap--${slot.side}" style="${capStyle};top:${mm(captionTop(slot))}">${captionHTML(work)}</p>`;
 }
 
-/**
- * 펼침면 하나 → 왼쪽 쪽 · 오른쪽 쪽. 두 쪽이 같은 370mm 화폭을 나눠 보여 준다.
- * left 에 'note' 를 적으면 왼쪽 쪽에 작가 노트를 함께 싣는다.
- */
-function spreadPages(spread, works, extras){
+/** 펼침면 하나 → 왼쪽 쪽 · 오른쪽 쪽. 두 쪽이 같은 370mm 화폭을 나눠 보여 준다. */
+function spreadPages(spread, works){
   const slots = layoutSpread(spread, works);
   const canvas = `<div class="cat-canvas">${slots.map(slotHTML).join('')}</div>`;
   const label = slots.map(s => s.work.title).join(' · ');
-  const leftExtra = spread.left === 'note' ? extras.note : '';
   return [
-    page('spread-left', `${leftExtra}${canvas}`, leftExtra ? `작가 노트 · ${label}` : label),
+    page('spread-left', canvas, label),
     page('spread-right', canvas, label),
   ];
 }
@@ -145,19 +148,19 @@ function withRatios(works, ratios){
 }
 
 /**
- * 도록 쪽 순서: 표지 → (빈 쪽 | 속표지) → (작가 노트 | 작품) → 작품 펼침면들 → (약력 | 판권) → 뒤표지.
+ * 도록 쪽 순서: 표지 → (빈 쪽 | 속표지) → (작가 노트 두 쪽) → 작품 펼침면들 → (약력 | 판권) → 뒤표지.
  * 표지가 오른쪽에 홀로 서고, 뒤표지가 왼쪽에 홀로 서려면 전체 쪽 수가 짝수여야 한다.
  */
 export function buildPages(catalog, ratios){
   const info = catalog.title || {};
   const contact = catalog.contact || {};
   const works = withRatios(catalog.works || [], ratios);
-  const extras = {note: notePage(catalog.note || {}, info.artist || '')};
   const pages = [
     coverPage(catalog.cover.front, '표지'),
     blankPage(),
     titlePage(info),
-    ...(catalog.spreads || []).flatMap(s => spreadPages(s, works, extras)),
+    ...notePages(catalog.note || {}, info.artist || ''),
+    ...(catalog.spreads || []).flatMap(s => spreadPages(s, works)),
     cvPage(catalog.cv || {}, info, contact),
     colophonPage(info, contact, catalog.colophon || {}),
   ];
