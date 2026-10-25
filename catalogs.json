@@ -1,0 +1,13 @@
+{
+  "_안내": "전시 도록 목록. 도록 화면(catalog.html?id=…)과 목록 화면(catalogs.html)이 이 파일을 읽는다. 새 도록은 catalogs/<id>.json 에 내용을, images/catalog/<id>/ 에 표지를 넣고 여기에 한 줄 더한다. 위에 적을수록 목록 앞에 온다. default 는 id 없이 catalog.html(=jbae.art/catalog)로 들어왔을 때 열 도록 — 이미 인쇄한 QR 이 이 주소를 가리키므로 바꾸지 않는다.",
+  "default": "2027-seoul-gov",
+  "catalogs": [
+    {
+      "id": "2027-seoul-gov",
+      "name": "2027년 정부서울청사",
+      "title": "꿈결 물결 바람결",
+      "cover": "images/catalog/2027-seoul-gov/cover-front.jpg",
+      "source": "catalogs/2027-seoul-gov.json"
+    }
+  ]
+}

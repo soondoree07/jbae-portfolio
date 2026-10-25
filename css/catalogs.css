@@ -1,0 +1,24 @@
+/* 전시 도록 목록 — 도록 한 권이 한 칸. 앞표지(185:240) 아래에 이름과 전시 제목.
+   사이트 규칙대로 곡률·그림자 없이 1px 선만 쓴다. */
+.shelf{
+  margin:0;padding:0;list-style:none;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,220px),1fr));
+  gap:var(--s7) var(--s5);
+}
+.shelf-item{min-width:0}
+.shelf-link{display:flex;flex-direction:column;gap:var(--s2);color:var(--ink)}
+.shelf-cover{
+  display:block;aspect-ratio:185/240;overflow:hidden;margin-bottom:var(--s2);
+  background:var(--paper-hi);border:1px solid var(--line);
+  transition:border-color .25s var(--ease);
+}
+.shelf-cover img{width:100%;height:100%;object-fit:cover}
+.shelf-name{
+  font-family:var(--font-display);font-size:19px;line-height:1.4;word-break:keep-all;
+  align-self:flex-start;border-bottom:1px solid transparent;
+  transition:border-color .25s var(--ease), color .25s var(--ease);
+}
+.shelf-title{font-size:13px;color:var(--ink-soft)}
+.shelf-link:hover .shelf-cover{border-color:var(--line-firm)}
+.shelf-link:hover .shelf-name{color:var(--clay-deep);border-bottom-color:var(--clay-deep)}
+.shelf-error{color:var(--ink-soft)}

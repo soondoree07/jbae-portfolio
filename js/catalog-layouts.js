@@ -1,6 +1,6 @@
 /* 작품 펼침면 배치 — 인쇄 도록 '도록 내지.pdf'(2024 한가람 전시)의 자리를 그대로 따른다.
    모든 치수는 펼친 두 쪽(370×240mm) 위의 mm 다. 그림 비율에 맞춰 상자 안에 꽉 차게 맞춘다.
-   어느 작품을 어떤 배치에 놓을지는 catalog.json 의 spreads 가 정한다. */
+   어느 작품을 어떤 배치에 놓을지는 도록 내용 파일(catalogs/<id>.json)의 spreads 가 정한다. */
 
 export const SPREAD_W = 370;
 export const PAGE_W = 185;

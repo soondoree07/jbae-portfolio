@@ -6,7 +6,8 @@ import { buildPages, pageHTML } from './catalog-pages.js';
 import { bindTools } from './catalog-tools.js';
 import { enableMiddleGrab, showThroughWhileTurning, fixHardPageOffset } from './catalog-turn.js';
 
-const SOURCE = 'catalog.json';
+// 도록 목록. ?id= 로 고른 도록(없으면 default)을 연다
+const LIST = 'catalogs.json';
 // 작품 그림의 가로·세로(실측)는 사이트 자료에 있다. 두 곳에 따로 적지 않는다.
 const SITE_DATA = 'data.json';
 // 인쇄 도록 내지와 같은 185×240mm 비율. 실제 크기는 화면에 맞춰 늘고 준다.
@@ -122,8 +123,18 @@ function bindMoves(book){
   });
 }
 
+/** 주소의 ?id= 로 도록을 고른다. 없거나 모르는 id 면 default — jbae.art/catalog QR 이 여기로 온다 */
+function chooseEntry(list){
+  const wanted = new URLSearchParams(location.search).get('id') || list.default;
+  return list.catalogs.find(c => c.id === wanted)
+      || list.catalogs.find(c => c.id === list.default);
+}
+
 async function init(){
-  const [catalog, site] = await Promise.all([loadJSON(SOURCE), loadJSON(SITE_DATA)]);
+  const entry = chooseEntry(await loadJSON(LIST));
+  if(!entry) throw new Error('도록 목록이 비어 있어요');
+  document.title = `${entry.name} 도록 | 배정혜 J.Bae`;
+  const [catalog, site] = await Promise.all([loadJSON(entry.source), loadJSON(SITE_DATA)]);
   const pages = buildPages(catalog, imageRatios(site));
   const bookEl = document.querySelector('.cat-book');
   const pageEls = renderPages(bookEl, pages);

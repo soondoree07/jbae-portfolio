@@ -7,7 +7,9 @@
 
 필요한 것: pip install pymupdf qrcode pillow opencv-python-headless
           Pretendard-Regular.otf (https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/public/static/)
-사용: python3 tools/build_catalog_cover.py <도록 표지2.pdf> <Pretendard-Regular.otf>
+사용: python3 tools/build_catalog_cover.py <도록 id> <도록 표지2.pdf> <Pretendard-Regular.otf>
+예:   python3 tools/build_catalog_cover.py 2027-seoul-gov '도록 표지2.pdf' Pretendard-Regular.otf
+그림은 images/catalog/<도록 id>/ 에 저장된다.
 """
 import sys
 from pathlib import Path
@@ -18,7 +20,7 @@ import pymupdf
 import qrcode
 from PIL import Image, ImageDraw, ImageFont
 
-OUT = Path(__file__).resolve().parent.parent / 'images' / 'catalog'
+CATALOG_IMAGES = Path(__file__).resolve().parent.parent / 'images' / 'catalog'
 DPI = 254                      # 1mm = 10px
 PX_PER_MM = DPI / 25.4
 PAGE_MM = 185
@@ -43,14 +45,14 @@ def make_qr(url):
     return code.make_image(fill_color=(30, 30, 30), back_color='white').convert('RGB')
 
 
-def place_qr_codes(back, font):
+def place_qr_codes(back, font, out):
     """옛 QR 자리(가로 12mm, 세로 약 203mm)에 13mm QR 둘을 19mm 간격으로 놓고 아래에 이름을 단다."""
     draw = ImageDraw.Draw(back)
     draw.rectangle((px(10), px(200), px(30), px(218.5)), fill='white')
     side, pad, top = px(13), px(1.2), px(199.5)
     for i, (url, label, filename) in enumerate(QR_LINKS):
         code = make_qr(url)
-        code.save(OUT / filename)
+        code.save(out / filename)
         left = px(12 + i * 19)
         draw.rounded_rectangle((left, top, left + side, top + side), radius=px(1.2),
                                outline=(205, 205, 205), width=3, fill='white')
@@ -72,17 +74,18 @@ def check_qr_codes(back, side, top):
         print('QR 확인', found)
 
 
-def main(pdf_path, font_path):
-    OUT.mkdir(parents=True, exist_ok=True)
+def main(catalog_id, pdf_path, font_path):
+    out = CATALOG_IMAGES / catalog_id
+    out.mkdir(parents=True, exist_ok=True)
     spread = render_spread(pdf_path)
     width, height = spread.size
     back = spread.crop((0, 0, px(PAGE_MM), height))
     front = spread.crop((width - px(PAGE_MM), 0, width, height))
-    side, top = place_qr_codes(back, ImageFont.truetype(font_path, px(2.3)))
+    side, top = place_qr_codes(back, ImageFont.truetype(font_path, px(2.3)), out)
     check_qr_codes(back, side, top)
-    back.save(OUT / 'cover-back.jpg', quality=88)
-    front.save(OUT / 'cover-front.jpg', quality=88)
+    back.save(out / 'cover-back.jpg', quality=88)
+    front.save(out / 'cover-front.jpg', quality=88)
 
 
 if __name__ == '__main__':
-    main(*sys.argv[1:3])
+    main(*sys.argv[1:4])

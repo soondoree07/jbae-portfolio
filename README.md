@@ -11,8 +11,10 @@
 ```
 index.html            첫 화면 (히어로 · 작품 연보 · 작가 · 약력 · 문의)
 year.html             한 시기의 작품 전체 (?year=2023 처럼 붙여서 연다)
-catalog.html          전시 도록 — 책처럼 넘겨 보는 화면 (#p=5 처럼 붙이면 그 쪽부터)
-catalog.json          도록 내용 + 작품 펼침면 배치(spreads)
+catalogs.html         전시 도록 목록 — 머리띠 메뉴 '도록'이 여기로 온다. 도록마다 앞표지 + 이름
+catalogs.json         도록 목록 (id · 이름 · 표지 · 내용 파일) + default(id 없이 열 도록)
+catalog.html          도록 한 권을 넘겨 보는 화면 (?id=… 로 고르고, #p=5 처럼 붙이면 그 쪽부터)
+catalogs/<id>.json    도록 한 권의 내용 + 작품 펼침면 배치(spreads)
 catalog-v1.*          2026-10-23 의 1판 도록 보관본 (A4 · 한 쪽에 한 점). 링크하지 않는다
 data.json             작가 정보 + 시기별 작품. 내용은 전부 여기서 온다
 css/
@@ -21,6 +23,7 @@ css/
   layout.css          머리띠, 히어로, 구획 골격, 작품 연보
   components.css      버튼, 약력, 작품 격자, 라이트박스, 등장 모션
   catalog.css         도록 화면 — 도구 줄 · 무대 · 덮는 창
+  catalogs.css        도록 목록 화면
   catalog-sheets.css  도록 쪽 안 — 인쇄 도록 내지 디자인(흰 종이 · Pretendard · mm 치수)
 js/
   data.js             data.json 읽기 + 화면용으로 다듬기
@@ -30,14 +33,15 @@ js/
   cv.js               약력 그리기
   lightbox.js         작품 크게 보기
   catalog.js          도록: 쪽 넘김 · 쪽 번호 · 넘김 단추
-  catalog-pages.js    도록: catalog.json → 쪽 만들기 (빈 값은 자리 표시)
+  catalogs.js         도록 목록: catalogs.json → 표지 칸
+  catalog-pages.js    도록: 내용 파일 → 쪽 만들기 (빈 값은 자리 표시)
   catalog-layouts.js  도록: 작품 펼침면 배치 5종 (right · big · pair · portraits · portrait-left)
   catalog-tools.js    도록: 모아보기 · 자동 넘기기 · 크게 보기 · 전체 화면 · 링크 복사
   catalog-turn.js     도록: 가운데 잡고 넘기기 · 넘기는 종이에만 뒷면 비침 · 표지 넘김 위치 보정
   vendor/page-flip.browser.js  쪽 넘김 라이브러리 StPageFlip 2.0.7 (MIT)
 images/               작품 원본 (라이트박스가 쓴다)
 images/thumb/         격자·연보용 WebP 썸네일 (자동 생성)
-images/catalog/       도록 앞·뒤표지 그림과 QR (tools/build_catalog_cover.py 가 만든다)
+images/catalog/<id>/  도록 앞·뒤표지 그림과 뒤표지 QR (tools/build_catalog_cover.py 가 만든다)
 tools/
   build_image_meta.py 이미지 크기 측정 + 썸네일 생성
   build_catalog_cover.py  인쇄 표지 PDF → 도록 앞·뒤표지 그림 + 뒤표지 QR 두 개
@@ -72,7 +76,10 @@ docs/qr/              사이트로 이동하는 QR 코드
 ### 전시 도록 채우기
 짜임은 인쇄 도록 `도록 내지.pdf`(2024 한가람 전시, 185×240mm)를 따른다 — 흰 종이, Pretendard 가는 글씨,
 작품 아래 한 줄 캡션(제목 · 크기 · 재료 · 연도). 치수는 전부 mm 라 화면 크기와 상관없이 내지와 같은 자리에 선다.
-`catalog.json` 을 고친다. 비어 있는 값은 화면에 흐린 자리 표시로 나온다.
+`catalogs/<id>.json` 을 고친다. 비어 있는 값은 화면에 흐린 자리 표시로 나온다.
+
+**새 도록을 더하려면**: `catalogs/<새 id>.json` 에 내용을, `images/catalog/<새 id>/` 에 표지를 넣고 `catalogs.json` 의 `catalogs` 에 한 줄 더한다(위에 적을수록 목록 앞). 주소는 `catalog.html?id=<새 id>`. `default` 는 바꾸지 않는다 — 인쇄한 QR(jbae.art/catalog)이 정부청사 도록을 연다.
+
 
 - `cover` 앞·뒤표지 그림. 인쇄 표지 `도록 표지2.pdf` 를 반씩 잘라 쓴다(`tools/build_catalog_cover.py`)
 - `title` 속표지 · 판권 (제목 · 작가 · 부제 · 기간 · 장소), `contact` 메일 · 인스타 · 누리집
@@ -85,7 +92,7 @@ docs/qr/              사이트로 이동하는 QR 코드
 
 넘길 때 그림자는 쓰지 않는다(`drawShadow:false` + 그늘 요소 숨김).
 넘기는 동안 들린 종이에만 같은 장 뒷면이 좌우 뒤집혀 8% 로 비친다(`--through`).
-홈·시기 화면 머리띠 메뉴의 "도록"으로 들어온다(2026-10-25 공개, `noindex` 뺌). QR 은 `docs/qr/catalog-qr*.png` (https://jbae.art/catalog).
+홈·시기 화면 머리띠 메뉴의 "도록" → 도록 목록(catalogs.html) → 도록으로 들어온다(2026-10-25 공개, `noindex` 뺌). QR 은 `docs/qr/catalog-qr*.png` (https://jbae.art/catalog).
 
 ## 알아둘 것
 

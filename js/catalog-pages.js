@@ -1,4 +1,4 @@
-/* catalog.json 을 도록의 쪽(page) 하나하나로 바꾼다.
+/* 도록 내용 파일(catalogs/<id>.json)을 도록의 쪽(page) 하나하나로 바꾼다.
    짜임은 인쇄 도록 '도록 내지.pdf' 를 따른다 — 흰 종이, 가는 글씨, 작품 아래 한 줄 캡션.
    작품은 펼친 두 쪽 위에 놓고(js/catalog-layouts.js), 왼쪽·오른쪽 쪽이 그 절반씩을 보여 준다.
    값이 비어 있으면 흐린 자리 표시를 그린다. */
@@ -57,7 +57,7 @@ function titlePage(info){
 }
 
 /**
- * 작가 노트는 펼침면 하나(두 쪽)에 싣는다. 어디서 쪽을 넘길지는 catalog.json 의 pages(문단 묶음)로 정한다.
+ * 작가 노트는 펼침면 하나(두 쪽)에 싣는다. 어디서 쪽을 넘길지는 도록 내용 파일의 pages(문단 묶음)로 정한다.
  * 제목은 첫 쪽에만 단다.
  */
 function notePages(note, artist){
