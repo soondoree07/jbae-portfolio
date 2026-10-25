@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>전시 도록(1판 보관본) | 배정혜 J.Bae</title>
+  <!-- 내용이 정해지기 전까지는 검색에 잡히지 않게 둔다 -->
+  <meta name="robots" content="noindex, nofollow">
+  <!-- 2026-10-25 새 도록(도록 내지 디자인)으로 바꾸기 전의 1판. 보관용이라 링크하지 않는다 -->
+
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="favicon.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="theme-color" content="#E8E0D3">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/catalog-v1.css">
+</head>
+<body class="catalog">
+  <header class="cat-bar">
+    <a class="cat-brand" href="index.html">배정혜 <span>J.Bae</span></a>
+
+    <nav class="cat-tools" aria-label="도록 넘기기">
+      <button class="cat-tool" type="button" data-act="first" aria-label="처음 쪽">
+        <svg viewBox="0 0 24 24"><path d="M6 5v14M18 6l-7 6 7 6"/></svg>
+      </button>
+      <button class="cat-tool" type="button" data-act="prev" aria-label="이전 쪽">
+        <svg viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+      </button>
+      <label class="cat-count">
+        <span class="sr-only">쪽 번호</span>
+        <input class="cat-count-input" type="text" inputmode="numeric" autocomplete="off" value="1">
+        <span class="cat-count-total">/ 1</span>
+      </label>
+      <button class="cat-tool" type="button" data-act="next" aria-label="다음 쪽">
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <button class="cat-tool" type="button" data-act="last" aria-label="마지막 쪽">
+        <svg viewBox="0 0 24 24"><path d="M18 5v14M6 6l7 6-7 6"/></svg>
+      </button>
+
+      <span class="cat-tools-gap" aria-hidden="true"></span>
+
+      <div class="cat-more">
+        <button class="cat-tool cat-more-toggle" type="button" aria-label="도구 더 보기" aria-expanded="false">
+          <svg viewBox="0 0 24 24"><path d="M12 5.5v.01M12 12v.01M12 18.5v.01"/></svg>
+        </button>
+        <div class="cat-extra">
+          <button class="cat-tool" type="button" data-act="thumbs" aria-label="쪽 모아보기">
+            <svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg>
+            <span class="cat-tool-name">모아보기</span>
+          </button>
+          <button class="cat-tool" type="button" data-act="autoplay" aria-label="자동으로 넘기기" aria-pressed="false">
+            <svg class="when-off" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <svg class="when-on" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg>
+            <span class="cat-tool-name">자동 넘기기</span>
+          </button>
+          <button class="cat-tool" type="button" data-act="zoom" aria-label="크게 보기">
+            <svg viewBox="0 0 24 24"><path d="M10.5 4a6.5 6.5 0 1 1 0 13 6.5 6.5 0 0 1 0-13zM15.5 15.5 20 20M10.5 8v5M8 10.5h5"/></svg>
+            <span class="cat-tool-name">크게 보기</span>
+          </button>
+          <button class="cat-tool" type="button" data-act="fullscreen" aria-label="전체 화면">
+            <svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+            <span class="cat-tool-name">전체 화면</span>
+          </button>
+          <button class="cat-tool" type="button" data-act="share" aria-label="도록 링크 복사">
+            <svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>
+            <span class="cat-tool-name">링크 복사</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="cat-stage">
+    <button class="cat-side cat-side--prev" type="button" data-act="prev" aria-label="이전 쪽">
+      <svg viewBox="0 0 24 48"><path d="M20 4 4 24l16 20"/></svg>
+    </button>
+    <div class="cat-book-box">
+      <div class="cat-book"></div>
+    </div>
+    <button class="cat-side cat-side--next" type="button" data-act="next" aria-label="다음 쪽">
+      <svg viewBox="0 0 24 48"><path d="m4 4 16 20L4 44"/></svg>
+    </button>
+  </main>
+
+  <div class="cat-thumbs" role="dialog" aria-modal="true" aria-label="쪽 모아보기" hidden>
+    <div class="cat-panel-bar">
+      <span>쪽 모아보기</span>
+      <button class="cat-tool" type="button" data-act="close" aria-label="닫기">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <ol class="cat-thumb-list"></ol>
+  </div>
+
+  <div class="cat-zoom" role="dialog" aria-modal="true" aria-label="크게 보기" hidden>
+    <div class="cat-panel-bar">
+      <span>크게 보기</span>
+      <button class="cat-tool" type="button" data-act="close" aria-label="닫기">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="cat-zoom-sheet"></div>
+  </div>
+
+  <p class="cat-toast" aria-live="polite"></p>
+
+  <script src="js/vendor/page-flip.browser.js"></script>
+  <script type="module" src="js/catalog-v1.js"></script>
+</body>
+</html>
