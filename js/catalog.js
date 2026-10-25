@@ -7,18 +7,31 @@ import { bindTools } from './catalog-tools.js';
 import { enableMiddleGrab, showThroughWhileTurning, fixHardPageOffset } from './catalog-turn.js';
 
 const SOURCE = 'catalog.json';
-// A4 세로 비율. 실제 크기는 화면에 맞춰 늘고 준다.
-const PAGE_W = 595;
-const PAGE_H = 842;
+// 작품 그림의 가로·세로(실측)는 사이트 자료에 있다. 두 곳에 따로 적지 않는다.
+const SITE_DATA = 'data.json';
+// 인쇄 도록 내지와 같은 185×240mm 비율. 실제 크기는 화면에 맞춰 늘고 준다.
+const PAGE_W = 555;
+const PAGE_H = 720;
 // 한 쪽 폭이 이보다 좁아지면(=화면 폭이 두 배 미만) 펼침면 대신 한 쪽씩 보여 준다.
 const SINGLE_PAGE_BELOW = 300;
 // 넘기는 동작이 도록의 핵심이라, 윈도우 애니메이션 효과를 꺼 둔(동작 줄이기) 화면에서도 그대로 둔다
 const FLIP_TIME = 700;
 
-async function loadCatalog(){
-  const res = await fetch(SOURCE);
-  if(!res.ok) throw new Error('도록 자료를 불러오지 못했습니다');
+async function loadJSON(url){
+  const res = await fetch(url);
+  if(!res.ok) throw new Error(`${url} 을 불러오지 못했습니다`);
   return res.json();
+}
+
+/** 이미지 주소 → 가로/세로 비율 */
+function imageRatios(site){
+  const ratios = new Map();
+  for(const year of site.years || []){
+    for(const w of year.works || []){
+      if(w.image && w.w && w.h) ratios.set(w.image, w.w / w.h);
+    }
+  }
+  return ratios;
 }
 
 /** 주소 끝의 #p=5 를 읽어 그 쪽에서 시작한다. 링크로 특정 쪽을 바로 보여 줄 수 있다. */
@@ -110,8 +123,8 @@ function bindMoves(book){
 }
 
 async function init(){
-  const catalog = await loadCatalog();
-  const pages = buildPages(catalog);
+  const [catalog, site] = await Promise.all([loadJSON(SOURCE), loadJSON(SITE_DATA)]);
+  const pages = buildPages(catalog, imageRatios(site));
   const bookEl = document.querySelector('.cat-book');
   const pageEls = renderPages(bookEl, pages);
 

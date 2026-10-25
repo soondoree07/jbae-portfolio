@@ -67,74 +67,6 @@ body.catalog{--bar:56px}
 
 .cat-error{position:absolute;inset:0;display:grid;place-items:center;color:var(--ink-soft)}
 
-/* ---------- 쪽 ----------
-   쪽 크기는 화면에 따라 바뀐다. 글자와 여백을 쪽 폭(cqw) 기준으로 잡아 어느 크기에서도 비례가 같다. */
-.cat-page{background:var(--paper-hi);border:1px solid var(--line);overflow:hidden;container-type:size}
-.cat-page--cover,.cat-page--back{background:var(--paper)}
-.cat-sheet{
-  position:absolute;inset:0;display:flex;flex-direction:column;
-  padding:10cqw 9cqw 12cqw;
-  font-size:2.9cqw;line-height:1.9;
-}
-/* 뒷면이 비친다 — 얇은 종이를 빛에 댄 것처럼. 넘기는 동안 들린 종이에서만 보인다(js/catalog-turn.js) */
-.cat-page{--through:.08}
-.cat-through{
-  position:absolute;inset:0;transform:scaleX(-1);
-  opacity:0;mix-blend-mode:multiply;pointer-events:none;
-}
-.cat-page.is-turning .cat-through{opacity:var(--through)}
-.cat-through .cat-ph,.cat-through .cat-ph-image span{color:var(--ink)}
-.cat-through img{filter:grayscale(1)}
-.cat-folio{
-  position:absolute;bottom:5cqw;left:0;right:0;text-align:center;
-  font-size:2.2cqw;color:var(--ink-soft);font-variant-numeric:tabular-nums;
-}
-
-.cat-ph{color:var(--line-firm)}
-.cat-ph-lines span{display:block;height:1px;background:var(--line);margin-block:5cqw}
-.cat-ph-image{
-  width:100%;height:100%;display:grid;place-items:center;
-  border:1px solid var(--line);
-}
-.cat-ph-image span{font-size:2.4cqw;letter-spacing:.2em;color:var(--ink-soft)}
-
-/* 표지 */
-.cat-page--cover .cat-sheet{gap:7cqw}
-.cat-cover-art{flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
-.cat-cover-art img{max-width:100%;max-height:100%;object-fit:contain}
-.cat-cover-title{font-size:8cqw;line-height:1.25}
-.cat-cover-sub{margin-top:2cqw;font-size:3.2cqw;letter-spacing:.08em}
-.cat-cover-meta{margin-top:5cqw;font-size:2.6cqw;color:var(--ink-soft);line-height:1.8}
-
-/* 글 쪽 — 인사말 · 작가 노트 */
-.cat-heading{font-size:5.6cqw;margin-bottom:7cqw}
-.cat-body p{white-space:pre-line}
-.cat-body p + p{margin-top:1.4em}
-.cat-sign{margin-top:auto;text-align:right;color:var(--ink-soft)}
-
-/* 작품 쪽 — 긴 작품도 짧은 작품도 한 쪽에 한 점, 쪽 안에 통째로 맞춘다 */
-.cat-work{flex:1;min-height:0;display:flex;flex-direction:column}
-.cat-work-art{flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
-.cat-work-art img{max-width:100%;max-height:100%;object-fit:contain}
-.cat-work figcaption{margin-top:5cqw;display:flex;flex-direction:column;gap:1cqw}
-.cat-work-title{font-family:var(--font-display);font-size:3.4cqw;line-height:1.4}
-.cat-work-meta{font-size:2.4cqw;color:var(--ink-soft)}
-.cat-work-about{margin-top:2cqw;font-size:2.5cqw;line-height:1.8;word-break:keep-all}
-
-/* 약력 · 전시 정보 */
-.cat-rows{display:flex;flex-direction:column}
-.cat-row{display:grid;grid-template-columns:22cqw minmax(0,1fr);gap:4cqw;padding-block:2.4cqw;border-bottom:1px solid var(--line)}
-.cat-row dt{font-size:2.4cqw;letter-spacing:.12em;color:var(--ink-soft)}
-.cat-row dd{margin:0}
-.cat-row--section{display:block;padding-block:4cqw 1.6cqw;border-bottom-color:var(--line-firm)}
-.cat-row--section:first-child{padding-top:0}
-.cat-row--section dt{font-family:var(--font-display);font-size:2.9cqw;letter-spacing:0;color:var(--ink)}
-.cat-row-note{display:block;font-size:2.3cqw;color:var(--ink-soft)}
-
-/* 뒤표지 */
-.cat-page--back .cat-sheet{justify-content:flex-end;align-items:center}
-.cat-back-line{font-family:var(--font-display);font-size:4cqw;letter-spacing:.12em;color:var(--ink-soft)}
-
 /* ---------- 덮는 창 ---------- */
 .cat-thumbs,.cat-zoom{
   position:fixed;inset:0;z-index:20;background:var(--sand);
@@ -155,7 +87,7 @@ body.catalog{--bar:56px}
 }
 .cat-thumb{width:100%;display:flex;flex-direction:column;gap:var(--s2);align-items:center}
 .cat-thumb-sheet{
-  width:100%;aspect-ratio:595/842;display:grid;place-items:center;overflow:hidden;
+  width:100%;aspect-ratio:185/240;display:grid;place-items:center;overflow:hidden;
   background:var(--paper-hi);border:1px solid var(--line);
   font-size:12px;color:var(--ink-soft);transition:border-color .25s var(--ease);
 }
@@ -169,7 +101,7 @@ body.catalog{--bar:56px}
   flex:1;overflow:auto;padding:var(--s6) var(--s5);
   display:flex;justify-content:center;align-items:flex-start;
 }
-.cat-zoom-sheet .cat-page{position:relative;flex:none;width:min(92vw,820px);aspect-ratio:595/842}
+.cat-zoom-sheet .cat-page{position:relative;flex:none;width:min(92vw,820px);aspect-ratio:185/240}
 .cat-zoom-sheet.is-spread .cat-page{width:min(46vw,820px)}
 .cat-zoom-sheet.is-spread .cat-page + .cat-page{border-left:0}
 

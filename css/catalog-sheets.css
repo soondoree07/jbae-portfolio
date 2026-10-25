@@ -1,0 +1,112 @@
+/* 전시 도록의 쪽 안 — 표지 · 속표지 · 작가 노트 · 작품 펼침면 · 약력 · 판권.
+   도구 줄 · 무대 · 덮는 창은 catalog.css 가 맡는다. */
+
+/* ---------- 쪽 ----------
+   짜임은 인쇄 도록 '도록 내지.pdf'(185×240mm)를 따른다. 흰 종이에 Pretendard 가는 글씨.
+   모든 치수는 쪽 폭 기준 mm(--mm = 쪽 폭/185)라 화면 크기와 무관하게 내지와 같은 자리에 선다.
+   글씨 크기는 내지의 pt 를 mm 로 옮긴 값이다(1pt = 0.353mm). */
+.cat-page{
+  --mm:calc(100cqw / 185);
+  --print-ink:#4d4d4f;
+  background:#fff;border:1px solid var(--line);overflow:hidden;container-type:size;
+}
+.cat-sheet{
+  position:absolute;inset:0;
+  font-family:'Pretendard',var(--font-body);color:var(--print-ink);
+  word-break:keep-all;
+}
+/* 뒷면이 비친다 — 얇은 종이를 빛에 댄 것처럼. 넘기는 동안 들린 종이에서만 보인다(js/catalog-turn.js) */
+.cat-page{--through:.08}
+.cat-through{
+  position:absolute;inset:0;transform:scaleX(-1);
+  opacity:0;mix-blend-mode:multiply;pointer-events:none;
+}
+.cat-page.is-turning .cat-through{opacity:var(--through)}
+.cat-through .cat-ph{color:var(--ink)}
+.cat-through img{filter:grayscale(1)}
+
+.cat-ph{color:var(--line-firm)}
+
+/* 표지 · 뒤표지 — 인쇄 표지(도록 표지2.pdf)를 반씩 자른 그림 */
+.cat-cover-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+/* 작품 펼침면 — 왼쪽·오른쪽 쪽이 같은 370mm 화폭을 반씩 보여 준다 */
+.cat-canvas{position:absolute;top:0;left:0;width:calc(370 * var(--mm));height:100%}
+.cat-sheet--spread-right .cat-canvas{left:calc(-185 * var(--mm))}
+.cat-fig{position:absolute;margin:0}
+.cat-fig img{width:100%;height:100%;object-fit:cover}
+.cat-cap{
+  position:absolute;white-space:nowrap;
+  font-size:calc(2.61 * var(--mm));font-weight:200;line-height:1.3;
+}
+.cat-cap b{font-weight:600;margin-right:calc(1.2 * var(--mm))}
+
+/* 속표지 */
+.cat-tp-lines{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:#9a9aa0;stroke-width:.25}
+.cat-tp-title{
+  position:absolute;left:calc(122 * var(--mm));top:calc(26 * var(--mm));
+  font-family:'Nanum Myeongjo',var(--font-display);font-weight:400;
+  font-size:calc(16.5 * var(--mm));line-height:calc(17 * var(--mm));color:#7d7983;
+}
+.cat-tp-artist{
+  position:absolute;left:calc(122 * var(--mm));top:calc(95.5 * var(--mm));
+  font-family:'Nanum Myeongjo',var(--font-display);
+  font-size:calc(9.2 * var(--mm));letter-spacing:.35em;color:#2b2e3d;
+}
+.cat-tp-info{
+  position:absolute;left:calc(122 * var(--mm));top:calc(208.5 * var(--mm));
+  font-size:calc(2.61 * var(--mm));line-height:1.75;
+}
+.cat-tp-venue{font-size:calc(3.88 * var(--mm));font-weight:600;line-height:1.5}
+
+/* 작가 노트 — 왼쪽 쪽 */
+.cat-note{position:absolute;left:calc(14 * var(--mm));top:calc(20.2 * var(--mm));width:calc(157 * var(--mm))}
+.cat-note-head{font-size:calc(2.79 * var(--mm));font-weight:400}
+.cat-note-head b{font-weight:600;margin-right:calc(1 * var(--mm))}
+.cat-note-body{
+  margin-top:calc(7 * var(--mm));
+  font-size:calc(2.93 * var(--mm));font-weight:300;line-height:calc(4.95 * var(--mm));
+}
+.cat-note-body p{white-space:pre-line}
+.cat-note-body p + p{margin-top:calc(4.95 * var(--mm))}
+
+/* 약력 — 내지 약력 쪽의 왼쪽 두 단 */
+.cat-cv-head{position:absolute;left:calc(16 * var(--mm));top:calc(19 * var(--mm))}
+.cat-cv-head h2{font-size:calc(4.6 * var(--mm));font-weight:400}
+.cat-cv-head h2 b{font-weight:600}
+.cat-cv-head h2 span{margin-left:calc(1.5 * var(--mm));font-size:calc(2.58 * var(--mm));font-weight:300}
+.cat-cv-contact{
+  display:flex;gap:calc(6 * var(--mm));margin-top:calc(4 * var(--mm));
+  font-size:calc(2.58 * var(--mm));font-weight:300;
+}
+.cat-cv-cols{
+  position:absolute;left:calc(16 * var(--mm));top:calc(54 * var(--mm));
+  width:calc(155 * var(--mm));height:calc(172 * var(--mm));
+  columns:2;column-gap:calc(8 * var(--mm));column-fill:auto;
+  font-size:calc(2.58 * var(--mm));font-weight:300;line-height:calc(5.3 * var(--mm));
+}
+.cat-cv-section{
+  break-after:avoid;margin-top:calc(10 * var(--mm));
+  font-size:calc(2.75 * var(--mm));font-weight:600;line-height:calc(5.3 * var(--mm));
+}
+.cat-cv-section:first-child{margin-top:0}
+.cat-cv-row{display:grid;grid-template-columns:calc(12 * var(--mm)) minmax(0,1fr);break-inside:avoid}
+
+/* 판권 — 내지 마지막 쪽처럼 아래쪽 왼편에 모은다 */
+.cat-colophon{position:absolute;left:calc(14 * var(--mm));right:calc(14 * var(--mm));top:calc(134.5 * var(--mm))}
+.cat-co-title{
+  font-family:'Nanum Myeongjo',var(--font-display);
+  font-size:calc(6.17 * var(--mm));line-height:calc(6.45 * var(--mm));color:#45495c;
+}
+.cat-co-line{
+  display:block;width:calc(10.6 * var(--mm));height:calc(10.6 * var(--mm));
+  margin:calc(3 * var(--mm)) 0 calc(3 * var(--mm)) calc(1 * var(--mm));
+  fill:none;stroke:#94969a;stroke-width:.14;overflow:visible;
+}
+.cat-co-sub{font-size:calc(4.23 * var(--mm));font-weight:600;color:#404041}
+.cat-co-period{margin-top:calc(4.5 * var(--mm));font-size:calc(2.79 * var(--mm))}
+.cat-co-venue{margin-top:calc(1.5 * var(--mm));font-size:calc(3.53 * var(--mm));font-weight:600}
+.cat-co-contact{margin-top:calc(4 * var(--mm));font-size:calc(2.82 * var(--mm));font-weight:200;white-space:pre}
+.cat-co-contact b{font-weight:500}
+.cat-co-legal{margin-top:calc(2.5 * var(--mm));font-size:calc(2.82 * var(--mm));font-weight:200}
+.cat-co-copy{margin-top:calc(2.5 * var(--mm));font-size:calc(2.12 * var(--mm));font-weight:200}
