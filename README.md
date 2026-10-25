@@ -41,6 +41,7 @@ images/catalog/       도록 앞·뒤표지 그림과 QR (tools/build_catalog_co
 tools/
   build_image_meta.py 이미지 크기 측정 + 썸네일 생성
   build_catalog_cover.py  인쇄 표지 PDF → 도록 앞·뒤표지 그림 + 뒤표지 QR 두 개
+  build_qr.py         사이트 QR 과 같은 모양(나비 판)의 QR 세 장 — 도록 QR 을 이걸로 만든다
 docs/qr/              사이트로 이동하는 QR 코드
 ```
 
@@ -84,7 +85,7 @@ docs/qr/              사이트로 이동하는 QR 코드
 
 넘길 때 그림자는 쓰지 않는다(`drawShadow:false` + 그늘 요소 숨김).
 넘기는 동안 들린 종이에만 같은 장 뒷면이 좌우 뒤집혀 8% 로 비친다(`--through`).
-지금은 홈에서 링크하지 않고 `noindex` 로 검색에서 빼 두었다.
+홈·시기 화면 머리띠 메뉴의 "도록"으로 들어온다(2026-10-25 공개, `noindex` 뺌). QR 은 `docs/qr/catalog-qr*.png` (https://jbae.art/catalog).
 
 ## 알아둘 것
 

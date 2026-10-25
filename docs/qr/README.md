@@ -50,3 +50,15 @@ python3 -m pip download segno -d /tmp/qrwheel --no-deps -q
 
 1. `segno.make("https://jbae.art", error='h')` — 오류 정정은 반드시 H
 2. 로고 판은 **홀수 모듈 수**로 잡아 가운데에 정확히 맞춘다 (전체 37모듈, 판 11모듈)
+
+## 전시 도록 QR (2026-10-25 추가)
+
+**https://jbae.art/catalog** (넘겨 보는 전시 도록)으로 가는 QR. 모양·색·규격은 위 사이트 QR 과 같다(29×29, 오류 정정 H, 나비 11×11 모듈).
+
+| 바탕화면 `jbae-QR` 폴더 | 레포 `docs/qr` | 쓸 곳 |
+|---|---|---|
+| `도록_1_화면용_기본.png` | `catalog-qr.png` | 기본. 화면·인쇄 모두 (1776px, 300dpi) |
+| `도록_2_흑백.png` | `catalog-qr-mono.png` | 흑백 인쇄 |
+| `도록_3_나비없음_아주작게쓸때.png` | `catalog-qr-plain.png` | 1.5cm 이하로 아주 작게 넣을 때 |
+
+다시 만들려면 `python3 tools/build_qr.py https://jbae.art/catalog docs/qr catalog-qr` — 만든 뒤 세 장을 다시 읽어 주소를 확인한다.
