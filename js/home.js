@@ -1,10 +1,11 @@
-/* 첫 화면 — 히어로, 작품 연보, 작가, 약력, 문의 */
+/* 첫 화면 — 히어로, 작가(+인용 한 구절), 작품 연보, 약력, 문의 */
 
 import { loadData, visibleChapters, chapterLabel, thumbOf, esc, flattenWorks, instagramHandle, isPanorama } from './data.js';
 import { copyLineHTML, bindCopyLines } from './copy.js';
 import { renderCV } from './cv.js';
 import { rememberSpot, restoreSpot } from './return-spot.js';
 import { revealOnScroll, stickyMasthead } from './motion.js';
+import { loadQuote, showArchiveLink } from './writing-data.js';
 
 /* 히어로에 걸 대표작. 태그라인 "꿈결·물결·바람결"과 같은 이름의 작품이라 이 시기를 쓴다. */
 const HERO_CHAPTER = '2023';
@@ -45,6 +46,20 @@ function renderChapters(chapters, mount){
 }
 
 /* 전화번호는 공개 페이지에 내지 않는다 (기획서 방침). data.json 에는 남아 있지만 화면에는 쓰지 않는다. */
+/* 작가 소개 아래 인용 한 구절. writings.json 의 quote 가 비면 숨긴 채 둔다 */
+async function renderQuote(){
+  const box = pick('.about-quote');
+  const quote = await loadQuote();
+  if(!box || !quote) return;
+  const { entry } = quote;
+  const title = `<a href="writing.html?id=${encodeURIComponent(entry.id)}">「${esc(entry.title)}」</a>`;
+  box.innerHTML = `
+    <blockquote>“${esc(quote.text)}”</blockquote>
+    <figcaption>— ${entry.author ? `${esc(entry.author)}, ` : ''}${title}</figcaption>
+    <a class="backlink" href="writings.html">기록 모두 보기 →</a>`;
+  box.hidden = false;
+}
+
 function renderAbout(artist){
   pick('.about-bio').textContent = artist.bio;
   pick('.about-lines').innerHTML = `
@@ -76,6 +91,7 @@ function jumpToHash(){
 
 async function start(){
   stickyMasthead();
+  showArchiveLink();
   try{
     const data = await loadData();
     const { artist } = data;
@@ -90,6 +106,7 @@ async function start(){
     renderChapters(chapters, chapterList);
     rememberSpot(chapterList);
     renderAbout(artist);
+    await renderQuote();
     renderCV(artist.cv, pick('.cv'));
     renderContact(artist);
     renderColophon(artist);

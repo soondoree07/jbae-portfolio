@@ -1,0 +1,8 @@
+{
+  "_안내": "기록 — 작가노트 · 평론 · 전시 서문 · 기사. 글이 하나도 없으면 머리띠의 '기록' 메뉴와 첫 화면 인용이 숨는다(글을 넣으면 저절로 나타난다). 글 한 편 = { id, kind(작가노트 · 평론 · 전시 서문 · 기사), title, author(작가노트는 비워도 됨), date, source(실린 곳), image(선택, images/writings/…), imageCaption(선택), link(선택, 기사 원문), body: [문단, …] }. 위에 적을수록 목록 앞. quote = 첫 화면 작가 소개 아래 인용 한 구절 — from 에 글 id, text 에 그 글에서 따온 문장.",
+  "quote": {
+    "from": "",
+    "text": ""
+  },
+  "writings": []
+}

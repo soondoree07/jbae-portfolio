@@ -1,0 +1,79 @@
+/* 기록 — 목록(writings.html)과 한 편 읽기(writing.html).
+   사이트 규칙대로 곡률·그림자 없이 1px 선만 쓴다. 색·글씨는 토큰을 따라 무드마다 바뀐다. */
+
+/* ---------- 목록: 글 한 편이 한 줄 ---------- */
+.writings-band{padding-top:0}
+.writing-list{margin:0;padding:0;list-style:none;border-top:1px solid var(--line-firm)}
+.writing-item{border-bottom:1px solid var(--line)}
+.writing-link{
+  display:grid;grid-template-columns:minmax(0,9em) minmax(0,1fr);
+  grid-template-areas:"kind title" ". meta";
+  align-items:start;
+  gap:var(--s2) var(--s5);padding-block:var(--s6);color:var(--ink);
+}
+.writing-kind{
+  grid-area:kind;padding-top:.45em;
+  font-size:12px;letter-spacing:.18em;color:var(--clay);
+}
+.writing-title{
+  grid-area:title;justify-self:start;
+  font-family:var(--font-display);font-size:clamp(21px,2.4vw,28px);line-height:1.4;word-break:keep-all;
+  border-bottom:1px solid transparent;
+  transition:border-color .25s var(--ease), color .25s var(--ease);
+}
+.writing-meta{grid-area:meta;font-size:13px;color:var(--ink-soft)}
+.writing-link:hover .writing-title{color:var(--clay-deep);border-bottom-color:var(--clay-deep)}
+/* 사진이 있는 줄은 오른쪽 칸을 하나 더 연다 */
+.writing-link:has(.writing-thumb){
+  grid-template-columns:minmax(0,9em) minmax(0,1fr) 168px;
+  grid-template-areas:"kind title thumb" ". meta thumb";
+  grid-template-rows:auto 1fr;  /* 사진이 더 높아도 한 줄 정보는 제목 바로 밑에 */
+}
+.writing-thumb{grid-area:thumb;display:block;aspect-ratio:4/3;overflow:hidden;
+  background:var(--paper-hi);border:1px solid var(--line)}
+.writing-thumb img{width:100%;height:100%;object-fit:cover}
+
+/* ---------- 한 편 읽기 ---------- */
+/* 한 줄이 너무 길면 읽다가 줄을 놓친다. 한글 기준 한 줄 40자 안팎 */
+.reading{max-width:calc(36em + 2 * var(--s5));padding-block:var(--s9) var(--s8)}
+.reading-head{display:flex;flex-direction:column;gap:var(--s3);padding-bottom:var(--s6);
+  margin-bottom:var(--s7);border-bottom:1px solid var(--line-firm)}
+.reading-head .backlink{margin-bottom:var(--s5)}
+.reading-kind{margin-bottom:0}
+.reading-title{font-size:clamp(30px,4.4vw,46px);line-height:1.3;word-break:keep-all}
+.reading-meta{color:var(--ink-soft);font-size:14px}
+
+.reading-figure{margin:0 0 var(--s7)}
+.reading-figure img{width:100%;height:auto;border:1px solid var(--line)}
+.reading-figure figcaption{margin-top:var(--s2);font-size:13px;color:var(--ink-soft)}
+
+.reading-body p{
+  font-size:17px;line-height:1.95;word-break:keep-all;
+  margin:0 0 1.4em;
+}
+.reading-source{margin-top:var(--s6)}
+.reading-source a{color:var(--clay);border-bottom:1px solid currentColor;font-size:14px}
+.reading-source a:hover{color:var(--clay-deep)}
+
+/* 앞뒤 글 — 왼쪽은 이전, 오른쪽은 다음. 한쪽이 없으면 빈칸으로 자리를 지킨다 */
+.reading-steps{
+  display:grid;grid-template-columns:1fr 1fr;gap:var(--s5);
+  margin-top:var(--s8);padding-top:var(--s5);border-top:1px solid var(--line)}
+.reading-step{display:flex;flex-direction:column;gap:var(--s1);color:var(--ink)}
+.reading-step.is-next{text-align:right;align-items:flex-end}
+.reading-step-label{font-size:12px;letter-spacing:.14em;color:var(--ink-soft)}
+.reading-step-title{font-family:var(--font-display);font-size:16px;line-height:1.5;word-break:keep-all}
+.reading-step:hover .reading-step-title{color:var(--clay-deep)}
+
+@media (max-width:560px){
+  .writing-link{grid-template-columns:1fr;grid-template-areas:"kind" "title" "meta";gap:var(--s2);padding-block:var(--s5)}
+  .writing-kind{padding-top:0}
+  .writing-link:has(.writing-thumb){
+    grid-template-columns:minmax(0,1fr) 96px;
+    grid-template-areas:"kind thumb" "title thumb" "meta thumb";
+  }
+  .reading{padding-top:var(--s8)}
+  .reading-body p{font-size:16px;line-height:1.9}
+  .reading-steps{grid-template-columns:1fr}
+  .reading-step.is-next{text-align:left;align-items:flex-start}
+}

@@ -3,6 +3,7 @@
 import { loadData, findChapter, flattenWorks, chapterLabel, spanOf, displayRatio, thumbOf, esc, titleText } from './data.js';
 import { revealOnScroll, stickyMasthead } from './motion.js';
 import { setupViewer, open as openViewer } from './lightbox.js';
+import { showArchiveLink } from './writing-data.js';
 
 const pick = (sel) => document.querySelector(sel);
 
@@ -28,6 +29,7 @@ function pieceHTML(work, index){
 
 async function start(){
   stickyMasthead();
+  showArchiveLink();
   const id = new URLSearchParams(location.search).get('year');
   if(!id){ location.replace('index.html'); return; }
 

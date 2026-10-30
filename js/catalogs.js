@@ -3,6 +3,7 @@
 
 import { esc } from './data.js';
 import { revealOnScroll, stickyMasthead } from './motion.js';
+import { showArchiveLink } from './writing-data.js';
 
 const LIST = 'catalogs.json';
 
@@ -19,6 +20,7 @@ function bookHTML(entry){
 
 async function start(){
   stickyMasthead();
+  showArchiveLink();
   const shelf = document.querySelector('.shelf');
   try{
     const res = await fetch(LIST);
