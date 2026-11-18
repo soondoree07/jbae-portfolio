@@ -32,6 +32,9 @@ jbae.art 에서 개발 파일(package.json · tests · e2e · 문서 등)이 열
 - 2026-11-18 · `logs/` · `test-results/` · `playwright-report/` 는 커밋 안 되지만 안전하게 같이 넣음
 
 ## 오류 기록
+- 없음
 <!-- 명령 · 메시지 핵심 · 원인 · 해결 · 로그 경로 -->
 
 ## 검증 결과
+- 2026-11-18 · verify-task 1회차 통과(테스트 · 100줄 · 의존성 · 화면 · e2e · 문서 · 비밀값, 린트 · 빌드는 명령 없음). 단위 시험 3개 추가(`tests/pages-exclude.test.js`)
+- Jekyll 실제 빌드는 이 PC 에 Ruby 가 없어 못 돌림 → 합친 뒤 PR 의 주소 목록으로 확인
