@@ -38,3 +38,6 @@ jbae.art 에서 개발 파일(package.json · tests · e2e · 문서 등)이 열
 ## 검증 결과
 - 2026-11-18 · verify-task 1회차 통과(테스트 · 100줄 · 의존성 · 화면 · e2e · 문서 · 비밀값, 린트 · 빌드는 명령 없음). 단위 시험 3개 추가(`tests/pages-exclude.test.js`)
 - Jekyll 실제 빌드는 이 PC 에 Ruby 가 없어 못 돌림 → 합친 뒤 PR 의 주소 목록으로 확인
+
+## 리뷰
+- Claude(Code Reviewer): 막음 없음. 제안 반영: 시험이 Jekyll 처럼 앞부분 일치로 판정 · writings.json · catalogs/*.json 그림 주소도 검사 · 파일 한 번만 읽기. ChatGPT 검토 없음

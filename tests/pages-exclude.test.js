@@ -22,11 +22,8 @@ function excludeList() {
 }
 
 const excluded = excludeList()
-const isExcluded = (path) =>
-  excluded.some((entry) => {
-    const name = entry.replace(/\/$/, '')
-    return path === name || path.startsWith(name + '/')
-  })
+// Jekyll 은 앞부분만 맞아도 뺀다(start_with?). 그래서 시험도 앞부분 일치로 넓게 본다 — 'catalog' 를 넣으면 catalog-v1.html 도 빠지는 걸 잡는다
+const isExcluded = (path) => excluded.some((entry) => path.startsWith(entry.replace(/\/$/, '')))
 
 /** 사이트 html · js 가 읽는 저장소 안 파일 (src · href · fetch 하는 'x.json' 같은 이름) */
 function siteReferences() {
@@ -34,12 +31,16 @@ function siteReferences() {
   const jsFiles = readdirSync(new URL('js/', root)).filter((name) => name.endsWith('.js')).map((name) => 'js/' + name)
   const refs = new Set(htmlFiles)
   for (const file of [...htmlFiles, ...jsFiles]) {
-    for (const [, path] of read(file).matchAll(/(?:src|href)="([^"#?:]+)/g)) refs.add(path)
-    for (const [, path] of read(file).matchAll(/['"`]([\w./-]+\.(?:json|js|css|png|jpe?g|webp|ico|svg))['"`]/g)) refs.add(path)
+    const text = read(file)
+    for (const [, path] of text.matchAll(/(?:src|href)="([^"#?:]+)/g)) refs.add(path)
+    for (const [, path] of text.matchAll(/['"`]([\w./-]+\.(?:json|js|css|png|jpe?g|webp|ico|svg))['"`]/g)) refs.add(path)
   }
   for (const entry of readJson('catalogs.json').catalogs) refs.add(entry.source).add(entry.cover)
-  // data.json 의 그림 주소는 화면이 이어 붙여 쓴다 (images/…)
-  for (const [, path] of JSON.stringify(readJson('data.json')).matchAll(/"((?:images|catalogs)\/[^"]+)"/g)) refs.add(path)
+  // 자료 파일 속 그림 · 도록 주소는 화면이 이어 붙여 쓴다 (images/… · catalogs/…)
+  const dataFiles = ['data.json', 'writings.json', ...readdirSync(new URL('catalogs/', root)).map((name) => 'catalogs/' + name)]
+  for (const file of dataFiles) {
+    for (const [, path] of read(file).matchAll(/"((?:images|catalogs)\/[^"]+)"/g)) refs.add(path)
+  }
   return [...refs].filter((path) => !path.startsWith('/') && !path.startsWith('http'))
 }
 
