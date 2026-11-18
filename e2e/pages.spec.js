@@ -10,7 +10,7 @@ const pages = [
   { path: `/year.html?year=${firstYear}`, ready: '.gallery img' },
   { path: '/catalogs.html', ready: '.shelf a' },
   { path: '/catalog.html', ready: '.cat-book .cat-page, .cat-book .stf__item' }, // id 없이 = 인쇄 QR 이 여는 기본 도록
-  { path: '/writings.html', ready: '.writing-list li' },
+  { path: '/writings.html', ready: '.writing-item, .writing-list li.load-error:has-text("아직")' }, // 불러오기 실패 문구(load-error)는 통과시키지 않는다
 ]
 
 for (const { path, ready } of pages) {
