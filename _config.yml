@@ -1,0 +1,35 @@
+# GitHub Pages(Jekyll) 설정 — jbae.art 에 개발 파일을 내지 않는다.
+# 사이트가 읽는 파일(html · css · js · images · data.json · writings.json · catalogs*)은 여기 넣지 않는다.
+# 지키는 시험: tests/pages-exclude.test.js
+exclude:
+  # Jekyll 기본 제외 목록 (exclude 를 적으면 기본값이 덮어써져서 다시 적는다)
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  # 테스트 · 개발 도구
+  - package.json
+  - package-lock.json
+  - playwright.config.js
+  - vitest.config.js
+  - harness.json
+  - tests/
+  - e2e/
+  - tools/
+  - logs/
+  - test-results/
+  - playwright-report/
+  # 문서 (QR 원본 docs/qr 포함, 사이트는 안 읽는다)
+  - docs/
+  - README.md
+  - CHANGELOG.md
+  - CLAUDE.md
+  - ARCHITECTURE.md
+  - RESUME.md
+  - LAST_CHAT.md
