@@ -1,0 +1,12 @@
+{
+  "stack": "static",
+  "test": "npx vitest run",
+  "test_quick": "npx vitest run",
+  "dev": "python3 -m http.server {port} --bind 127.0.0.1",
+  "pages": ["/", "/year.html?year=2025-2026", "/catalogs.html", "/catalog.html", "/writings.html"],
+  "dark": false,
+  "src": "js",
+  "deploy": "github-pages",
+  "e2e": "npx playwright test",
+  "auth": null
+}
