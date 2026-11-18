@@ -4,7 +4,7 @@ project: P002
 type: 수정
 branch: claude/1118-jbae-pages-exclude
 port: 4104
-status: 진행 중
+status: 완료
 created: 2026-11-18
 ---
 
