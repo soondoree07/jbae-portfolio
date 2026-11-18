@@ -4,3 +4,11 @@
 # Windows 탐색기 잔재
 *:Zone.Identifier
 __pycache__/
+
+# 개발 도구 (테스트용 — 사이트에는 안 쓴다)
+node_modules/
+
+# 하네스 검증 로그 · 테스트 결과
+logs/
+test-results/
+playwright-report/
